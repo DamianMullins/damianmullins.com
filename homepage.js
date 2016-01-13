@@ -1,5 +1,0 @@
-$(function() {
-  
-  $('.popup').popup();
-
-});
