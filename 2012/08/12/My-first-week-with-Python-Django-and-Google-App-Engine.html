@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>My first week with Python, Django &amp; Google App Engine</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="//www.damianmullins.com/themes/Casper/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//www.damianmullins.com/themes/Casper/assets/css/screen.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="http://www.damianmullins.com/2012/08/12/My-first-week-with-Python-Django-and-Google-App-Engine.html" />
+    
+    <meta property="og:site_name" content="DamianMullins.com" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="My first week with Python, Django &amp; Google App Engine" />
+    <meta property="og:description" content="This post details the journey through my first week working with Python, Django &amp;amp; Google App Engine. I&amp;#8217;ve had ups and downs (many!), but overall I&amp;#8217;ve come out loving the three of them! Let&amp;#8217;s..." />
+    <meta property="og:url" content="http://www.damianmullins.com/2012/08/12/My-first-week-with-Python-Django-and-Google-App-Engine.html" />
+    <meta property="article:published_time" content="2012-08-11T23:00:00.000Z" />
+    <meta property="article:modified_time" content="2016-01-14T10:45:43.485Z" />
+    <meta property="article:tag" content="python" />
+    <meta property="article:tag" content="django" />
+    <meta property="article:tag" content="gae" />
+    <meta property="article:tag" content="scss" />
+    <meta property="article:tag" content="github" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="My first week with Python, Django &amp; Google App Engine" />
+    <meta name="twitter:description" content="This post details the journey through my first week working with Python, Django &amp;amp; Google App Engine. I&amp;#8217;ve had ups and downs (many!), but overall I&amp;#8217;ve come out loving the three of them! Let&amp;#8217;s..." />
+    <meta name="twitter:url" content="http://www.damianmullins.com/2012/08/12/My-first-week-with-Python-Django-and-Google-App-Engine.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "DamianMullins.com",
+    "author": {
+        "@type": "Person",
+        "name": "Damian",
+        "image": "https://avatars.githubusercontent.com/u/89059?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "lowflyingowls.co.uk"
+    },
+    "headline": "My first week with Python, Django &amp; Google App Engine",
+    "url": "http://www.damianmullins.com/2012/08/12/My-first-week-with-Python-Django-and-Google-App-Engine.html",
+    "datePublished": "2012-08-11T23:00:00.000Z",
+    "dateModified": "2016-01-14T10:45:43.485Z",
+    "keywords": "python,  django,  gae,  scss,  github",
+    "description": "This post details the journey through my first week working with Python, Django &amp;amp; Google App Engine. I&amp;#8217;ve had ups and downs (many!), but overall I&amp;#8217;ve come out loving the three of them! Let&amp;#8217;s..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="DamianMullins.com" href="http://www.damianmullins.com/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+</head>
+<body class="post-template tag-python tag-django tag-gae tag-scss tag-github">
+
+    
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="http://www.damianmullins.com">Home</a>
+        <!-- <a class="subscribe-button icon-feed" href="http://www.damianmullins.com/rss/">Subscribe</a> -->
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-python tag-django tag-gae tag-scss tag-github">
+
+        <header class="post-header">
+            <h1 class="post-title">My first week with Python, Django &amp; Google App Engine</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2012-08-12">12 August 2012</time>  on <a href="http://www.damianmullins.com/tag/python">python</a>, <a href="http://www.damianmullins.com/tag/django"> django</a>, <a href="http://www.damianmullins.com/tag/gae"> gae</a>, <a href="http://www.damianmullins.com/tag/scss"> scss</a>, <a href="http://www.damianmullins.com/tag/github"> github</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This post details the journey through my first week working with Python, Django &amp; Google App Engine. I&#8217;ve had ups and downs (many!), but overall I&#8217;ve come out loving the three of them!</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s begin&#8230;&#8203;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>## My Experience
+
+I'm not gonna lie, I have a little experience Python &amp; GAE, but no experience with Django at all... However I didn't let this hinder me!</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_up_running">Up &amp; running</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>My tools of choice were</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Espresso (then later Textmate)</p>
+</li>
+<li>
+<p>iTerm (alternative to Terminal)</p>
+</li>
+<li>
+<p>Firefox &amp; Chrome</p>
+</li>
+<li>
+<p>GitHub app</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>I run OSX so already had Python 2.7 installed, step one complete and I didn&#8217;t have to do anything! To keep track of my changes I used Github, I cheated slightly and opted for the Github app rather than the command line option (I have used it previously), I love the interface and wanted to give it a try for this project.</p>
+</div>
+<div class="paragraph">
+<p>Next up I installed the latest version of Django with no problems (or so I thought), I had issues later when running my app locally and deploying to GAE. Downgrading to Django 1.3 resolved my issues.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>## Knowledge
+
+To begin I read up on the background of Django to get an idea of where it came from, who developed it, and how it came to be named Django. Some fairly interesting reading, plus I found out the [correct pronunciation of Django](https://docs.djangoproject.com/en/dev/faq/general/#what-does-django-mean-and-how-do-you-pronounce-it)!
+
+Once I'd concluded my history lesson I began the Django tutorial, ran through it no problems. First impressions were that it's almost *completely* different to the .Net C# development that I am used to. Lots of new concepts to get my head around, and habits to unlearn. But hey, nothing I hadn't expected.
+
+### Features that stood out to me
+
+- DRY principle
+- Model, template, view (MTV) pattern, this makes more sense to me than MVC even though they are essentially the same thing
+- Keeping apps in separate directories making it easy to re-use them
+- No waiting for project to compile after updating code
+
+### What caught me out
+
+- No curly braces around functions
+- No ending semi-colon
+- Whitespace indentation (I was expecting this one!)
+- Not declaring a type for variables
+
+The documentation was (usually) extremely helpful; I ended up bookmarking a lot from the docs site. Relying heavily on Stack Overflow during development, it was reassuring to see plenty of other people going through the same issues as me whilst they were learning.
+
+There did seem to be a lot of articles from way back in 2008 onwards whilst searching for solutions, which made me worry that I may not be following the latest best practices. I tried to find examples from the official docs as often as I could.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_building_the_blog">Building the blog</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I decided to run with Django non-rel as there seemed to be plenty of support available, I went ahead and downloaded all the bits and pieces, then got it all up and running.</p>
+</div>
+<div class="sect2">
+<h3 id="_displaying_data">Displaying Data</h3>
+<div class="paragraph">
+<p>Because I&#8217;d ran through the Django tutorial already, I ended up using the content as the base for the blog, just customizing a little here and there to get it how I wanted.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_building_the_post_admin">Building the post admin</h3>
+<div class="paragraph">
+<p>Inserting posts was fairly easy; it was when I came to updating a post that I spent an embarrassing amount of time&#8230;&#8203; There didn&#8217;t seem to be a lot of helpful posts online, at least that I could find. I finally figured out that adding <code>form = PostForm(instance=post)</code> to the form variable inside my delete_post view would tell Django that I wanted it to work with an existing record.</p>
+</div>
+<div class="paragraph">
+<p>I built in the delete functionality late in the project, by this point it took me minutes to put together, Django was beginning to show me some of its power!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_text_editing">Text Editing</h3>
+<div class="paragraph">
+<p>Initially I decided to use the YUI editor as it could run entirely from externally hosted files, however it seemed pretty flakey and didn&#8217;t handle paragraph tags very well, even with the <code>ptags</code> flag set to true. Looking around at alternatives, it occurred to me that if I wanted to keep the blog as simple as possible, maybe I could implement Markdown. One Google search later and I found that Django had a module which can parse markdown. What fun I had with this!..</p>
+</div>
+<div class="paragraph">
+<p>So to start I installed as per [instructions](<a href="http://packages.python.org/Markdown/install.html" class="bare">http://packages.python.org/Markdown/install.html</a>). Added <code>django.contrib.markup</code> to <code>INSTALLED_APPS</code>, and received the error <code>Error in {% markdown %} filter: The Python markdown library isn&#8217;t installed.</code>.</p>
+</div>
+<div class="paragraph">
+<p>Digging through the markdown code in contrib I could see that the error was being thrown because the Markdown package couldn&#8217;t be found on my machine (obviously). Being a noob I did a little Googling and came across a post which suggested copying the markdown folder into the root of my app, I did this, lo and behold I had Markdown running nicely on my machine and once I&#8217;d deployed to GAE.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_styling">Styling</h3>
+<div class="paragraph">
+<p>From the start I used the [foundation framework v3](<a href="http://foundation.zurb.com/" class="bare">http://foundation.zurb.com/</a>), for various reasons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>I&#8217;d used version 2 and found it very easy to put together a quick prototype</p>
+</li>
+<li>
+<p>It supports responsive layouts out of the box</p>
+</li>
+<li>
+<p>I wanted to put my SCSS skills to the test</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>I am aware that IE7 is not supported, but for this project I decided IE7 was not a priority, after all I wanted to get this thing completed quickly!</p>
+</div>
+<div class="paragraph">
+<p>Throughout development I used a very minimal two column layout, because my focus was on learning Python and Django I decided to leave the majority of the styling until the end. Not my usual approach, I like to plan these things out!</p>
+</div>
+<div class="paragraph">
+<p>I&#8217;d almost gotten the blog to point that I wanted it, when I decided I was tired of looking at a white &amp; grey screen, so I threw together a layout inspired by the recent NASA news about the Mars Curiosity Rover (interestingly, the test scripts for the project were written in Python), hence the star cluster, NGC 346, you see at the top of the page (albeit little further out in space).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>## Deploying to Google App Engine
+
+Luckily, I really didn't have many issues deploying to GAE, I did find a few of the concepts hard to pick up at first, such as where was the database? How did it store data?
+
+There's still a lot for me to learn about GAE, evident by the amount of documentation available, but I plan to continue reading through the docs and playing around with the admin settings to find just what I can and can't do.</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_not_included">Not Included</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are a few features that I have omitted from the blog, these include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ability to manage users</p>
+</li>
+<li>
+<p>Cannot change the author of a post (I could add this in a matter of seconds through the PostForm class)</p>
+</li>
+<li>
+<p>No categories or tags</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These were left out because I didn&#8217;t feel they were needed at this point (seeing as there is only one post &amp; two users). The whole point of this project was to create a very basic blog and I feel this is about as basic as they come! Saying that, I have a very strong suspicion that they will be present in the near future, I&#8217;m feeling that itch to develop&#8230;&#8203;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>## Have a look for yourself
+
+The code for the project is all up at [github.com/DamianMullins/basic-blog](https://github.com/DamianMullins/basic-blog), and the blog itself can be found here [basic-blog.appspot.com](http://basic-blog.appspot.com). Go have a look!
+
+To wrap up it's been a fun week, I've learned a lot, and I've enjoyed myself. Here's to more Django development in the future!</pre>
+</div>
+</div>
+</div>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="" style="background-image: url(https://avatars.githubusercontent.com/u/89059?v=3)"><span class="hidden">Damian's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="">Damian</a></h4>
+
+                    <p>Read <a href="">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Bristol, UK</span>
+                    <span class="author-link icon-link"><a href="lowflyingowls.co.uk">lowflyingowls.co.uk</a></span>
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=My%20first%20week%20with%20Python%2C%20Django%20%26%20Google%20App%20Engine&amp;url=http://www.damianmullins.com/2012/08/12/My-first-week-with-Python-Django-and-Google-App-Engine.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.damianmullins.com/2012/08/12/My-first-week-with-Python-Django-and-Google-App-Engine.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.damianmullins.com/2012/08/12/My-first-week-with-Python-Django-and-Google-App-Engine.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'damianmullins'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="http://www.damianmullins.com">DamianMullins.com</a> &copy; 2016</section>
+        <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+    </footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <script type="text/javascript" src="//www.damianmullins.com/themes/Casper/assets/js/jquery.fitvids.js?v=1.0.0"></script>
+    <script type="text/javascript" src="//www.damianmullins.com/themes/Casper/assets/js/index.js?v=1.0.0"></script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1425869-12', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
