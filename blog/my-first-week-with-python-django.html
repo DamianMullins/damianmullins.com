@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>DamianMullins.com</title>
+
+    <!--[if lte IE 8]><link rel="stylesheet" href="/assets/dist/css/kickoff-old-ie.css"><![endif]-->
+    <!--[if gt IE 8]><!--><link rel="stylesheet" href="/assets/css/style.css"><!--<![endif]-->
+
+    <script>
+        var docElem = window.document.documentElement;
+
+			// Replace 'no-js'/'js' class on <html>
+			docElem.className = docElem.className.replace(/\bno-js\b/g, '') + ' js ';
+    </script>
+</head>
+
+<body class="">
+
+
+<div class="skipToContent">
+    <a href="#mainContent" class="btn btn--primary">Skip to main content</a>
+</div>
+
+<header class="header" role="banner">
+    <div class="l-container">
+        <div class="header-logo">
+            <a href="/"><img src="/assets/img/plus_djmelonz.png" /></a>
+        </div>
+    </div>
+</header>
+
+
+<main id="mainContent">
+    <div class="l-container post">
+        <header>
+            <h1>My first week with Python, Django &amp; Google App Engine</h1>
+        </header>
+        
+        <p>This post details the journey through my first week working with Python, Django &amp; Google App Engine. I&#39;ve had ups and downs (many!), but overall I&#39;ve come out loving the three of them!</p>
+<p>Let&#39;s begin...</p>
+<h2 id="my-experience">My Experience</h2>
+<p>I&#39;m not gonna lie, I have a little experience Python &amp; GAE, but no experience with Django at all... However I didn&#39;t let this hinder me!</p>
+<h2 id="up-running">Up &amp; running</h2>
+<p>My tools of choice were</p>
+<ul>
+<li>Espresso (then later Textmate)</li>
+<li>iTerm (alternative to Terminal)</li>
+<li>Firefox &amp; Chrome</li>
+<li>GitHub app</li>
+</ul>
+<p>I run OSX so already had Python 2.7 installed, step one complete and I didn&#39;t have to do anything! To keep track of my changes I used Github, I cheated slightly and opted for the Github app rather than the command line option (I have used it previously), I love the interface and wanted to give it a try for this project.</p>
+<p>Next up I installed the latest version of Django with no problems (or so I thought), I had issues later when running my app locally and deploying to GAE. Downgrading to Django 1.3 resolved my issues.</p>
+<h2 id="knowledge">Knowledge</h2>
+<p>To begin I read up on the background of Django to get an idea of where it came from, who developed it, and how it came to be named Django. Some fairly interesting reading, plus I found out the <a href="https://docs.djangoproject.com/en/dev/faq/general/#what-does-django-mean-and-how-do-you-pronounce-it">correct pronunciation of Django</a>!</p>
+<p>Once I&#39;d concluded my history lesson I began the Django tutorial, ran through it no problems. First impressions were that it&#39;s almost <em>completely</em> different to the .Net C# development that I am used to. Lots of new concepts to get my head around, and habits to unlearn. But hey, nothing I hadn&#39;t expected.</p>
+<h3 id="features-that-stood-out-to-me">Features that stood out to me</h3>
+<ul>
+<li>DRY principle</li>
+<li>Model, template, view (MTV) pattern, this makes more sense to me than MVC even though they are essentially the same thing</li>
+<li>Keeping apps in separate directories making it easy to re-use them</li>
+<li>No waiting for project to compile after updating code</li>
+</ul>
+<h3 id="what-caught-me-out">What caught me out</h3>
+<ul>
+<li>No curly braces around functions</li>
+<li>No ending semi-colon</li>
+<li>Whitespace indentation (I was expecting this one!)</li>
+<li>Not declaring a type for variables</li>
+</ul>
+<p>The documentation was (usually) extremely helpful; I ended up bookmarking a lot from the docs site. Relying heavily on Stack Overflow during development, it was reassuring to see plenty of other people going through the same issues as me whilst they were learning.</p>
+<p>There did seem to be a lot of articles from way back in 2008 onwards whilst searching for solutions, which made me worry that I may not be following the latest best practices. I tried to find examples from the official docs as often as I could.</p>
+<h2 id="building-the-blog">Building the blog</h2>
+<p>I decided to run with Django non-rel as there seemed to be plenty of support available, I went ahead and downloaded all the bits and pieces, then got it all up and running.</p>
+<h3 id="displaying-data">Displaying Data</h3>
+<p>Because I&#39;d ran through the Django tutorial already, I ended up using the content as the base for the blog, just customizing a little here and there to get it how I wanted. </p>
+<h3 id="building-the-post-admin">Building the post admin</h3>
+<p>Inserting posts was fairly easy; it was when I came to updating a post that I spent an embarrassing amount of time... There didn&#39;t seem to be a lot of helpful posts online, at least that I could find. I finally figured out that adding <code>form = PostForm(instance=post)</code> to the form variable inside my delete_post view would tell Django that I wanted it to work with an existing record. </p>
+<p>I built in the delete functionality late in the project, by this point it took me minutes to put together, Django was beginning to show me some of its power! </p>
+<h3 id="text-editing">Text Editing</h3>
+<p>Initially I decided to use the YUI editor as it could run entirely from externally hosted files, however it seemed pretty flakey and didn&#39;t handle paragraph tags very well, even with the <code>ptags</code> flag set to true. Looking around at alternatives, it occurred to me that if I wanted to keep the blog as simple as possible, maybe I could implement Markdown. One Google search later and I found that Django had a module which can parse markdown. What fun I had with this!.. </p>
+<p>So to start I installed as per <a href="http://packages.python.org/Markdown/install.html">instructions</a>. Added <code>django.contrib.markup</code> to <code>INSTALLED_APPS</code>, and received the error <code>Error in {% markdown %} filter: The Python markdown library isn&#39;t installed.</code>.</p>
+<p>Digging through the markdown code in contrib I could see that the error was being thrown because the Markdown package couldn&#39;t be found on my machine (obviously). Being a noob I did a little Googling and came across a post which suggested copying the markdown folder into the root of my app, I did this, lo and behold I had Markdown running nicely on my machine and once I&#39;d deployed to GAE.</p>
+<h3 id="styling">Styling</h3>
+<p>From the start I used the <a href="http://foundation.zurb.com/">foundation framework v3</a>, for various reasons:</p>
+<ul>
+<li>I&#39;d used version 2 and found it very easy to put together a quick prototype</li>
+<li>It supports responsive layouts out of the box</li>
+<li>I wanted to put my SCSS skills to the test</li>
+</ul>
+<p>I am aware that IE7 is not supported, but for this project I decided IE7 was not a priority, after all I wanted to get this thing completed quickly!</p>
+<p>Throughout development I used a very minimal two column layout, because my focus was on learning Python and Django I decided to leave the majority of the styling until the end. Not my usual approach, I like to plan these things out! </p>
+<p>I&#39;d almost gotten the blog to point that I wanted it, when I decided I was tired of looking at a white &amp; grey screen, so I threw together a layout inspired by the recent NASA news about the Mars Curiosity Rover (interestingly, the test scripts for the project were written in Python), hence the star cluster, NGC 346, you see at the top of the page (albeit little further out in space).</p>
+<h2 id="deploying-to-google-app-engine">Deploying to Google App Engine</h2>
+<p>Luckily, I really didn&#39;t have many issues deploying to GAE, I did find a few of the concepts hard to pick up at first, such as where was the database? How did it store data? </p>
+<p>There&#39;s still a lot for me to learn about GAE, evident by the amount of documentation available, but I plan to continue reading through the docs and playing around with the admin settings to find just what I can and can&#39;t do.</p>
+<h2 id="not-included">Not Included</h2>
+<p>There are a few features that I have omitted from the blog, these include:</p>
+<ul>
+<li>Ability to manage users</li>
+<li>Cannot change the author of a post (I could add this in a matter of seconds through the PostForm class)</li>
+<li>No categories or tags</li>
+</ul>
+<p>These were left out because I didn&#39;t feel they were needed at this point (seeing as there is only one post &amp; two users). The whole point of this project was to create a very basic blog and I feel this is about as basic as they come! Saying that, I have a very strong suspicion that they will be present in the near future, I&#39;m feeling that itch to develop...</p>
+<h2 id="have-a-look-for-yourself">Have a look for yourself</h2>
+<p>The code for the project is all up at <a href="https://github.com/DamianMullins/basic-blog">github.com/DamianMullins/basic-blog</a>, and the blog itself can be found here <a href="http://basic-blog.appspot.com">basic-blog.appspot.com</a>. Go have a look!</p>
+<p>To wrap up it&#39;s been a fun week, I&#39;ve learned a lot, and I&#39;ve enjoyed myself. Here&#39;s to more Django development in the future!</p>
+
+        
+        <div id="disqus_thread" class="comments separator-top"></div>
+    </div>
+</main>
+
+
+<footer class="footer">
+    <div class="l-container footer-content">
+        <div class="footer-about">
+            <p>Hi, I'm Damian Mullins, a Software engineer working at Just Eat. Cranking out code in C#, JavaScript, CSS
+                &amp; others, always looking to learn more!
+        </div>
+        <div class="footer-links">
+            <ul class="unstyled">
+    <li><a href="https://github.com/">GitHub</a></li>
+    <li><a href="https://twitter.com/">Twitter</a></li>
+</ul>
+
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    var disqus_shortname = 'damianmullins';
+    (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+</body>
+
+</html>
+

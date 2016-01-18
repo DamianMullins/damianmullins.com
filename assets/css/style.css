@@ -2656,6 +2656,14 @@ body {
   margin-top: 30px;
 }
 
+.post a {
+  text-decoration: none;
+}
+
+.comments {
+  margin-top: 30px;
+}
+
 .footer {
   background-color: #272525;
   color: #fff;

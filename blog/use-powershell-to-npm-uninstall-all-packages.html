@@ -19,117 +19,94 @@
     </script>
 </head>
 
-<body class="home">
+<body class="">
+
 
 <div class="skipToContent">
     <a href="#mainContent" class="btn btn--primary">Skip to main content</a>
 </div>
 
-<!--<header class="masthead" role="banner">
-	<h1 class="sg-sectionHeading">Use PowerShell to npm uninstall all packages</h1>
-	
-	<p>After months of finishing touches/procrastination, the redesign of my blog, Dragon Graphics, has finally been pushed out into the world to fend for itself.</p>
-	
-</header>-->
-
-<header class="masthead" role="banner">
+<header class="header" role="banner">
     <div class="l-container">
-        <div class="masthead-logo">
-            <img src="/assets/img/plus_djmelonz.png" />
+        <div class="header-logo">
+            <a href="/"><img src="/assets/img/plus_djmelonz.png" /></a>
         </div>
     </div>
 </header>
 
 
 <main id="mainContent">
-    <h1>Use PowerShell to npm uninstall all packages</h1>
-    
-    
-
-Recently I needed to delete all npm package folders which had been installed into the `node_modules` directory of a project. Attempting to manually delete the folders occasionally failed due to the [maximum path length limitation](https://msdn.microsoft.com/en-us/library/aa365247(v=vs.85).aspx#maxpath) Windows imposes. I didn't fancy running `npm uninstall` for each package individually as there were a lot of them, and knowing that I would likely need to repeat this task again I decided to try my hand at writing some PowerShell to uninstall each package listed in either the `devDependencies` section of `package.json`, or in the `node_modules` directory itself. 
-
-### Uninstall packages, attempt one
-
-First up I wrote a function which removes package folders added by a reference in `devDependencies`.
-
-```bash
-Function Uninstall-NpmPackagesInDevDependencies {
+    <div class="l-container post">
+        <header>
+            <h1>Use PowerShell to npm uninstall all packages</h1>
+        </header>
+        
+        <p>Recently I needed to delete all npm package folders which had been installed into the <code>node_modules</code> directory of a project. Attempting to manually delete the folders occasionally failed due to the <a href="https://msdn.microsoft.com/en-us/library/aa365247%28v=vs.85%29.aspx#maxpath">maximum path length limitation</a> Windows imposes. I didn&#39;t fancy running <code>npm uninstall</code> for each package individually as there were a lot of them, and knowing that I would likely need to repeat this task again I decided to try my hand at writing some PowerShell to uninstall each package listed in either the <code>devDependencies</code> section of <code>package.json</code>, or in the <code>node_modules</code> directory itself. </p>
+<h2 id="uninstall-packages-attempt-one">Uninstall packages, attempt one</h2>
+<p>First up I wrote a function which removes package folders added by a reference in <code>devDependencies</code>.</p>
+<pre><code class="language-bash">Function Uninstall-NpmPackagesInDevDependencies {
     Param (
-        # Optional path to package.json
-        [String]$pathToPackage= $(Resolve-Path "package.json")
+        <span class="comment"># Optional path to package.json</span>
+        [String]<span class="variable">$pathToPackage</span>= $(Resolve-Path <span class="string">"package.json"</span>)
     )
-    
-    # Read the json content
-    $json = (Get-Content $pathToPackage -Raw) | ConvertFrom-Json
-    
-    # Loop over each package in devDependencies
-    ForEach ($dep in ($json.devDependencies | Get-Member -MemberType *Property).Name) {
-        # Uninstall the package
-        iex "npm uninstall $dep"
+
+    <span class="comment"># Read the json content</span>
+    <span class="variable">$json</span> = (Get-Content <span class="variable">$pathToPackage</span> -Raw) | ConvertFrom-Json
+
+    <span class="comment"># Loop over each package in devDependencies</span>
+    ForEach (<span class="variable">$dep</span> <span class="keyword">in</span> (<span class="variable">$json</span>.devDependencies | Get-Member -MemberType *Property).Name) {
+        <span class="comment"># Uninstall the package</span>
+        iex <span class="string">"npm uninstall <span class="variable">$dep</span>"</span>
     }
-}
-```
-
-It works! However a few pesky folders still remained as they were saved in another section of the `package.json`.
-
-### Uninstall packages, attempt two
-
-To deal with the leftover folders I created a second function which loops over all folders in the `node_modules` directory and uses the name of each folder to uninstall the package.
-
-```bash
-Function Uninstall-NpmPackagesInNodeModules {
+}</code></pre>
+<p>It works! However a few pesky folders still remained as they were saved in another section of the <code>package.json</code>.</p>
+<h2 id="uninstall-packages-attempt-two">Uninstall packages, attempt two</h2>
+<p>To deal with the leftover folders I created a second function which loops over all folders in the <code>node_modules</code> directory and uses the name of each folder to uninstall the package.</p>
+<pre><code class="language-bash">Function Uninstall-NpmPackagesInNodeModules {
     Param (
-        # Optional path to node_modules directory
-        [String]$pathToNodeModules = (Get-Item ".\node_modules").FullName
+        <span class="comment"># Optional path to node_modules directory</span>
+        [String]<span class="variable">$pathToNodeModules</span> = (Get-Item <span class="string">".\node_modules"</span>).FullName
     )
-    
-    Get-ChildItem $pathToNodeModules | ForEach {
-        # Uninstall the package
-        iex "npm uninstall $($_.Name)"
+
+    Get-ChildItem <span class="variable">$pathToNodeModules</span> | ForEach {
+        <span class="comment"># Uninstall the package</span>
+        iex <span class="string">"npm uninstall <span class="variable">$($_.Name)</span>"</span>
     }
-}
-```
+}</code></pre>
+<p>Trying out slightly different ForEach syntax for a bit of fun, I managed to remove all directories, regardless of whether the packages were saved in <code>package.json</code> or the path length was too long.</p>
+<h2 id="one-liners">One liners</h2>
+<p>After some further searching online I came across a nice <a href="http://blog.legacyteam.info/2014/10/how-to-remove-all-local-npm-packages/">bash command</a> for this sort of thing:</p>
+<pre><code class="language-bash"><span class="keyword">for</span> package <span class="keyword">in</span> `ls node_modules`; <span class="keyword">do</span> npm uninstall <span class="variable">$package</span>; <span class="keyword">done</span>;</code></pre>
+<p>Which led me to wonder what the equivilent would be if I shortened the <code>Uninstall-NpmPackagesInDirectory</code> function. </p>
+<p>Stripping the function right back, and substituting method names for their shorter aliases resulted in</p>
+<pre><code class="language-bash">ls (gi <span class="string">".\node_modules"</span>).FullName | % { iex <span class="string">"npm uninstall <span class="variable">$($_.Name)</span>"</span> }</code></pre>
+<p>It doesn&#39;t read as well as the bash command, but I don&#39;t think it&#39;s too bad.</p>
+<p>Just for the hell of it I thought I&#39;d have a go at shortening the <code>Uninstall-NpmPackagesInDevDependencies</code> function as well, the result:</p>
+<pre><code class="language-bash">($(gc <span class="string">"package.json"</span> -raw) | convertfrom-json).devdependencies | gm -membertype *property | % { iex <span class="string">"npm uninstall <span class="variable">$dep</span>"</span> }</code></pre>
+<p>Not likely to remember that one off the top of my head the next time I need to use it.. </p>
+<hr>
 
-Trying out slightly different ForEach syntax for a bit of fun, I managed to remove all directories, regardless of whether the packages were saved in `package.json` or the path length was too long.
-
-### One liners
-
-After some further searching online I came across a nice [bash command](http://blog.legacyteam.info/2014/10/how-to-remove-all-local-npm-packages/) for this sort of thing:
-
-```bash
-for package in `ls node_modules`; do npm uninstall $package; done;
-```
-
-Which led me to wonder what the equivilent would be if I shortened the `Uninstall-NpmPackagesInDirectory` function. 
-
-Stripping the function right back, and substituting method names for their shorter aliases resulted in
-
-```bash
-ls (gi ".\node_modules").FullName | % { iex "npm uninstall $($_.Name)" }
-```
- 
-It doesn't read as well as the bash command, but I don't think it's too bad.
-
-Just for the hell of it I thought I'd have a go at shortening the `Uninstall-NpmPackagesInDevDependencies` function as well, the result:
-
-```bash
-($(gc "package.json" -raw) | convertfrom-json).devdependencies | gm -membertype *property | % { iex "npm uninstall $dep" }
-```
-
-Not likely to remember that one off the top of my head the next time I need to use it.. 
-
-------
-    
-    <div id="disqus_thread" class="comments separator-top"></div>
+        
+        <div id="disqus_thread" class="comments separator-top"></div>
+    </div>
 </main>
 
 
+<footer class="footer">
+    <div class="l-container footer-content">
+        <div class="footer-about">
+            <p>Hi, I'm Damian Mullins, a Software engineer working at Just Eat. Cranking out code in C#, JavaScript, CSS
+                &amp; others, always looking to learn more!
+        </div>
+        <div class="footer-links">
+            <ul class="unstyled">
+    <li><a href="https://github.com/">GitHub</a></li>
+    <li><a href="https://twitter.com/">Twitter</a></li>
+</ul>
 
-
-    <script src="/assets/js/script.min.js"></script>
-</body>
-
-</html>
+        </div>
+    </div>
+</footer>
 
 
 <script>
@@ -141,3 +118,10 @@ Not likely to remember that one off the top of my head the next time I need to u
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+</body>
+
+</html>
+

@@ -19,50 +19,91 @@
     </script>
 </head>
 
-<body class="home">
+<body class="">
+
 
 <div class="skipToContent">
     <a href="#mainContent" class="btn btn--primary">Skip to main content</a>
 </div>
 
-<!--<header class="masthead" role="banner">
-	<h1 class="sg-sectionHeading">Blog</h1>
-	
-</header>-->
-
-<header class="masthead" role="banner">
+<header class="header" role="banner">
     <div class="l-container">
-        <div class="masthead-logo">
-            <img src="/assets/img/plus_djmelonz.png" />
+        <div class="header-logo">
+            <a href="/"><img src="/assets/img/plus_djmelonz.png" /></a>
         </div>
     </div>
 </header>
 
 
 <main id="mainContent">
-    
+    <div class="l-container post">
+        <header>
+            <h1></h1>
+        </header>
+        
+        
 
 <section class="content blog articles separator-top">
 	
 		
-			
-			<a href="statix//blog/use-powershell-to-npm-uninstall-all-packages" class="articles-item separator-bottom">
+			<a href="/blog/importing-asp-net-5-tag-helpers" class="articles-item separator-bottom">
+				<article>
+					<time></time>
+					<h2 class="articles-item-title">Importing ASP.NET MVC 6 Tag Helpers</h2>
+					<p class="articles-item-description">The @addTagHelper directive allows you to use Tag Helpers inside of your razor views.</p>
+				</article>
+			</a>
+		
+			<a href="/blog/use-powershell-to-npm-uninstall-all-packages" class="articles-item separator-bottom">
 				<article>
 					<time></time>
 					<h2 class="articles-item-title">Use PowerShell to npm uninstall all packages</h2>
-					<p class="articles-item-description">After months of finishing touches/procrastination, the redesign of my blog, Dragon Graphics, has finally been pushed out into the world to fend for itself.</p>
+					<p class="articles-item-description">Recently I needed to delete all npm package folders which had been installed into the &#x60;node_modules&#x60; directory of a project. Attempting to manually delete the folders occasionally failed due to the maximum path length limitation Windows imposes.</p>
+				</article>
+			</a>
+		
+			<a href="/blog/2015-the-year-ahead" class="articles-item separator-bottom">
+				<article>
+					<time></time>
+					<h2 class="articles-item-title">2015 the year ahead</h2>
+					<p class="articles-item-description">Last year was full of change, I got engaged(!), refocused on client side development, worked in an (proper) agile scrum team for the first time, attended my first meetup, architected a custom adaptive framework using SCSS, and finally, left my job at the very end of the year to chase new challenges.</p>
+				</article>
+			</a>
+		
+			<a href="/blog/my-first-week-with-python-django" class="articles-item separator-bottom">
+				<article>
+					<time></time>
+					<h2 class="articles-item-title">My first week with Python, Django &amp; Google App Engine</h2>
+					<p class="articles-item-description">This post details the journey through my first week working with Python, Django &amp; Google App Engine. I&#x27;ve had ups and downs (many!), but overall I&#x27;ve come out loving the three of them!</p>
 				</article>
 			</a>
 		
 	
 </section>
 
+    </div>
 </main>
 
 
+<footer class="footer">
+    <div class="l-container footer-content">
+        <div class="footer-about">
+            <p>Hi, I'm Damian Mullins, a Software engineer working at Just Eat. Cranking out code in C#, JavaScript, CSS
+                &amp; others, always looking to learn more!
+        </div>
+        <div class="footer-links">
+            <ul class="unstyled">
+    <li><a href="https://github.com/">GitHub</a></li>
+    <li><a href="https://twitter.com/">Twitter</a></li>
+</ul>
+
+        </div>
+    </div>
+</footer>
 
 
-    <script src="/assets/js/script.min.js"></script>
+
+    
 </body>
 
 </html>
