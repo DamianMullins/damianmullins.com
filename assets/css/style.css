@@ -876,7 +876,7 @@ hr {
   font-weight: normal;
   vertical-align: baseline;
   background-color: #fff;
-  border: 2px solid #ccc;
+  border: 2px solid #272525;
   border-radius: 5px;
   background-clip: padding-box;
   -webkit-transition: border 200ms ease-in-out;
@@ -885,7 +885,7 @@ hr {
 }
 
 .form-input:focus {
-  border-color: #fff;
+  border-color: #4d4d4d;
   outline: 0;
   outline: thin dotted \9;
 }
@@ -942,7 +942,7 @@ hr {
 
 .form-input[disabled], .form-input[readonly] {
   background-color: #e6e6e6;
-  border-color: #ccc;
+  border-color: #272525;
   cursor: not-allowed;
 }
 
@@ -1282,7 +1282,7 @@ input[type="submit"] {
 }
 
 .control--custom-input:focus ~ .control-indicator {
-  box-shadow: 0 0 0 2px #fff, 0 0 0 3px #fff;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px #4d4d4d;
 }
 
 .control-indicator--checkbox,
@@ -1565,7 +1565,7 @@ a:active {
 }
 
 .btn--primary {
-  background-color: #000;
+  background-color: #272525;
 }
 
 .btn--primary, .btn--primary:link, .btn--primary:visited {
@@ -1573,7 +1573,7 @@ a:active {
 }
 
 .btn--primary:hover, .btn--primary:active, .btn--primary:focus {
-  background-color: black;
+  background-color: #4d4d4d;
 }
 
 .btn--block {
@@ -2606,6 +2606,11 @@ body {
   min-width: 1000px;
 }
 
+.content {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
 .header {
   background-color: #272525;
   color: #fff;
@@ -2721,11 +2726,6 @@ body {
   color: #D6DCE5;
 }
 
-.post {
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
-
 .post-comments {
   border-top: solid 1px #272525;
   margin-top: 30px;
@@ -2754,6 +2754,24 @@ body {
   display: inline-block;
   font-size: 18px;
   font-size: 0.8181818182rem;
+}
+
+.newsletter {
+  background-color: #495264;
+  color: #fff;
+  padding: 40px;
+}
+
+.newsletter a {
+  color: #fff;
+}
+
+.newsletter .form-input {
+  border: none;
+}
+
+.newsletter .btn:hover {
+  background-color: #343131;
 }
 
 .footer {
