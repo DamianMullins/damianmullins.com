@@ -91,7 +91,6 @@
 <p>Just for the hell of it I thought I&#39;d have a go at shortening the <code>Uninstall-NpmPackagesInDevDependencies</code> function as well, the result:</p>
 <pre><code class="language-bash">($(gc <span class="string">"package.json"</span> -raw) | convertfrom-json).devdependencies | gm -membertype *property | % { iex <span class="string">"npm uninstall <span class="variable">$dep</span>"</span> }</code></pre>
 <p>Not likely to remember that one off the top of my head the next time I need to use it.. </p>
-<hr>
 
         
         <div id="disqus_thread" class="post-comments"></div>
