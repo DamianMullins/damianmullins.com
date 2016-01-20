@@ -2627,9 +2627,9 @@ body {
   min-width: 1000px;
 }
 
-.content {
-  margin-bottom: 30px;
-  margin-top: 30px;
+.section {
+  padding: 20px 0;
+  padding: 60px 0;
 }
 
 .header {
@@ -2739,7 +2739,6 @@ body {
 .newsletter {
   background-color: #495264;
   color: #fff;
-  padding: 40px 0;
 }
 
 .newsletter a {
@@ -2754,11 +2753,18 @@ body {
   background-color: #343131;
 }
 
+.related {
+  background-color: #272525;
+  color: #fff;
+}
+
+.related a {
+  color: #fff;
+}
+
 .footer {
   background-color: #272525;
   color: #fff;
-  padding: 20px 0;
-  padding: 60px 0;
 }
 
 .footer a {
@@ -2962,6 +2968,10 @@ textarea[contenteditable] {
   -webkit-transition: all 100ms ease-in-out;
      -moz-transition: all 100ms ease-in-out;
           transition: all 100ms ease-in-out;
+}
+
+.u-noMargin {
+  margin: 0;
 }
 
 /* Print styles */
