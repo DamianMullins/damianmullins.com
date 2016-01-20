@@ -2844,7 +2844,7 @@ body {
 }
 
 .description-blurb {
-  margin-left: 60px;
+  padding-left: 60px;
 }
 
 /* Helper/utility classes */

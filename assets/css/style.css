@@ -2887,7 +2887,7 @@ body {
 
 @media screen and (min-width: 46.875em) {
   .description-blurb {
-    margin-left: 60px;
+    padding-left: 60px;
   }
 }
 
