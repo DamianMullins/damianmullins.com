@@ -1768,7 +1768,7 @@ input[type="button"].btn--block {
   height: auto;
 }
 
-@media screen and (min-width: 28.125em) {
+@media screen and (min-width: 25em) {
   .l-blockGrid--1--narrow .l-blockGrid-item {
     float: left;
     width: 100%;
@@ -2660,12 +2660,6 @@ body {
 .masthead-logo {
   margin: 0 auto;
   width: 75%;
-}
-
-@media screen and (min-width: 28.125em) {
-  .masthead-logo {
-    width: 40%;
-  }
 }
 
 @media screen and (min-width: 46.875em) {
