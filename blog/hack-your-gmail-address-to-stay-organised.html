@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tips and tricks to keep your email inbox organised, and hopefully empty! - Damian mullins" />
+
+    <title>Hack your Gmail address to stay organised - DamianMullins.com - Development Blog for Damian mullins</title>
+
+    <!--[if lte IE 8]><link rel="stylesheet" href="/assets/dist/css/kickoff-old-ie.css"><![endif]-->
+    <!--[if gt IE 8]><!--><link rel="stylesheet" href="/assets/css/style.css"><!--<![endif]-->
+    
+    <link href="http://feeds.feedburner.com/damianmullins" rel="alternate" type="application/rss+xml" title="Development Blog for Damian mullins" />
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#272525">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#272525">
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@DJMelonz" />
+    <meta name="twitter:creator" content="@DJMelonz" />
+    <meta name="twitter:title" content="Hack your Gmail address to stay organised" />
+    <meta name="twitter:description" content="Tips and tricks to keep your email inbox organised, and hopefully empty!" />
+    <meta name="twitter:image" content="http://www.damianmullins.com/assets/img/logo-tcard.png" />
+
+    <script>
+        var docElem = window.document.documentElement;
+        docElem.className = docElem.className.replace(/\bno-js\b/g, '') + 'js';
+    </script>
+</head>
+
+<body>
+
+
+<div class="skipToContent">
+    <a href="#mainContent" class="btn btn--primary">Skip to main content</a>
+</div>
+
+<header class="header" role="banner">
+    <div class="l-container">
+        <div class="header-logo">
+            <a href="/"><img src="/assets/img/plus_djmelonz.png" /></a>
+        </div>
+    </div>
+</header>
+
+
+<main id="mainContent" class="section">
+    <div class="l-container post">
+        <header>
+            <h1>Hack your Gmail address to stay organised</h1>
+        </header>
+        
+        <p class="post-date">Posted <time datetime="2016-01-20T18:35:00">20th January 2016</time>
+
+            
+        </p>
+        
+        <p>Like to keep an organised email inbox? I definitely do, here are a few tips I picked up over the last few years, and how I combine them all to help me maintain an organised, and often empty, inbox.</p>
+<h2 id="address-alias">Address Alias</h2>
+<p>Address aliases allow you to specify an alias after the <code>+</code> symbol, so for example emails sent to <code>damianmullins+myalias123@gmail.com</code> will be delivered to the inbox for <code>damianmullins@gmail.com</code>. </p>
+<p>You can see the alias you applied when an email is delivered which is great for being able to tell if a website has shared your information, and also very useful when combined with filters (more on that shortly).</p>
+<p>Another little known tip with Gmail is that you can add dots anywhere in your email address and it will still be delivered to your inbox, so for example <code>dam.ian.mul.lin.s@gmail.com</code> will be delivered to the inbox for <code>damianmullins@gmail.com</code>.</p>
+<p>I&#39;ve testing alias with outlook.com (hotmail, live etc) and they appear to work there, this is not a feature unique to gmail!</p>
+<h2 id="filters">Filters</h2>
+<p>Filters allow you to find email based on certain conditions and then perform automated actions against those emails as they are recieved.</p>
+<p>I use filters to match email sent to addresses which have an alias, for me this is mostly email from social networks or newsletters.</p>
+<h3 id="search-by-email">Search by email</h3>
+<p>You can match these emails using the full address by clicking the arrow in the search box and typing the email address into the <code>From</code> field. You can also use wildcard selectors (<code>*</code>) in the search box.</p>
+<p><img src="/assets/img/posts/filter-email-address.gif" alt="Filter email address"></p>
+<p>I used to create filters this way, but unless you&#39;re using wildcards they can become brittle when the senders of the emails you receive changes the address they send with. Once I discovered aliases there was no looking back.</p>
+<h3 id="search-by-alias">Search by alias</h3>
+<p>There are a few ways you can match by alias, the fisrt of which is typing the entire email address into the <code>To</code> field</p>
+<p><img src="/assets/img/posts/full-email-includes-words.png" alt="e.g. afreshpulse+linksforlightreading@gmail.com"></p>
+<p>Using the <code>deliveredto</code> operator in the <code>Includes the words</code> field</p>
+<p><img src="/assets/img/posts/to-field-email.png" alt="e.g. deliveredto:afreshpulse+linksforlightreading@gmail.com"></p>
+<p>Shorten the previous filter to just the alias in the <code>Includes the words</code> field</p>
+<p><img src="/assets/img/posts/alias-includes-words.png" alt="e.g. deliveredto:+linksforlightreading"></p>
+<p>This last example is the one I favour; less to type and remember.</p>
+<h3 id="creating-a-filter">Creating a filter</h3>
+<p>The next step is to create a filter from this search, this is done by clicking the <strong><em>Create filter with this search</em></strong> link at the bottom of the search panel.</p>
+<p><img src="/assets/img/posts/create-filter.gif" alt="Creating a filter"></p>
+<p>I like to select <strong><em>Never send it to Spam</em></strong> and <strong><em>Never mark it as important</em></strong> as shown in the animation above so that I can guarantee that none of these emails are sent to the spam folder and also that there aren&#39;t mixed in with other email marked as important.</p>
+<h2 id="labels">Labels</h2>
+<p>Finally, I make heavy use of labels which when combined with filters can help ensure your email is organised and easily searchable.</p>
+<p>Using the same technique as above to create to filters (or editing an existing filter from settings) you can select a label from the <strong><em>Apply the label</em></strong> dropdown.</p>
+<p><img src="/assets/img/posts/apply-label.gif" alt="Apply label"></p>
+<p>Now any incoming email matching a filter will automatically be sorted according to your settings and have a label applied, making the task of keeping an organised inbox a lot easier.</p>
+<h3 id="searching-for-labels">Searching for labels</h3>
+<p>To search for labels use the search box at the top of the page, type in <code>label:</code> and then the name of the label you are after, the list autocompletes making searching a breeze. </p>
+<p>Gmail provides lots of keyboard shortcuts (which I&#39;m a huge fan of), so to search for a label you can save time by typing <code>g</code> then <code>l</code> (for go label), this will focus on the search bar and prefill the <code>label:</code> search prefix, you then type the name of the label you&#39;re looking for and et voila all emails with that label are displayed.</p>
+<p><img src="/assets/img/posts/search-label-keyboard-shortcuts.gif" alt="Search for label using keyboard shortcuts"></p>
+<h2 id="summary">Summary</h2>
+<p>Whilst writing this post I&#39;ve realised just how much I rely on the techniques above to help me maintain an organised inbox, I&#39;m sure there are many more techniques I&#39;m not aware of which people use day to day, I&#39;d love to hear about them in the comments below.</p>
+
+        
+        <div id="disqus_thread" class="post-comments"></div>
+    </div>
+</main>
+
+
+
+<section class="newsletter section">
+    <div class="l-container">
+        <header>
+            <h1>Sign up to my newsletter!</h1>
+        </header>
+        
+        
+<p>Need Input is a newsletter comprised of anything and everything web related, from HTTP to SVG; CSS to JSX; W3C to PNG; … You get the point.</p>
+<p>The title comes from the classic film Short Circuit 2, and main character Johnny Five’s insatiable need for more input, much the same as my need for the most interesting web news, tips, techniques, and tutorials.</p>
+<p>Lovingly crafted by myself each week, I collate a list of links across various categories, gathered from the internets, books, podcasts, videos, conferences, and colleagues, then delivered into your inbox. </p>
+<p>Suggestions and submissions are welcome, send them to me on <a href="https://twitter.com/DJMelonz">Twitter</a>, or email them to <a href="mailto:damian@lowflyingowls.co.uk">damian@lowflyingowls.co.uk</a>.</p>
+<p>Subscribe below!</p>
+
+
+<form class="newsletter-form" action="https://www.getrevue.co/profile/need-input/add_subscriber" method="post" name="revue-form" target="_blank">  
+    <div class="form-controlGroup">
+        <label class="form-label is-visuallyHidden" for="member_email">Email address</label>
+        <div class="form-controlGroup-inputWrapper">
+            <input class="form-input" id="member_email" placeholder="Your email address..." type="email" name="member[email]" required="required">
+        </div>
+    </div>
+    <button class="btn btn--primary" type="submit" name="member[subscribe]">Subscribe</button>
+</form>
+
+    </div>
+</section>
+
+
+<footer class="footer section">
+    <div class="l-container footer-content">
+        <div class="footer-about">
+            <p>Hi, I'm Damian Mullins, a Software engineer working at Just Eat. Cranking out code in C#, JavaScript, CSS &amp; others, always looking to learn more!</p>
+        
+            
+        </div>
+        <div class="footer-links">
+            <ul class="unstyled">
+    <li><a href="mailto:hello@damianmullins.com" rel="external" title="Contact me via email">Email</a></li>
+    <li><a href="https://github.com/DJMelonz" rel="external" title="View my GitHub profile">GitHub</a></li>
+    <li><a href="https://twitter.com/DJMelonz" rel="external" title="Talk to me on Twitter">Twitter</a></li>
+    <li><a href="https://uk.linkedin.com/in/damianmullins" rel="external" title="View my LinkedIn profile">LinkedIn</a></li>
+</ul>
+
+            <p>&copy; 2016 Damian Mullins</p>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    var disqus_shortname = 'damianmullins';
+    (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1425869-12', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+
+</html>
+
