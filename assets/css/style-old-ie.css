@@ -2711,6 +2711,11 @@ body {
   color: #D6DCE5;
 }
 
+.post img {
+  display: block;
+  margin: 0 auto;
+}
+
 .post-comments {
   border-top: solid 1px #272525;
   margin-top: 30px;
