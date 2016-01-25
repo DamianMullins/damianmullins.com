@@ -63,7 +63,7 @@
 <main id="mainContent" class="section">
     <div class="l-container post">
         <header>
-            <h1>Internet Explorer is dying</h1>
+            <h1 class="post-heading">Internet Explorer is dying</h1>
         </header>
         
         <p class="post-date">Posted <time datetime="2016-01-19T15:45:00">19th January 2016</time>
@@ -75,13 +75,15 @@
 <p>In a way I&#39;ll be sad to see these old browsers die off, I&#39;ve put <em>so</em> many hours into coding workarounds for all sorts of bugs in each version over the last 7 years (<a href="https://en.wikipedia.org/wiki/Internet_Explorer_8">IE 8 was released March 19 2009</a>!).</p>
 <p>In looking up IE release dates I&#39;ve just realised I started building websites around the time IE 5 was released (<a href="https://en.wikipedia.org/wiki/Internet_Explorer_5">1999</a>), ahhh nostalgia.. and a sense of impending old age!</p>
 
-        
-        <div id="disqus_thread" class="post-comments"></div>
     </div>
 </main>
 
+<section class="section">
+    <div id="disqus_thread" class="l-container"></div>
+</section>
 
-    <section class="related section">
+
+    <section class="related section section--dark">
         <div class="l-container">
             <header>
                 <h1>Related Posts</h1>
@@ -93,7 +95,7 @@
     <article class="articles-item">
         <a href="/blog/importing-asp-net-5-tag-helpers">
             <h2 class="articles-item-title">Importing ASP.NET MVC 6 Tag Helpers</h2>
-            <time class="articles-item-posted">20th August 2015</time>
+            <time datetime="2015-08-20T09:46:00" class="articles-item-posted">20th August 2015</time>
         </a>
     </article>
 
@@ -103,20 +105,16 @@
     </section>
 
 
-<section class="newsletter section">
-    <div class="l-container">
+<section class="newsletter section section--medium">
+    <div class="l-container l-container--narrow">
         <header>
             <h1>Sign up to my newsletter!</h1>
         </header>
         
+<p>Need Input is a newsletter comprised of anything and everything web related, from HTTP to SVG; CSS to JSX; W3C to PNG; Lovingly crafted by myself each week.</p>
+
+
         
-<p>Need Input is a newsletter comprised of anything and everything web related, from HTTP to SVG; CSS to JSX; W3C to PNG; … You get the point.</p>
-<p>The title comes from the classic film Short Circuit 2, and main character Johnny Five’s insatiable need for more input, much the same as my need for the most interesting web news, tips, techniques, and tutorials.</p>
-<p>Lovingly crafted by myself each week, I collate a list of links across various categories, gathered from the internets, books, podcasts, videos, conferences, and colleagues, then delivered into your inbox. </p>
-<p>Suggestions and submissions are welcome, send them to me on <a href="https://twitter.com/DJMelonz">Twitter</a>, or email them to <a href="mailto:damian@lowflyingowls.co.uk">damian@lowflyingowls.co.uk</a>.</p>
-<p>Subscribe below!</p>
-
-
 <form class="newsletter-form" action="https://www.getrevue.co/profile/need-input/add_subscriber" method="post" name="revue-form" target="_blank">  
     <div class="form-controlGroup">
         <label class="form-label is-visuallyHidden" for="member_email">Email address</label>
@@ -131,12 +129,10 @@
 </section>
 
 
-<footer class="footer section">
+<footer class="footer section section--dark">
     <div class="l-container footer-content">
         <div class="footer-about">
             <p>Hi, I'm Damian Mullins, a Software engineer working at Just Eat. Cranking out code in C#, JavaScript, CSS &amp; others, always looking to learn more!</p>
-        
-            
         </div>
         <div class="footer-links">
             <ul class="unstyled">
