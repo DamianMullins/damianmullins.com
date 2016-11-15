@@ -1,0 +1,20 @@
+
+@import "colors";
+
+.header {
+  background-color: $c-dark;
+}
+  .header__small {
+    .header_link {
+      width: 10rem;
+    }
+  }
+
+  .header_link {
+    display: block;
+    margin: 0 auto;
+    width: 20rem;
+  }
+  .header_image {
+    margin-bottom: 0;
+  }

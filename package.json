@@ -1,0 +1,32 @@
+{
+  "name": "damianmullins",
+  "description": "Development Blog for Damian mullins – Software Engineer at JUST EAT.",
+  "homepage": "http://www.damianmullins.com",
+  "version": "3.0.0",
+  "author": "Damian Mullins <damian@lowflyingowls.c.uk> (http://www.damianmullins.com/)",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DJMelonz/djmelonz.github.io.git"
+  },
+  "dependencies": {
+    "gatsby": "^0.12.6",
+    "kickoff-grid.css": "^1.1.0",
+    "lodash": "^4.15.0",
+    "moment": "^2.14.1",
+    "react-ga": "^2.1.2",
+    "react-helmet": "^3.1.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^0.11.0"
+  },
+  "scripts": {
+    "dev": "gatsby develop",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gatsby build --prefix-links",
+    "deploy": "gatsby build --prefix-links && gh-pages -d public"
+  }
+}

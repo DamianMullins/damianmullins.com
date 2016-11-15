@@ -1,0 +1,9 @@
+
+@import "colors";
+
+@mixin links($foreground: #fff, $background: $c-dark) {
+    color: $background;
+    text-decoration: none;
+    text-shadow: .03em 0 , -.03em 0 $foreground, 0 .03em $foreground, 0 -.03em $foreground, .06em 0 $foreground, -.06em 0 $foreground, .09em 0 $foreground, -.09em 0 $foreground, .12em 0 $foreground, -.12em 0 $foreground, .15em 0 $foreground, -.15em 0 $foreground;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $background 1px, $background 2px, rgba(0, 0, 0, 0) 2px);
+}
