@@ -8,7 +8,7 @@ tags:
   - slides
 ---
 
-<iframe class="u-fullWidth l-vPad" src="//slides.com/djmelonz/configuring-babel-6/embed" height="600" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe style="width: 100%" src="//slides.com/djmelonz/configuring-babel-6/embed" height="600" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Babel 6 was [released late last year](http://babeljs.io/blog/2015/10/29/6.0.0) and with it came some core changes. I put these slides together for a lightning talk at work whilst I was learning about these changes.
 
