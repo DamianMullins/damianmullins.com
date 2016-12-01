@@ -16,7 +16,10 @@ class MarkdownWrapper extends React.Component {
     return (
       <div className={`markdown ${layout.l_container}`}>
         <Helmet
-          title={`${post.title} | ${config.blogTitle}`}
+          title={`${post.title} - ${config.blogTitle}`}
+          meta={[
+            { "name": "description", "content": post.description || config.authorBio }
+          ]}
           />
 
         <h1>{post.title}</h1>

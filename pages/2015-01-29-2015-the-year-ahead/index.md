@@ -1,5 +1,6 @@
 ---
 title: 2015 the year ahead
+description: A quick rundown of 2014, and my plans and expectations for 2015
 date: "2015-01-29T12:54"
 path: "/2015-the-year-ahead/"
 tags:

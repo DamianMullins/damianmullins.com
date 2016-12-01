@@ -1,5 +1,6 @@
 ---
 title: Hack your Gmail address to stay organised
+description: Tips and tricks to keep your email inbox organised, and hopefully empty!
 date: "2016-01-22T09:25"
 path: "/hack-your-gmail-address-to-stay-organised/"
 tags:

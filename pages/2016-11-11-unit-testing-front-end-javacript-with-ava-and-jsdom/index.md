@@ -1,5 +1,6 @@
 ---
 title: Unit testing front-end JavaScript with AVA and jsdom
+description: Writing tests for JavaScript code that interacts with the DOM can be tricky. Luckily, using a combination of AVA and jsdom, writing those tests becomes a lot easier.
 date: "2016-11-11T11:11"
 path: "/unit-testing-front-end-javacript-with-ava-and-jsdom/"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: My podcast obsession
+description: A few years back I discovered the wonderful world of podcasts, I subscribed to one or two and gradually over time the list has grown, I now subscribe to so many podcasts it's not even funny!
 date: "2016-02-19T09:46"
 path: "/my-podcast-obsession/"
 tags:

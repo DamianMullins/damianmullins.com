@@ -1,5 +1,6 @@
 ---
 title: Configuring Babel 6
+description: Babel 6 was released late last year and with it came some core changes. I put these slides together for a lightning talk at work whilst I was learning about these changes.
 date: "2016-03-18T09:00"
 path: "/configuring-babel-6/"
 tags:
