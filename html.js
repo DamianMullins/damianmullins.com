@@ -27,9 +27,11 @@ module.exports = React.createClass({
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+          <link rel="alternate" type="application/rss+xml" href="/feed.xml"/>
+
           {head.title.toComponent()}
           {head.meta.toComponent()}
-          
+
           {css}
         </head>
         <body>
