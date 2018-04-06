@@ -57,7 +57,7 @@ That’s how I learn and it works for me — lots of failure driven development!
 
 One other thing to note is that I’ll often spend a week or so either writing no code at all - perhaps reading or even spending time away from the project completely. I have a young family so it's important to me that I don't shut myself off from them, spending time with family is much more important to me than learning in my spare time.
 
-I find that taking breaks like that allows everything I’ve learned so far to sink in. Often I find that if I become stuck on an issue which I can't figure out, taking a step back allows my brain to recover and sometimes I'll subconsciously figure out a solution which takes minutes to implement.
+I find that taking breaks like that allows everything I’ve learned so far to sink in. Often I find that if I become stuck on an issue which I can't figure out taking a step back allows my brain to recover and sometimes I'll subconsciously figure out a solution which takes minutes to implement.
 
 ##  Plan for the first week
 
