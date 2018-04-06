@@ -1,6 +1,6 @@
 ---
 title: My first week with Python, Django & Google App Engine
-description: Walkthrough of a week spent working with Python, Django & Google App Engine
+description: Walkthrough of a week spent working with Python, Django & Google App Engine.
 date: "2012-08-16T13:35"
 path: "/my-first-week-with-python-django/"
 tags:

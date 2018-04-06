@@ -1,6 +1,6 @@
 ---
 title: Use PowerShell to npm uninstall all packages
-description: Using PowerShell to overcome node_modules directory woes
+description: Using PowerShell to overcome node_modules directory woes.
 date: "2015-07-23T14:18"
 path: "/use-powershell-to-npm-uninstall-all-packages/"
 tags:
