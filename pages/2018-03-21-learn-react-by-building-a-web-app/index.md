@@ -1,5 +1,5 @@
 ---
-title: Building an app with React
+title: Learn React by building a web app
 description: So, I decided a few months back that I’d like to learn a JavaScript framework this year. It’s something I’ve wanted to for quite a while but I’ve always put it off for various reasons.
 date: "2018-03-21T18:01"
 path: "/building-an-app-with-react/"
