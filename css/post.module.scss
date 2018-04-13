@@ -9,3 +9,22 @@
     padding: 1rem 0;
     text-shadow: none;
   }
+  [data-post-heading-anchor] {
+    // position: relative;
+
+    a {
+      background-image: none;
+      font-size: 0.5rem;
+      // right: -0;
+      // position: absolute;
+      margin-left: -25px;
+      text-shadow: none;
+      visibility: hidden;
+    }
+
+    &:hover {
+      a {
+        visibility: visible;
+      }
+    }
+  }

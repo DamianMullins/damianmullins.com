@@ -2,6 +2,8 @@
 @import "mixins";
 
 $font-stack: "Maison Neue", "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$spacing: 1.45rem;
+$spacing-lists: calc(#{$spacing} / 4);
 
 html {
     font-family: sans-serif;
@@ -218,7 +220,7 @@ img {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
 }
 h1 {
     margin-left: 0;
@@ -228,7 +230,7 @@ h1 {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
     color: hsla(0, 0%, 0%, 0.8);
     font-family: $font-stack;
     font-weight: 600;
@@ -244,7 +246,7 @@ h2 {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
     color: hsla(0, 0%, 0%, 0.8);
     font-family: $font-stack;
     font-weight: 600;
@@ -260,7 +262,7 @@ h3 {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
     color: hsla(0, 0%, 0%, 0.8);
     font-family: $font-stack;
     font-weight: 600;
@@ -276,13 +278,13 @@ h4 {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
     color: hsla(0, 0%, 0%, 0.8);
     font-family: $font-stack;
     font-weight: 600;
     text-rendering: optimizeLegibility;
     font-size: 1rem;
-    line-height: 1.45rem;
+    line-height: $spacing;
 }
 h5 {
     margin-left: 0;
@@ -292,13 +294,13 @@ h5 {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
     color: hsla(0, 0%, 0%, 0.8);
     font-family: $font-stack;
     font-weight: 600;
     text-rendering: optimizeLegibility;
     font-size: 0.87055rem;
-    line-height: 1.45rem;
+    line-height: $spacing;
 }
 h6 {
     margin-left: 0;
@@ -308,13 +310,13 @@ h6 {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
     color: hsla(0, 0%, 0%, 0.8);
     font-family: $font-stack;
     font-weight: 600;
     text-rendering: optimizeLegibility;
     font-size: 0.81225rem;
-    line-height: 1.45rem;
+    line-height: $spacing;
 }
 hgroup {
     margin-left: 0;
@@ -324,29 +326,29 @@ hgroup {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
 }
 ul {
-    margin-left: 1.45rem;
+    margin-left: $spacing;
     margin-right: 0;
     margin-top: 0;
     padding-bottom: 0;
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
     list-style-position: outside;
     list-style-image: none;
 }
 ol {
-    margin-left: 1.45rem;
+    margin-left: $spacing;
     margin-right: 0;
     margin-top: 0;
     padding-bottom: 0;
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
     list-style-position: outside;
     list-style-image: none;
 }
@@ -358,7 +360,7 @@ dl {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
 }
 dd {
     margin-left: 0;
@@ -368,7 +370,7 @@ dd {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
 }
 p {
     margin-left: 0;
@@ -378,7 +380,7 @@ p {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
 }
 figure {
     margin-left: 0;
@@ -388,7 +390,7 @@ figure {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
 }
 pre {
     margin-left: 0;
@@ -398,9 +400,9 @@ pre {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
     font-size: 0.85rem;
-    line-height: 1.45rem;
+    line-height: $spacing;
 }
 table {
     margin-left: 0;
@@ -410,9 +412,9 @@ table {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
     font-size: 1rem;
-    line-height: 1.45rem;
+    line-height: $spacing;
     border-collapse: collapse;
     width: 100%;
 }
@@ -424,7 +426,7 @@ fieldset {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
 }
 blockquote {
     margin-left: -1.0875rem;
@@ -434,9 +436,9 @@ blockquote {
     padding-left: 0.81563rem;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
     font-size: 1.1487rem;
-    line-height: 1.45rem;
+    line-height: $spacing;
     border-left: 0.27187rem solid #222020;
     font-style: italic;
 }
@@ -455,7 +457,7 @@ form {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
 }
 noscript {
     margin-left: 0;
@@ -465,7 +467,7 @@ noscript {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
 }
 iframe {
     margin-left: 0;
@@ -475,7 +477,7 @@ iframe {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
 }
 hr {
     margin-left: 0;
@@ -485,7 +487,7 @@ hr {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: calc(1.45rem - 1px);
+    margin-bottom: calc($spacing - 1px);
     background: hsla(0, 0%, 0%, 0.2);
     border: none;
     height: 1px;
@@ -498,7 +500,7 @@ address {
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: $spacing;
 }
 b {
     font-weight: 700;
@@ -513,7 +515,7 @@ th {
     font-weight: 700;
 }
 li {
-    margin-bottom: calc(1.45rem / 2);
+    margin-bottom: $spacing-lists;
 }
 ol li {
     padding-left: 0;
@@ -522,26 +524,26 @@ ul li {
     padding-left: 0;
 }
 li > ol {
-    margin-left: 1.45rem;
-    margin-bottom: calc(1.45rem / 2);
-    margin-top: calc(1.45rem / 2);
+    margin-left: $spacing;
+    margin-bottom: $spacing-lists;
+    margin-top: $spacing-lists;
 }
 li > ul {
-    margin-left: 1.45rem;
-    margin-bottom: calc(1.45rem / 2);
-    margin-top: calc(1.45rem / 2);
+    margin-left: $spacing;
+    margin-bottom: $spacing-lists;
+    margin-top: $spacing-lists;
 }
 code {
     font-size: 0.85rem;
-    line-height: 1.45rem;
+    line-height: $spacing;
 }
 kbd {
     font-size: 0.85rem;
-    line-height: 1.45rem;
+    line-height: $spacing;
 }
 samp {
     font-size: 0.85rem;
-    line-height: 1.45rem;
+    line-height: $spacing;
 }
 abbr {
     border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
