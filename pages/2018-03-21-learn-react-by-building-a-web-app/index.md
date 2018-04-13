@@ -2,7 +2,7 @@
 title: Learn React by building a web app
 description: So, I decided a few months back that I’d like to learn a JavaScript framework this year. It’s something I’ve wanted to for quite a while but I’ve always put it off for various reasons.
 date: "2018-03-21T18:01"
-path: "/building-an-app-with-react/"
+path: "/learn-react-by-building-a-web-app/"
 tags:
   - learning
   - react
@@ -24,6 +24,8 @@ The first step is to choose a framework, this is fairly easy for me as there is 
 I’ll be honest, I *have* used the framework before — mostly taking example code from blogs and playing around with it. A colleague and I also [ran a few sessions of a React workshop](https://github.com/react-sessions) where we walked a group of engineers through the basics of React, setting up coding exercises so that everyone got some hands-on experience using the framework. Planning those workshops involved reading a lot of blog posts and taking some online courses but a lot of that knowledge has since faded from memory.
 
 So what I’m trying to say is that whilst I’m already familiar with the basic concepts of React, I’ve never put what I learned into practice. Running the workshop helped me to learn a lot, and teaching is a great way of learning, but I have a feeling that when it comes to writing some actual code I’ll have that classic struggle where I realise that reading and watching videos is all good, but nothing compares to actually building something in order to really solidify that knowledge.
+
+<a id="what-am-i-going-to-build" aria-hidden="true"></a>
 
 ## What am I going to build?
 
