@@ -534,7 +534,6 @@ li > ul {
     margin-top: $spacing-lists;
 }
 code {
-    font-size: 0.85rem;
     line-height: $spacing;
 }
 kbd {
@@ -582,8 +581,7 @@ td:last-child {
 a {
     @include links();
 }
-a:hover,
-a:active {
+a:hover {
     text-shadow: none;
     background-image: none;
 }
