@@ -16,32 +16,21 @@ I've just completed my first week learning React by building an application and 
 This post is a run-through of *what* I spent my week working on rather than a guide to *how* I did it.
 
 
-## The plan
-
-The plan at the start of the week looked like this
-
-- Get a basic app up and running on [CodeSandbox](https://codesandbox.io).
-- Break sections of the app into components.
-- Add some state to track "owned" coins and apply filters.
-- Look into database options.
-
-I also set myself a few stretch goals
-
-- Retrieve data from a database.
-- Set up continuous integration.
-- Look into unit testing best practices in React.
-
-
 <a id="what-features-will-be-in-the-first-iteration" aria-hidden="true"></a>
 
 ## What features will be in the first iteration?
 
-[Last week I decided on some of the features of the app](/learn-react-by-building-a-web-app/#what-am-i-going-to-build). This week, for the first iteration, I would like the app to
+[Last week I decided on some of the features of the app](/learn-react-by-building-a-web-app/#what-am-i-going-to-build). This week, for the first iteration, I wanted to
 
+- Get a basic app up and running on [CodeSandbox](https://codesandbox.io).
+- Break sections of the app into components.
 - Display a list of coins.
 - Provide a way for the user to mark a coin as "owned".
 - Have filters for coin denomination and showing "owned" & "needed" coins.
+- Retrieve data from a database (stretch goal).
 - Require users to log in so that their data can be saved to a database (stretch goal).
+- Set up continuous integration (stretch goal).
+- Look into unit testing best practices in React (stretch goal).
 
 
 ## Choosing a name
@@ -159,13 +148,13 @@ If there are no coins to display then a message is shown to the user.
 
 There are three functions which live in the same module as this component; `filterCoins`, `filterNeeded`, and `filterOwned`.
 
-The `filterCoins` function calls one of the other two methods based on the filter string passed to it, if the filter is `'all'` then it returns the coin list unfiltered. The other two methods do what you would expect; `filterNeeded` returns the coins which the user has marked as "needed"; and `filterOwned` returns the coins which the user has marked as "owned".
+The `filterCoins` function calls one of the other two methods based on the filter string passed to it. If the filter is `'all'` then it returns the coin list unfiltered. If the filter is `onlyNeeded` then the `filterNeeded` function is called returning only the coins which the user has marked as "needed". Finally, if the filter is `onlyOwned` the then `filterOwned` function is called returning only the coins which the user has marked as "owned".
 
-I'm not completely happy with these functions living in the same module as the `CoinList` component so I'll most likely move them out into a helper module in the future, that way I keep the modules focused and can unit test the logic a little easier.
+I'm not completely happy with these functions living in the same module as the `CoinList` component so I'll most likely move them out into a helper module in the future, that way I can keep the modules focused and can unit test the logic a little easier.
 
 ### `Header` component
 
-The header component a stateless functional component which displays the app title at the top of the page. I didn't really have to break this out into a component but I was thinking that more could be added in the future such as the logged in users name.
+The header component is a stateless functional component which displays the app title at the top of the page. I didn't really have to break this out into a component but I was thinking that more could be added in the future such as the logged in users name.
 
 #### Props
 
@@ -181,8 +170,8 @@ The top-level component which, at the moment, holds all of the state for the app
 
 These properties have mostly been covered already in the component props details above but I'll add descriptions again here for reference.
 
-- `user` - an object containing a users logged-in details.
-- `isLoading` - a boolean which handles displaying a loader indicator to the user.
+- `user` - an object containing the logged-in users details.
+- `isLoading` - a boolean which handles displaying a loading indicator to the user.
 - `coins` - an array of all the coins in the app, before any filters have been applied.
 - `owned` - an array of all of the coin ID's the user has marked as "owned".
 - `filter` - a string which is set to the current filter. Values can be `'all'`, `'onlyNeeded'`, or `'onlyOwned'`.
@@ -216,11 +205,11 @@ Not a component, but included here for completeness, this is the entry point for
 
 I've looked into hosted database options for web apps in the past and have always felt like there was a mountain of things to learn, loads of config to set up, and the API's tend to be quite complicated when it comes to interacting with the database itself.
 
-Then, whilst looking the source code for [Kent C. Dodds' Repeat TODO app](https://github.com/kentcdodds/repeat-todo-v2), I noticed he was using Firebase so I decided to check it out.
+Then, whilst looking at the source code for [Kent C. Dodds' Repeat TODO app](https://github.com/kentcdodds/repeat-todo-v2), I noticed he was using Firebase so I decided to check it out.
 
-I found a great [tutorial by Simon Bloom on CSS Tricks called Intro to Firebase and React](https://css-tricks.com/intro-firebase-react/), and following the steps in the article I had an app which could read and write to a database and some basic authentication set up within 30 minutes.
+I found a great [tutorial by Simon Bloom on CSS Tricks called Intro to Firebase and React](https://css-tricks.com/intro-firebase-react/). Following the steps in the article I was able to set up an app with  basic authentication and the ability to talk to a database within 30 minutes.
 
-Following this, I decided to add a [Cloud Firestore database](https://firebase.google.com/products/firestore/) to my app. Firestore is in beta but it's heavily documented and, so far, I haven't had any issues with it.
+Because I had such a good experience setting up Firebase I looked at their database offerings and chose to use a [Cloud Firestore database](https://firebase.google.com/products/firestore/). Firestore is in beta but it's heavily documented and, so far, I haven't had any issues with it.
 
 <a id="firebase-authentication" aria-hidden="true"></a>
 
@@ -262,7 +251,7 @@ That's all it took to implement some basic authentication into the app!
 
 ### Adding data
 
-I wanted to add some of the coin data to the database so I created a `firebaseService.js` module which exposed the Firestore database object:
+I wanted to add some coin data to the database so I created a `firebaseService.js` module which exposed the Firestore database object:
 
 ```js
 import firebase from 'firebase';
@@ -275,7 +264,8 @@ Then I created a `coinService.js` module which contained a function that could a
 ```js
 import { db } from './firebaseService';
 
-export const addCoin = async ({ denomination, name, year, order }) => await db
+export const addCoin = async ({ denomination, name, year, order }) =>
+  await db
     .collection('coins')
     .add({ denomination, name, year, order });
 ```
@@ -325,12 +315,12 @@ When a user is signed in I retrieve all of the records from this collection whic
 }
 ```
 
-The reason I added a `userId` property rather than use the generated document ID was because a user ID is passed back when the user logs in when using a sign-in provider which should be the same for a single user regardless of which provider they use to sign in.
+The reason I added a `userId` property rather than use the generated document ID was because a user ID is passed back when the user logs in when using a sign-in provider which *should* be the same for a single user regardless of which provider they use to sign in.
 
 
 ## Unit tests — Stretch goal!
 
-I really wanted to start looking into unit testing best practices in React at this point, and coincidentally [Kent C. Dodds had just sent out a newsletter which covered a new unit testing library which he just released](https://github.com/kentcdodds/react-testing-library) which is *"a very light-weight solution for testing React components"*. If you haven't realised already I am a huge fan of Kent and his work!
+I really wanted to start looking into unit testing best practices in React at this point, and coincidentally [Kent C. Dodds had just sent out a newsletter which covered a new unit testing library which he just released](https://github.com/kentcdodds/react-testing-library) which he described as *"a very light-weight solution for testing React components"*. If you haven't realised already I am a huge fan of Kent and his work!
 
 I followed the readme on the GitHub repository and wrote a couple of basic tests but left it at that point as I feel like I need to do some more reading up on writing React unit tests.
 
@@ -350,11 +340,11 @@ It wasn't all plain sailing this week, I did hit a few issues along the way.
 
 I spent far too long trying to access state in child components which I'd set in the `App` component, completely forgetting that state is private to a component 🤦
 
-Once I (finally) remembered that state in React is private to the component it is defined in I started passing the data down to the child components via`props`.
+Once I (finally) remembered that state in React is private to the component it is defined in I started passing the data down to the child components via  `props`.
 
 ### Filter logic
 
-I fumbled with the format of the filter state for a while, originally I had each filter type as a separate property in state:
+I fumbled with the format of the filter state for a while, originally I had each filter type as a separate property of a filter object in state:
 
 ```js
 filter: {
@@ -381,16 +371,33 @@ Then I switched the checkboxes to radio buttons and grouped them together using 
 Each radio button then sets the `checked` attribute based on the filter state value
 
 ```html
-<input checked={filter === 'all'} />
-<input checked={filter === 'onlyNeeded'} />
-<input checked={filter === 'onlyOwned'} />
+<input
+  type="radio"
+  name="filter"
+  value="all"
+  checked={filter === 'all'}
+/>
+
+<input
+  type="radio"
+  name="filter"
+  value="onlyNeeded"
+  checked={filter === 'onlyNeeded'}
+/>
+
+<input
+  type="radio"
+  name="filter"
+  value="onlyOwned"
+  checked={filter === 'onlyOwned'}
+/>
 ```
 
 ### Snapshot testing in CodeSandox
 
-One of the unit tests I wrote used `.toMatchSnapshot()`, this caused an issue in CodeSandbox as it isn't able to create snapshot files.
+One of the unit tests I wrote used the `.toMatchSnapshot()` assertion, this caused an issue in CodeSandbox as it isn't able to create snapshot files.
 
-To get around this I had to clone the repository onto my laptop and run the unit tests with the `-u` flag (`yarn run tests -u`) in order to create the snapshot files, then check the updated files in. Once this was done the test passed in CodeSandbox.
+To get around this I had to clone the repository onto my laptop and run the unit tests with the `-u` flag (`yarn run tests -u`) to create the snapshot files, then check the updated files in. Once this was done the test passed in CodeSandbox.
 
 ### Prop drilling
 
@@ -403,12 +410,12 @@ Next week I plan to do some reading up on this subject to find out what the best
 
 ## End of week one
 
-Below is the source code for the app as it stands at the end of the first week.
+You can [check out the code on the GitHub repo](https://github.com/DamianMullins/Coinsly), or view and run it in the CodeSandox window below.
 
 <iframe src="https://codesandbox.io/embed/6vp397pr3z?autoresize=1&module=%2Fsrc%2Fcomponents%2FApp.js&view=editor" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 I feel like I've made some good progress in my first week, I even managed to work on all of the stretch goals! The app is far from finished and I need to tidy a few bits up, but I'm happy with what I have achieved so far.
 
-It doesn't look great at the moment as I haven't put a design together yet and haven't written any styles. I'd like to figure out what this CSS in JS thing is all about before starting work on this.
+The app doesn't look great at the moment as I haven't put a design together yet and haven't written any styles. I'd like to figure out what this CSS in JS thing is all about before starting work on this.
 
 Until next week ✌️
