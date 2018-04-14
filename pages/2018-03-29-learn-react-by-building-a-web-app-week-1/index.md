@@ -410,7 +410,7 @@ Next week I plan to do some reading up on this subject to find out what the best
 
 ## End of week one
 
-You can [check out the code on the GitHub repo](https://github.com/DamianMullins/Coinsly), or view and run it in the CodeSandox window below.
+You can [check out the code on the GitHub repo](https://github.com/DamianMullins/Coinsly/tree/ddc31c98ef2f687594279bfc5ba1d6308bbf567b), or view and run it in the CodeSandox window below.
 
 <iframe src="https://codesandbox.io/embed/6vp397pr3z?autoresize=1&module=%2Fsrc%2Fcomponents%2FApp.js&view=editor" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
