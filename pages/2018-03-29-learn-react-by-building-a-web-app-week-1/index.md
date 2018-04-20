@@ -9,7 +9,7 @@ tags:
   - projects
 ---
 
-> TLDR: I've made some good progress in my first week, I need to tidy a few bits up and would like to start looking at applying some patterns, but I'm happy with what I have achieved so far. Take a look at the [end of week one section to see the final code](#end-of-week-one).
+> TLDR: I've made some good progress in my first week, I need to tidy a few bits up and would like to start looking at applying some patterns, but I'm happy with what I have achieved so far. [Take a look at the end of week one section to see the final code](#end-of-week-one).
 
 I've just completed my first week learning React by building an application and it has gone better than expected 👐
 
