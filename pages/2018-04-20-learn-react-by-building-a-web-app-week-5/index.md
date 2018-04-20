@@ -1,6 +1,6 @@
 ---
 title: Learn React by building a web app — Week 5
-description:
+description: Two posts in two days? Unheard of! It’s hackathon time at work so I have been spending my time working on the Coinsly app.
 date: "2018-04-20T15:53"
 path: "/learn-react-by-building-a-web-app-week-5/"
 tags:
