@@ -45,7 +45,7 @@ I did look into using CSS modules before settling on glamorous but they aren’t
 
 ### Flexbox
 
-I’m familiar with flexbox and have used it a fair in the past, however, recently at work we’ve been using a lot of utility classes which handle grid layouts etc so I’ve been using those rather than writing the styles myself. I know, excuses excuses..
+I’m familiar with flexbox and have used it a fair bit in the past, however, recently at work we’ve been using a lot of utility classes which handle grid layouts etc so I’ve been using those rather than writing the styles myself. I know, excuses excuses..
 
 Because of this I have had to do a lot of searching online to find out how to achieve some pretty basic layouts 😳 I may work my way through [flexbox froggy](https://flexboxfroggy.com/) or [flexbox defence](http://www.flexboxdefense.com/) again to refresh my memory.
 
@@ -117,18 +117,6 @@ Then in the consuming component the values can be accessed like this:
 I use the `Totals` component to display details for the currently filtered coin denomination:
 
 ```js
-<Totals coins={coins}>
-  {({ total, owned, percentage }) => (
-    <p>Total {owned} of {total} ({percentage}%)</p>
-  )}
-</Totals>
-```
-
-Which results in something like `"Total 3 of 30 (10%)"`.
-
-The `Totals` component also used to display details for all the coins in the app:
-
-```js
 <Totals coins={filteredCoins}>
   {({ total, owned, percentage }) => (
     <p>{this.state.denomination} Total {owned} of {total} ({percentage}%)</p>
@@ -137,6 +125,18 @@ The `Totals` component also used to display details for all the coins in the app
 ```
 
 Which results in something like `"25p Crown Total 1 of 4 (25%)"`.
+
+The `Totals` component is also used to display details for all the coins in the app:
+
+```js
+<Totals coins={coins}>
+  {({ total, owned, percentage }) => (
+    <p>Total {owned} of {total} ({percentage}%)</p>
+  )}
+</Totals>
+```
+
+Which results in something like `"Total 3 of 30 (10%)"`.
 
 
 <a id="context-api" aria-hidden="true"></a>
@@ -155,7 +155,7 @@ I created a `LoadingContext` module which I used in the app to set the context v
 </LoadingContext.Provider>
 ```
 
-Then in any components which needed to read the value, I used `ContLoadingContextext.Consumer` to provide the value like so:
+Then in any components which needed to read the value, I used `LoadingContext.Consumer` to provide the value like so:
 
 ```html
 <LoadingContext.Consumer>
@@ -183,14 +183,14 @@ After reading through the Firebase documentation a little more over the last few
 
 ### Owned list
 
-The `owned` property stored in state was really bugging me, having it meant that the filter logic was unnecessarily complex and hard to decipher. To resolve this I removed the property from state and instead added the `ownedId` to the relevant coin in the list of coins returned from the database.
+The `owned` state property was really bugging me, because it was stored separately to the coin data it meant that the filter logic was unnecessarily complex. To resolve this I removed the property from state and instead added the `ownedId` to any coins owned by the user.
 
-[This is done in the `coinApi` module](https://github.com/DamianMullins/Coinsly/blob/9eed188ead3e4796c59c0daa565649da3a99b65c/src/api/coinApi.js#L7-L30) by first retrieving the list of owned coins for the logged in user, then retrieving the coins and whilst building up the coins list in a loop I check to see if there is an `ownedId` for the current coin, if one is found then the property is added to the coin object.
+[This is done in the `coinApi` module](https://github.com/DamianMullins/Coinsly/blob/9eed188ead3e4796c59c0daa565649da3a99b65c/src/api/coinApi.js#L7-L30) where two calls to the database are made, one to get the coins, and another to get the owned list. The `ownedId`'s are then added to the matching coins.
 
 So given an owned list of
 
 ```json
-{ "ownedId": 1, "coindId": 2 }
+[{ "ownedId": 1, "coinId": 2 }]
 ```
 
 and a coin list of
@@ -211,13 +211,13 @@ You end up with
 ]
 ```
 
-Now the filter logic only has to check that a coin has an `ownedId` property which isn’t undefined in order to tell that the user has marked that coin as “owned”. Much simpler.
+Now the filter logic only has to check that a coin has an `ownedId` property with a value which isn’t `undefined` in order to tell that the user has marked that coin as “owned”. Much simpler.
 
 As part of this change I also had to create some helper functions, the first of which adds the `ownedId` property to a coin object when it is marked as “owned”, and the second removes the `ownedId` property when a coin is marked as “needed”.
 
 ### Forms
 
-The form elements in the coin list are now all disabled whilst `state.isLoading` is true i.e. when a database transaction is being made. Rather than disabling the elements directly, the `disabled` attribute is applied to a `fieldset` element which wraps the form, this has the effect of disabling all form elements — this is standard HTML behaviour by the way, no React specific code here.
+The form elements in the coin list are now all disabled whilst `state.isLoading` is true i.e. when a database transaction is being made. Rather than disabling the elements directly, the `disabled` attribute is applied to a `fieldset` element which wraps the form, this has the effect of disabling all form elements within that fieldset — this is standard HTML behaviour by the way, no React specific code here.
 
 The form `onSubmit` handlers were removed from the forms in the `Filters` and `Coin` components as I’m no longer planning to render on the server — all of the actions are triggered via `onChange` attributes directly on the form inputs.
 
