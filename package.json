@@ -1,9 +1,9 @@
 {
   "name": "damianmullins",
   "description": "Development Blog for Damian mullins – Software Engineer at JUST EAT.",
-  "homepage": "http://www.damianmullins.com",
+  "homepage": "https://www.damianmullins.com",
   "version": "3.0.0",
-  "author": "Damian Mullins <damian@lowflyingowls.c.uk> (http://www.damianmullins.com/)",
+  "author": "Damian Mullins <damian@lowflyingowls.c.uk> (https://www.damianmullins.com/)",
   "keywords": [
     "gatsby"
   ],
@@ -21,12 +21,13 @@
     "react-helmet": "^3.1.0"
   },
   "devDependencies": {
+    "copyfiles": "^2.0.0",
     "gh-pages": "^0.11.0"
   },
   "scripts": {
     "dev": "gatsby develop",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gatsby build --prefix-links",
-    "deploy": "gatsby build --prefix-links && gh-pages -d public"
+    "deploy": "gatsby build --prefix-links && copyfiles feed.xml public && gh-pages -d public"
   }
 }

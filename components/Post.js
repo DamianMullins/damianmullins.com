@@ -6,7 +6,7 @@ import { prefixLink } from 'gatsby-helpers';
 import styles from 'css/post.module.scss';
 
 class Post extends React.Component {
-  render () {
+  render() {
     const { path, title, posted } = this.props;
 
     return (
@@ -17,8 +17,8 @@ class Post extends React.Component {
         </Link>
       </article>
     );
-  };
-};
+  }
+}
 
 React.propTypes = {
   path: React.PropTypes.string.isRequired,

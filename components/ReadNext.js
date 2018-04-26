@@ -6,34 +6,32 @@ import find from 'lodash/find';
 import truncate from 'lodash/truncate';
 
 class ReadNext extends React.Component {
-  render () {
+  render() {
     const { pages, post } = this.props;
     const { readNext } = post;
     let nextPost;
 
     if (readNext) {
-      nextPost = find(pages, (page) =>
-        includes(page.path, readNext)
-      );
+      nextPost = find(pages, page => includes(page.path, readNext));
     }
 
     if (!nextPost) {
       return React.createElement('noscript', null);
     } else {
-      nextPost = find(pages, (page) =>
+      nextPost = find(pages, page =>
         includes(page.path, readNext.slice(1, -1))
       );
-      
+
       const html = nextPost.data.body;
       const body = truncate(html.replace(/<[^>]*>/g, ''), {
-        'length': 200
+        length: 200
       });
 
       return (
         <div>
           <hr />
 
-          <h6 style={{ margin: 0,  textTransform: 'uppercase' }}>
+          <h6 style={{ margin: 0, textTransform: 'uppercase' }}>
             Read this next:
           </h6>
 
@@ -42,19 +40,20 @@ class ReadNext extends React.Component {
               to={{
                 pathname: prefixLink(nextPost.path),
                 query: {
-                  readNext: true,
+                  readNext: true
                 }
-              }}>
+              }}
+            >
               {nextPost.data.title}
             </Link>
           </h3>
           <p>{body}</p>
           <hr />
         </div>
-      )
+      );
     }
   }
-};
+}
 
 ReadNext.propTypes = {
   post: React.PropTypes.object.isRequired,

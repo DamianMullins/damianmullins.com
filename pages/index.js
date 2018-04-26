@@ -4,7 +4,7 @@ import get from 'lodash/get';
 import sortBy from 'lodash/sortBy';
 import includes from 'lodash/includes';
 import { prefixLink } from 'gatsby-helpers';
-import Helmet from "react-helmet";
+import Helmet from 'react-helmet';
 import { config } from 'config';
 import Bio from 'components/Bio';
 import Post from 'components/Post';
@@ -20,32 +20,35 @@ class BlogIndex extends React.Component {
     const sortedPages = sortBy(route.pages, page => get(page, 'data.date'))
       .reverse()
       .map(page => {
-        if (get(page, 'file.ext') === 'md' && !includes(page.path, '/404') && !get(page, 'data.draft')) {
+        if (
+          get(page, 'file.ext') === 'md' &&
+          !includes(page.path, '/404') &&
+          !get(page, 'data.draft')
+        ) {
           const title = get(page, 'data.title') || page.path;
           const posted = get(page, 'data.date');
 
-          return (<Post
+          return (
+            <Post
               key={page.path}
               path={page.path}
               title={title}
-              posted={posted} />
+              posted={posted}
+            />
           );
-        };
+        }
       });
 
     return (
       <div className={layout.l_container}>
         <Helmet
           title={config.blogTitle}
-          meta={[
-            { "name": "description", "content": config.authorBio }
-          ]} />
+          meta={[{ name: 'description', content: config.authorBio }]}
+        />
 
         <Bio />
 
-        <section>
-          {sortedPages}
-        </section>
+        <section>{sortedPages}</section>
       </div>
     );
   }

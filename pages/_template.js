@@ -4,22 +4,21 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 
 class Template extends React.Component {
-  render () {
+  render() {
     const { location, children } = this.props;
     const headerModifier = location.pathname === prefixLink('/') ? '' : 'small';
 
     return (
       <div>
-        <Header
-          modifier={headerModifier} />
+        <Header modifier={headerModifier} />
 
         {children}
 
         <Footer />
       </div>
-    )
+    );
   }
-};
+}
 
 Template.propTypes = {
   children: React.PropTypes.any,
