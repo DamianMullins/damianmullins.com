@@ -42,6 +42,10 @@ module.exports = React.createClass({
           {head.meta.toComponent()}
 
           {css}
+          <script
+            src="https://cdn.ravenjs.com/3.24.2/raven.min.js"
+            crossorigin="anonymous"
+          />
         </head>
         <body>
           <div id="react-mount" dangerouslySetInnerHTML={{ __html: body }} />

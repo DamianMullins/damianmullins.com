@@ -44,6 +44,12 @@ class BlogIndex extends React.Component {
         <Helmet
           title={config.blogTitle}
           meta={[{ name: 'description', content: config.authorBio }]}
+          script={[
+            {
+              innerHTML:
+                "Raven.config('https://b7ebba6ca5dd4d65a2ee0ea7f7665a22@sentry.io/1197101').install()"
+            }
+          ]}
         />
 
         <Bio />
