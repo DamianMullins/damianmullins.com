@@ -35,6 +35,7 @@ module.exports = React.createClass({
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
+          <meta name="google-site-verification" content="a6Ox8VBA5N9ohpNFIepLCkROEGmvZc2eqnm6msYIMSk" />
 
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
 
