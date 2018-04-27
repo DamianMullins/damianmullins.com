@@ -13,21 +13,19 @@
     "url": "git://github.com/DJMelonz/djmelonz.github.io.git"
   },
   "dependencies": {
-    "gatsby": "^0.12.6",
-    "kickoff-grid.css": "^1.1.0",
-    "lodash": "^4.15.0",
-    "moment": "^2.14.1",
-    "react-ga": "^2.1.2",
-    "react-helmet": "^3.1.0"
+    "gatsby": "0.12.46",
+    "kickoff-grid.css": "1.2.0",
+    "lodash": "4.17.10",
+    "moment": "2.22.1",
+    "react-ga": "2.5.0",
+    "react-helmet": "5.2.0"
   },
   "devDependencies": {
-    "copyfiles": "^2.0.0",
-    "gh-pages": "^0.11.0"
+    "copyfiles": "2.0.0"
   },
   "scripts": {
     "dev": "gatsby develop",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gatsby build --prefix-links",
-    "deploy": "gatsby build --prefix-links && copyfiles feed.xml public && gh-pages -d public"
+    "build": "gatsby build --prefix-links && copyfiles feed.xml public"
   }
 }
