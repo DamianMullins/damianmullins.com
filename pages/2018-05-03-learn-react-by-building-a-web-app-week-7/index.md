@@ -9,17 +9,7 @@ tags:
   - projects
 ---
 
-It has been a busy two weeks of reading, listening to podcasts, and watching talks online. I did manage to make a few updates and bug fixes to Coinsly which I've listed in the sections below.
-
-## Changes to the Coinsly app
-
-A very quick run-through of the changes I've made.
-
-- Updated package dependencies to latest versions.
-- Fixed firestore warning by passing a `timestampsInSnapshots: true` setting.
-- After first signing in an error was being thrown because the filters prop in the `Filters` component is `null` when created. To fix this I provided a default value of an empty array.
-- Fixed issue with totals component where `NaN` was being displayed on initial load because the default values in state are set to `0` which causes a divide by zero exception when working out the percentages.
-- Refactored `coinHelper` to use a new filter method, and to prevent multiple copies of objects being made.
+It has been a busy two weeks of reading, listening to podcasts, and watching talks online. I did manage to make a few updates and bug fixes to Coinsly which I've [listed below](#changes-to-the-coinsly-app).
 
 ## Podcasts
 
@@ -39,7 +29,6 @@ I had some time whilst travelling to London recently which gave me time to catch
 - [Forking instead of Ejecting a Create React App](https://www.youtube.com/watch?v=I22TW-33dDE)
 - [Add ESLint & Prettier to VS Code for a Create React App](https://www.youtube.com/watch?v=bfyI9yl3qfE)
 - [Bootstrap a React App with Parcel](https://www.youtube.com/watch?v=ybjmUgKW3vU)
--
 - [What's New in React 16.3.0](https://www.youtube.com/watch?v=WhWqy-vxKS8)
 - [Polyfill React 16.3 New Lifecycle Hooks](https://www.youtube.com/watch?v=djXh1vaDarg)
 
@@ -47,3 +36,18 @@ I had some time whilst travelling to London recently which gave me time to catch
 
 - [How to React ⚛️](https://blog.kentcdodds.com/how-to-react-%EF%B8%8F-9e87f48414d2)
 - [Use a Render Prop!](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce)
+
+<a id="changes-to-the-coinsly-app" aria-hidden="true"></a>
+## Changes to the Coinsly app
+
+A very quick run-through of the changes I've made.
+
+- Updated package dependencies to latest versions.
+- Fixed firestore warning by passing a `timestampsInSnapshots: true` setting.
+- After first signing in an error was being thrown because the filters prop in the `Filters` component is `null` when created. To fix this I provided a default value of an empty array.
+- Fixed issue with totals component where `NaN` was being displayed on initial load because the default values in state are set to `0` which causes a divide by zero exception when working out the percentages.
+- Refactored `coinHelper` to use a new filter method, and to prevent multiple copies of objects being made.
+
+You can [check out the code on the GitHub repo](https://github.com/DamianMullins/Coinsly/tree/35b64c58e6384c5aa6da8a0c3a4da11d41e01a96), or view and run it in the CodeSandox window below.
+
+<iframe src="https://codesandbox.io/embed/06xkj9lpv?autoresize=1&module=%2Fsrc%2Fcomponents%2FApp.js&view=editor" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
