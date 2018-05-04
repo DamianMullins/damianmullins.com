@@ -2,9 +2,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
     <channel>
         <title><![CDATA[damianmullins]]></title>
-        <description><![CDATA[Development Blog for Damian mullins – Web UI Engineer at JUST EAT.]]></description>
+        <description><![CDATA[Development Blog for Damian mullins – Senior Web UI Engineer at JUST EAT.]]></description>
         <link>http://www.damianmullins.com</link>
-        <lastBuildDate>Fri, 6 Apr 2018 08:36:14 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 03 May 2018 10:33:00 GMT</lastBuildDate>
         <atom:link href="http://www.damianmullins.com/feed.xml" rel="self" type="application/rss+xml" />
         <author><![CDATA[Damian Mullins]]></author>
         <copyright><![CDATA[Copyright 2018 Damian Mullins]]></copyright>
