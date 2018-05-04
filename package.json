@@ -27,6 +27,6 @@
   "scripts": {
     "dev": "gatsby develop",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gatsby build --prefix-links && copyfiles feed.xml public"
+    "build": "mkdir public && copyfiles feed.xml public && gatsby build --prefix-links"
   }
 }
