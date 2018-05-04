@@ -11,6 +11,15 @@
         <language><![CDATA[en]]></language>
         <ttl>60</ttl>
         <item>
+            <title><![CDATA[Learn React by building a web app — Week 7
+]]></title>
+            <description><![It has been a busy two weeks of reading, listening to podcasts, and watching talks online. I did manage to make a few updates and bug fixes to Coinsly which I've listed in the sections below.
+]]></description>
+            <link>https://www.damianmullins.com/learn-react-by-building-a-web-app-week-7/</link>
+            <guid isPermaLink="false">https://www.damianmullins.com/learn-react-by-building-a-web-app-week-7/</guid>
+            <pubDate>Thu, 03 May 2018 10:33:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[Learn React by building a web app — Week 5
 ]]></title>
             <description><![Two posts in two days? Unheard of! It’s hackathon time at work so I have been spending my time working on the Coinsly app.
