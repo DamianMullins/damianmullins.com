@@ -1,0 +1,209 @@
+@import 'mixins/mixins';
+@import 'partials/colors';
+@import 'partials/variables';
+
+html {
+  font-size: 125%;
+  line-height: 1.45em;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+*:before {
+  box-sizing: inherit;
+}
+
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $c-light;
+  color: $c-dark;
+  font-family: $font-stack;
+  font-weight: 300;
+  padding-top: 5rem;
+  word-wrap: break-word;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $c-dark;
+  font-weight: 600;
+  line-height: $spacing;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.9rem;
+}
+
+h2 {
+  font-size: 1.51572rem;
+  line-height: 2.175rem;
+}
+
+h3 {
+  font-size: 1.31951rem;
+  line-height: 2.175rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.87055rem;
+}
+
+h6 {
+  font-size: 0.81225rem;
+}
+
+ul,
+ol {
+  margin: 0 0 $spacing;
+  list-style-position: outside;
+  list-style-image: none;
+}
+
+pre {
+  margin: 0 0 $spacing;
+  padding: 0;
+  font-size: 0.85rem;
+  line-height: $spacing;
+}
+
+table {
+  margin: 0 0 $spacing;
+  padding: 0;
+  font-size: 1rem;
+  line-height: $spacing;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+blockquote {
+  margin: 0 0 $spacing -1.0875rem;
+  padding: 1rem;
+  line-height: $spacing;
+  border-left: 0.54375rem solid $c-dark;
+  font-style: italic;
+
+  @media only screen and (min-width: 480px) {
+    margin-left: 0;
+    border: 1px solid $c-dark;
+    border-left: 0.54375rem solid $c-dark;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img,
+dl,
+dd,
+p,
+figure,
+fieldset,
+form,
+noscript,
+iframe,
+address {
+  margin: 0 0 $spacing;
+  padding: 0;
+}
+
+hr {
+  background: hsla(0, 0%, 100%, 0.5);
+  border: none;
+  margin: 0 0 calc($spacing - 1px);
+  padding: 0;
+  height: 1px;
+}
+
+b,
+strong,
+dt,
+th {
+  font-weight: 700;
+}
+
+li {
+  margin-bottom: $spacing-lists;
+}
+
+code {
+  line-height: $spacing;
+
+  :not(pre) > &[class*='language-'] {
+    padding: 0 0.2em;
+  }
+}
+
+kbd,
+samp {
+  font-size: 0.85rem;
+  line-height: $spacing;
+}
+
+abbr,
+acronym {
+  border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
+  cursor: help;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
+  cursor: help;
+  text-decoration: none;
+}
+
+thead {
+  text-align: left;
+}
+
+td,
+th {
+  text-align: left;
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
+  font-feature-settings: tnum;
+  padding: 0.725rem 0.96667rem calc(0.725rem - 1px) 0.96667rem;
+}
+
+th:first-child,
+td:first-child {
+  padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 0;
+}
+
+a {
+  @include links();
+}
+
+a:hover {
+  text-shadow: none;
+  background-image: none;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}

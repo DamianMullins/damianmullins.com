@@ -1,0 +1,14 @@
+@import 'partials/colors';
+
+@mixin links($foreground: $c-light, $background: $c-dark) {
+  color: $background;
+  text-decoration: none;
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0) 1px,
+    $background 1px,
+    $background 2px,
+    rgba(0, 0, 0, 0) 2px
+  );
+}
