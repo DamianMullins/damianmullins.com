@@ -1,0 +1,20 @@
+@import 'mixins/mixins';
+@import 'partials/colors';
+
+.footer {
+  background-color: $c-dark;
+  color: $c-light;
+  text-align: center;
+}
+.links {
+  list-style-type: none;
+  margin: 0 0 2rem;
+}
+.link {
+  display: inline;
+  margin: 20px 15px;
+
+  a {
+    @include links($c-dark, $c-light);
+  }
+}
