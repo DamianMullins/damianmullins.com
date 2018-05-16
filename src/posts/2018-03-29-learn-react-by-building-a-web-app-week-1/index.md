@@ -1,6 +1,6 @@
 ---
 type: 'diary'
-path: "/learn-react-by-building-a-web-app-week-1/"
+slug: "/learn-react-by-building-a-web-app-week-1/"
 title: Learn React by building a web app — Week 1
 date: "2018-03-29T22:13"
 description: I've just completed my first week learning React by building an application and it has gone better than expected 👐

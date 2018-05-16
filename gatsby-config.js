@@ -62,12 +62,12 @@ module.exports = {
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
-                const { path, title, date, tags } = edge.node.frontmatter;
+                const { slug, title, date, tags } = edge.node.frontmatter;
                 return Object.assign({}, edge.node.frontmatter, {
                   title,
                   description: edge.node.excerpt,
-                  url: site.siteMetadata.siteUrl + path,
-                  guid: site.siteMetadata.siteUrl + path,
+                  url: site.siteMetadata.siteUrl + slug,
+                  guid: site.siteMetadata.siteUrl + slug,
                   pubDate: date,
                   categories: tags
                 });
@@ -83,7 +83,7 @@ module.exports = {
                   node {
                     excerpt(pruneLength: 250)
                     frontmatter {
-                      path
+                      slug
                       title
                       date
                       tags

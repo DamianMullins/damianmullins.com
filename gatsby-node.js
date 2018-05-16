@@ -18,7 +18,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             edges {
               node {
                 frontmatter {
-                  path
+                  slug
                   tags
                   type
                 }
@@ -34,15 +34,12 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         const posts = result.data.allMarkdownRemark.edges;
 
         posts.forEach(({ node }) => {
-          const { path, type } = node.frontmatter;
+          const { slug, type } = node.frontmatter;
           const component = type === 'blog' ? postTemplate : diaryTemplate;
 
           createPage({
-            path,
-            component,
-            context: {
-              path
-            }
+            path: slug,
+            component
           });
         });
 

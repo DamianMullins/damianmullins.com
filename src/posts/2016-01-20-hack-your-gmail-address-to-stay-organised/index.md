@@ -1,6 +1,6 @@
 ---
 type: 'blog'
-path: "/hack-your-gmail-address-to-stay-organised/"
+slug: "/hack-your-gmail-address-to-stay-organised/"
 title: Hack your Gmail address to stay organised
 date: "2016-01-22T09:25"
 description: Tips and tricks to keep your email inbox organised, and hopefully empty!

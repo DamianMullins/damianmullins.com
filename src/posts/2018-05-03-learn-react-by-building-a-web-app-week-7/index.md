@@ -1,6 +1,6 @@
 ---
 type: 'diary'
-path: "/learn-react-by-building-a-web-app-week-7/"
+slug: "/learn-react-by-building-a-web-app-week-7/"
 title: Learn React by building a web app — Week 7
 date: "2018-05-03T10:33"
 description: It has been a busy two weeks of reading, listening to podcasts, and watching talks online. I did manage to make a few updates and bug fixes to Coinsly which I've listed in the sections below.

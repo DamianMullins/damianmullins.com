@@ -1,6 +1,6 @@
 ---
 type: 'diary'
-path: "/learn-react-by-building-a-web-app/"
+slug: "/learn-react-by-building-a-web-app/"
 title: Learn React by building a web app
 date: "2018-03-21T18:01"
 description: So, I decided a few months back that I'd like to learn a JavaScript framework this year. It's something I've wanted to for quite a while but I've always put it off for various reasons.

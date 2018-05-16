@@ -17,10 +17,10 @@ const Tags = ({ pathContext, data }) => {
 
       <ul>
         {edges.map(({ node }) => {
-          const { path, title } = node.frontmatter;
+          const { slug, title } = node.frontmatter;
           return (
-            <li key={path}>
-              <Link to={path}>{title}</Link>
+            <li key={slug}>
+              <Link to={slug}>{title}</Link>
             </li>
           );
         })}
@@ -43,7 +43,7 @@ Tags.propTypes = {
         PropTypes.shape({
           node: PropTypes.shape({
             frontmatter: PropTypes.shape({
-              path: PropTypes.string.isRequired,
+              slug: PropTypes.string.isRequired,
               title: PropTypes.string.isRequired
             })
           })
@@ -67,7 +67,7 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             title
-            path
+            slug
           }
         }
       }

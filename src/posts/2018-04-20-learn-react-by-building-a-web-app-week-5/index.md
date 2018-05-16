@@ -1,6 +1,6 @@
 ---
 type: 'diary'
-path: "/learn-react-by-building-a-web-app-week-5/"
+slug: "/learn-react-by-building-a-web-app-week-5/"
 title: Learn React by building a web app — Week 5
 date: "2018-04-20T15:53"
 description: Two posts in two days? Unheard of! It's hackathon time at work so I have been spending my time working on the Coinsly app.

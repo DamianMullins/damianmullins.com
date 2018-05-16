@@ -1,6 +1,6 @@
 ---
 type: 'blog'
-path: "/a-look-back-and-forward-2016-edition/"
+slug: "/a-look-back-and-forward-2016-edition/"
 title: A look back and forward - 2016 edition
 date: "2016-01-29T17:01"
 description: Looking back at the last year in 2015, and ahead to 2016.

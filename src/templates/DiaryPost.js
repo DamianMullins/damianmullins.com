@@ -11,11 +11,11 @@ import layout from '../styles/layout.module.scss';
 
 const Diary = ({ data }) => {
   const { markdownRemark: post } = data;
-  const { path, title, date, description, tags } = post.frontmatter;
+  const { slug, title, date, description, tags } = post.frontmatter;
   const { siteUrl, authorBio, disqusShortname } = data.site.siteMetadata;
   const disqusConfig = {
-    url: siteUrl + path,
-    identifier: path,
+    url: siteUrl + slug,
+    identifier: slug,
     title
   };
   const postDate = moment(date).format('Do MMMM YYYY');
@@ -47,7 +47,7 @@ Diary.propTypes = {
       html: PropTypes.string.isRequired,
       timeToRead: PropTypes.number.isRequired,
       frontmatter: PropTypes.shape({
-        path: PropTypes.string.isRequired,
+        slug: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         date: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
@@ -68,11 +68,11 @@ export const query = graphql`
         disqusShortname
       }
     }
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    markdownRemark(frontmatter: { slug: { eq: $path } }) {
       html
       timeToRead
       frontmatter {
-        path
+        slug
         title
         date
         description

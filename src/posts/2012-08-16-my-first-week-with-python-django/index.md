@@ -1,6 +1,6 @@
 ---
 type: 'blog'
-path: "/my-first-week-with-python-django/"
+slug: "/my-first-week-with-python-django/"
 title: My first week with Python, Django & Google App Engine
 date: "2012-08-16T13:35"
 description: Walkthrough of a week spent working with Python, Django & Google App Engine.

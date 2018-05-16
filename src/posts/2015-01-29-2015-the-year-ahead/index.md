@@ -1,6 +1,6 @@
 ---
 type: 'blog'
-path: "/2015-the-year-ahead/"
+slug: "/2015-the-year-ahead/"
 title: 2015 the year ahead
 date: "2015-01-29T12:54"
 description: A quick rundown of 2014, and my plans and expectations for 2015.

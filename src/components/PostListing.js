@@ -5,9 +5,9 @@ import moment from 'moment';
 
 import post from '../styles/post-listing.module.scss';
 
-const PostListing = ({ path, title, posted, excerpt, timeToRead }) => (
+const PostListing = ({ slug, title, posted, excerpt, timeToRead }) => (
   <article className={post.post}>
-    <Link to={path} className={post.link}>
+    <Link to={slug} className={post.link}>
       <h2>{title}</h2>
 
       <p><time>{moment(posted).format('Do MMMM YYYY')}</time></p>
@@ -17,7 +17,7 @@ const PostListing = ({ path, title, posted, excerpt, timeToRead }) => (
 );
 
 PostListing.propTypes = {
-  path: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   posted: PropTypes.string.isRequired,
   excerpt: PropTypes.string.isRequired,
