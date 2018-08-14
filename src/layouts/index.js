@@ -1,12 +1,24 @@
 import React, { Fragment } from 'react';
-import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
+import LogRocket from 'logrocket';
+import setupLogRocketReact from 'logrocket-react';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 import 'prismjs/themes/prism-funky.css';
 import '../styles/global.module.scss';
+
+if (process.env.NODE_ENV === 'production') {
+  try {
+    LogRocket.init('u8t5r0/damianmullinscom');
+    setupLogRocketReact(LogRocket);
+    Raven.setDataCallback(data => {
+      data.extra.sessionURL = LogRocket.sessionURL;
+      return data;
+    });
+  } catch(e) {}
+}
 
 export default ({ children, data }) => {
   const {

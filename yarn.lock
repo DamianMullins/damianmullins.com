@@ -5261,6 +5261,17 @@ log-symbols@^1.0.2:
   dependencies:
     chalk "^1.0.0"
 
+logrocket-react@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/logrocket-react/-/logrocket-react-2.0.0.tgz#efbbf764b7630be44015a73b27ec3a714c51b5af"
+  dependencies:
+    react "16.4.1"
+    react-dom "16.4.1"
+
+logrocket@0.6.16:
+  version "0.6.16"
+  resolved "https://registry.yarnpkg.com/logrocket/-/logrocket-0.6.16.tgz#09ac05426b096016e19395a0c0b0acf97a647418"
+
 longest-streak@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/longest-streak/-/longest-streak-2.0.2.tgz#2421b6ba939a443bb9ffebf596585a50b4c38e2e"
@@ -7203,6 +7214,15 @@ react-dev-utils@^4.2.1:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
+react-dom@16.4.1:
+  version "16.4.1"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.1.tgz#7f8b0223b3a5fbe205116c56deb85de32685dad6"
+  dependencies:
+    fbjs "^0.8.16"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
+
 react-dom@^15.6.0, react-dom@^15.6.1:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.2.tgz#41cfadf693b757faf2708443a1d1fd5a02bef730"
@@ -7279,6 +7299,15 @@ react-side-effect@^1.1.0:
   dependencies:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
+
+react@16.4.1:
+  version "16.4.1"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.4.1.tgz#de51ba5764b5dbcd1f9079037b862bd26b82fe32"
+  dependencies:
+    fbjs "^0.8.16"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
 
 react@^15.6.0, react@^15.6.1:
   version "15.6.2"
