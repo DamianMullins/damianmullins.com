@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import Link from 'gatsby-link';
+import React from 'react';
+import Helmet from 'react-helmet';
 
 import Strapline from '../components/Strapline';
 import PostListing from '../components/PostListing';
@@ -14,6 +14,13 @@ export default ({ data }) => {
 
   return (
     <div className={layout.l_container}>
+      <Helmet>G
+        <meta
+          name="google-site-verification"
+          content="a6Ox8VBA5N9ohpNFIepLCkROEGmvZc2eqnm6msYIMSk"
+        />
+      </Helmet>
+
       <Strapline text={authorBio} />
 
       {posts.length &&
