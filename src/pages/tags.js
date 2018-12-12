@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import kebab from 'slugify';
 
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 
 const TagsPage = ({
   data: {

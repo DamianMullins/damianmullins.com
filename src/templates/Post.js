@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import { format } from 'date-fns';
 import { DiscussionEmbed } from 'disqus-react';
 
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 
 import Tags from '../components/Tags';
 
