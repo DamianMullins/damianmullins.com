@@ -30,14 +30,6 @@ Here's a quick rundown of the changes I have made
 
 <a id="styles" aria-hidden="true"></a>
 
-## Styles
-
-Coinsly now has a logo!
-
-<img data-post-image--medium src="https://raw.githubusercontent.com/DamianMullins/Coinsly/master/src/assets/logo.png" alt="The new Coinsly logo" />
-
-Once I come up with a final layout design I may tweak the logo a little bit to make sure it looks right.
-
 ### Glamorous
 
 I was getting tired of the lack of styling so I applied some really basic styles using [glamorous](https://glamorous.rocks/). This is only a rough layout to tide me over until I come up with an actual design (the hold up on the design is figuring out how best to display all of the information and filters, especially on small screens).

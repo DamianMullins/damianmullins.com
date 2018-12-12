@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
+import { format } from 'date-fns';
 
 import footer from '../styles/footer.module.scss';
-import layout from '../styles/layout.module.scss';
+import layoutStyles from '../styles/layout.module.scss';
 
 const Footer = ({
   author,
@@ -13,7 +13,7 @@ const Footer = ({
   linkedInUsername
 }) => (
   <div className={footer.footer}>
-    <div className={layout.l_container}>
+    <div className={layoutStyles.l_container}>
       <ul className={footer.links}>
         {authorEmail && (
           <li className={footer.link}>
@@ -49,7 +49,7 @@ const Footer = ({
       </ul>
 
       <p>
-        &copy; {author} {moment().format('YYYY')}
+        &copy; {author} {format(new Date(), 'YYYY')}
       </p>
     </div>
   </div>

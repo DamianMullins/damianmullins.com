@@ -1,8 +1,8 @@
 const nodepath = require('path');
 const kebab = require('slugify');
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
     const postTemplate = nodepath.resolve('src/templates/Post.js');

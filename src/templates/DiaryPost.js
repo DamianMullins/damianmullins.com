@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import moment from 'moment';
+import { graphql } from 'gatsby';
+import { format } from 'date-fns';
 import { DiscussionEmbed } from 'disqus-react';
 
+import Layout from "../components/layout";
 import Tags from '../components/Tags';
 
 import styles from '../styles/post.module.scss';
-import layout from '../styles/layout.module.scss';
 
 const Diary = ({ data }) => {
   const { markdownRemark: post } = data;
@@ -18,10 +19,9 @@ const Diary = ({ data }) => {
     identifier: slug,
     title
   };
-  const postDate = moment(date).format('Do MMMM YYYY');
 
   return (
-    <div className={layout.l_container}>
+    <Layout>
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description || authorBio} />
@@ -29,7 +29,7 @@ const Diary = ({ data }) => {
 
       <h1>{title}</h1>
       <p className={styles.post_meta}>
-        <time>{postDate}</time> — {post.timeToRead} minute read
+        <time>{format(date, 'Do MMMM YYYY')}</time> — {post.timeToRead} minute read
       </p>
 
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -37,7 +37,7 @@ const Diary = ({ data }) => {
       <Tags tags={tags} />
 
       <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
-    </div>
+    </Layout>
   );
 };
 
@@ -60,7 +60,7 @@ Diary.propTypes = {
 export default Diary;
 
 export const query = graphql`
-  query DiaryPostQuery($path: String!) {
+  query ($path: String!) {
     site {
       siteMetadata {
         siteUrl

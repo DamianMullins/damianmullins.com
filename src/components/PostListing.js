@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
-import moment from 'moment';
+import { Link } from 'gatsby';
+import { format } from 'date-fns';
 
 import post from '../styles/post-listing.module.scss';
 
@@ -10,7 +10,7 @@ const PostListing = ({ slug, title, posted, excerpt, timeToRead }) => (
     <Link to={slug} className={post.link}>
       <h2>{title}</h2>
 
-      <p><time>{moment(posted).format('Do MMMM YYYY')}</time></p>
+      <p><time>{format(posted, 'Do MMMM YYYY')}</time></p>
       <p>{excerpt}</p>
     </Link>
   </article>

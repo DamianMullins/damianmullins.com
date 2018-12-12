@@ -98,7 +98,6 @@ module.exports = {
         ]
       }
     },
-    'gatsby-plugin-react-next',
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     {
@@ -107,10 +106,7 @@ module.exports = {
         plugins: [
           'gatsby-remark-prismjs',
           {
-            resolve: 'gatsby-remark-copy-linked-files',
-            options: {
-              ignoreFileExtensions: []
-            }
+            resolve: 'gatsby-remark-copy-linked-files'
           }
         ]
       }

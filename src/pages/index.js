@@ -1,10 +1,10 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
 
+import Layout from "../components/layout";
 import Strapline from '../components/Strapline';
 import PostListing from '../components/PostListing';
-
-import layout from '../styles/layout.module.scss';
 
 export default ({ data }) => {
   const posts = data.allMarkdownRemark.edges.filter(
@@ -13,8 +13,8 @@ export default ({ data }) => {
   const { authorBio } = data.site.siteMetadata;
 
   return (
-    <div className={layout.l_container}>
-      <Helmet>G
+    <Layout>
+      <Helmet>
         <meta
           name="google-site-verification"
           content="a6Ox8VBA5N9ohpNFIepLCkROEGmvZc2eqnm6msYIMSk"
@@ -39,12 +39,12 @@ export default ({ data }) => {
             />
           );
         })}
-    </div>
+    </Layout>
   );
 };
 
 export const query = graphql`
-  query IndexQuery {
+  {
     site {
       siteMetadata {
         authorBio

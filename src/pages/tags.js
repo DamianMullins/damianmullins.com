@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
+import { Link, graphql } from 'gatsby';
 import kebab from 'slugify';
 
-import layout from '../styles/layout.module.scss';
+import Layout from "../components/layout";
 
 const TagsPage = ({
   data: {
@@ -14,23 +14,23 @@ const TagsPage = ({
     }
   }
 }) => (
-  <div className={layout.l_container}>
-    <Helmet title={title} />
-    <div>
-      <h1>Tags</h1>
+    <Layout>
+      <Helmet title={title} />
+      <div>
+        <h1>Tags</h1>
 
-      <ul>
-        {group.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebab(tag.fieldValue)}/`}>
-              {tag.fieldValue} ({tag.totalCount})
+        <ul>
+          {group.map(tag => (
+            <li key={tag.fieldValue}>
+              <Link to={`/tags/${kebab(tag.fieldValue)}/`}>
+                {tag.fieldValue} ({tag.totalCount})
             </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
-);
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Layout>
+  );
 
 TagsPage.propTypes = {
   data: PropTypes.shape({
@@ -53,7 +53,7 @@ TagsPage.propTypes = {
 export default TagsPage;
 
 export const pageQuery = graphql`
-  query TagsQuery {
+  {
     site {
       siteMetadata {
         title

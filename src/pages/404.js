@@ -1,20 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
-import kebab from 'slugify';
 
-import layout from '../styles/layout.module.scss';
+import Layout from "../components/layout";
 import notFoundImage from '../assets/images/404.jpg';
 
 const PageNotFound = () => (
-  <div className={layout.l_container}>
+  <Layout>
     <Helmet title="Page Not Found" />
     <h1>Page Not Found</h1>
 
     <p>The page you are looking for couldn't be found.</p>
     <img src={notFoundImage} alt="" />
-  </div>
+  </Layout>
 );
 
 export default PageNotFound;
