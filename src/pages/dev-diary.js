@@ -1,11 +1,9 @@
 import React from 'react';
-import Link from 'gatsby-link';
-import moment from 'moment';
+import { graphql } from 'gatsby';
 
+import Layout from "../components/Layout";
 import Strapline from '../components/Strapline';
 import PostListing from '../components/PostListing';
-
-import layout from '../styles/layout.module.scss';
 
 export default ({ data }) => {
   const posts = data.allMarkdownRemark.edges.filter(
@@ -13,7 +11,7 @@ export default ({ data }) => {
   );
 
   return (
-    <div className={layout.l_container}>
+    <Layout>
       <Strapline text='Development diary for my personal projects' />
 
       {posts.length &&
@@ -32,12 +30,12 @@ export default ({ data }) => {
             />
           );
         })}
-    </div>
+    </Layout>
   );
 };
 
 export const query = graphql`
-  query DiaryQuery {
+  {
     allMarkdownRemark(
       filter: { frontmatter: { published: { eq: true } } }
       sort: { fields: [frontmatter___date], order: DESC }

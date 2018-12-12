@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import kebab from 'slugify';
 
 const Tags = ({ tags }) =>
@@ -11,7 +11,7 @@ const Tags = ({ tags }) =>
       <ul>
         {tags.map(tag => (
           <li key={tag}>
-            <Link to={`/tags/${kebab(tag)}`}>{tag.toLowerCase()}</Link>
+            <Link to={`/tags/${kebab(tag)}/`}>{tag.toLowerCase()}</Link>
           </li>
         ))}
       </ul>

@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { Link, graphql } from 'gatsby';
 
-import layout from '../styles/layout.module.scss';
+import Layout from "../components/Layout";
 
-const Tags = ({ pathContext, data }) => {
-  const { tag } = pathContext;
+const Tags = ({ pageContext, data }) => {
+  const { tag } = pageContext;
   const { edges, totalCount } = data.allMarkdownRemark;
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? '' : 's'
-  } tagged with "${tag}"`;
+    } tagged with "${tag}"`;
 
   return (
-  <div className={layout.l_container}>
+    <Layout>
       <h1>{tagHeader}</h1>
 
       <ul>
@@ -27,12 +27,12 @@ const Tags = ({ pathContext, data }) => {
       </ul>
 
       <Link to='/tags'>All tags</Link>
-    </div>
+    </Layout>
   );
 };
 
 Tags.propTypes = {
-  pathContext: PropTypes.shape({
+  pageContext: PropTypes.shape({
     tag: PropTypes.string.isRequired
   }),
 
@@ -56,7 +56,7 @@ Tags.propTypes = {
 export default Tags;
 
 export const pageQuery = graphql`
-  query TagPage($tag: String) {
+  query ($tag: String) {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
