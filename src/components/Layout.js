@@ -18,7 +18,11 @@ if (process.env.NODE_ENV === 'production') {
 
     setupLogRocketReact(LogRocket);
 
-    Sentry.init({ dsn: 'https://b7ebba6ca5dd4d65a2ee0ea7f7665a22@sentry.io/1197101' });
+    Sentry.init({
+      dsn: 'https://b7ebba6ca5dd4d65a2ee0ea7f7665a22@sentry.io/1197101',
+      environment: process.env.NODE_ENV,
+      release: `damianmullins@${process.env.GATSBY_RELEASE_VERSION}`
+    });
 
     Sentry.configureScope(scope => {
       scope.addEventProcessor(async event => {
