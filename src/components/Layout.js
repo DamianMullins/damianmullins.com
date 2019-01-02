@@ -73,6 +73,7 @@ export default ({ children }) => (
           >
             <html lang="en" />
             <meta name="description" content={authorBio} />
+            <meta name="release" content={process.env.GATSBY_RELEASE_VERSION} />
           </Helmet>
 
           <Header />
