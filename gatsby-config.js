@@ -9,7 +9,6 @@ module.exports = {
     authorEmail: 'hello@damianmullins.com',
     authorBio: `Hi, I'm ${author}, a Senior Web UI Engineer working at Just Eat.`,
     authorBio: `Hi, I'm ${author}, a Senior Web UI Engineer working at Just Eat.`,
-    disqusShortname: 'damianmullins',
     githubUsername: 'DamianMullins',
     twitterUsername: 'DamianMullins',
     linkedInUsername: 'damianmullins'

@@ -2,7 +2,7 @@
   "name": "damianmullins",
   "description": "Development Blog for Damian mullins – Senior Web UI Engineer at JUST EAT.",
   "homepage": "https://www.damianmullins.com",
-  "version": "4.4.0",
+  "version": "4.5.0",
   "author": "Damian Mullins <damian@lowflyingowls.co.uk> (https://www.damianmullins.com/)",
   "keywords": [
     "gatsby"
@@ -20,7 +20,6 @@
   "dependencies": {
     "@sentry/browser": "4.6.4",
     "date-fns": "1.30.1",
-    "disqus-react": "1.0.5",
     "gatsby": "2.1.22",
     "gatsby-plugin-feed": "2.0.14",
     "gatsby-plugin-glamor": "2.0.8",
