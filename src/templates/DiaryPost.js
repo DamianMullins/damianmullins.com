@@ -11,7 +11,7 @@ import styles from '../styles/post.module.scss';
 
 const Diary = ({ data }) => {
   const { markdownRemark: post } = data;
-  const { slug, title, date, description, tags } = post.frontmatter;
+  const { title, date, description, tags } = post.frontmatter;
   const { authorBio } = data.site.siteMetadata;
 
   return (
