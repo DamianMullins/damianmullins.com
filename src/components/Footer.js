@@ -49,7 +49,7 @@ const Footer = ({
       </ul>
 
       <p>
-        &copy; {author} {format(new Date(), 'YYYY')}
+        &copy; {author} {format(new Date(), 'yyyy')}
       </p>
     </div>
   </div>

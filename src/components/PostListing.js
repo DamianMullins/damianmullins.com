@@ -10,7 +10,7 @@ const PostListing = ({ slug, title, posted, excerpt, timeToRead }) => (
     <Link to={slug} className={post.link}>
       <h2>{title}</h2>
 
-      <p><time>{format(posted, 'Do MMMM YYYY')}</time></p>
+      <p><time>{format(new Date(posted), 'do MMMM yyyy')}</time></p>
       <p>{excerpt}</p>
     </Link>
   </article>

@@ -27,7 +27,7 @@ const Post = ({ data }) => {
         <h1>{title}</h1>
 
         <p className={styles.post_meta}>
-          <time>{format(date, 'Do MMMM YYYY')}</time> — {post.timeToRead} minute read
+          <time>{format(new Date(date), 'do MMMM yyyy')}</time> — {post.timeToRead} minute read
       </p>
 
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
