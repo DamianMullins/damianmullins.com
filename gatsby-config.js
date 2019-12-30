@@ -37,12 +37,10 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        workboxConfig: {
-          trackingId: 'UA-1425869-12',
-          head: false,
-          anonymize: true,
-          respectDNT: true
-        }
+        trackingId: 'UA-1425869-12',
+        head: false,
+        anonymize: true,
+        respectDNT: true
       }
     },
     {
