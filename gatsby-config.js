@@ -37,10 +37,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'UA-1425869-12',
-        head: false,
-        anonymize: true,
-        respectDNT: true
+        workboxConfig: {
+          trackingId: 'UA-1425869-12',
+          head: false,
+          anonymize: true,
+          respectDNT: true
+        }
       }
     },
     {
@@ -92,7 +94,8 @@ module.exports = {
               }
             }
           `,
-            output: '/rss.xml'
+            output: '/rss.xml',
+            title: 'RSS Feed for Damian Mullins'
           }
         ]
       }
