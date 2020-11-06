@@ -8,7 +8,6 @@ module.exports = {
     author,
     authorEmail: 'hello@damianmullins.com',
     authorBio: `Hi, I'm ${author}, a Senior Web UI Engineer working at Just Eat.`,
-    authorBio: `Hi, I'm ${author}, a Senior Web UI Engineer working at Just Eat.`,
     githubUsername: 'DamianMullins',
     twitterUsername: 'DamianMullins',
     linkedInUsername: 'damianmullins'

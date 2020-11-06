@@ -39,7 +39,9 @@ export default {
 
 To start we need to locate the top-level element of the component using the Chrome devtools elements panel. In this case, the element is the `h1`.
 
-![Screenshot of the component top-level element highlighted in the Chrome devtools elements panel](devtools-elements.png)
+![Screenshot of the component top-level element highlighted in the Chrome devtools elements panel](./devtools-elements.png)
+
+![Filter email address](filter-email-address.gif)
 
 ### Using the $0 Command
 

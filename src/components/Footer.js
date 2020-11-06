@@ -48,7 +48,7 @@ const Footer = ({
         )}
       </ul>
 
-      <p>
+      <p className={footer.noMargin}>
         &copy; {author} {format(new Date(), 'yyyy')}
       </p>
     </div>
