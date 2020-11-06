@@ -1,5 +1,4 @@
 ---
-type: 'blog'
 slug: "/a-look-back-and-forward-2016-edition/"
 title: A look back and forward - 2016 edition
 date: "2016-01-29T17:01"

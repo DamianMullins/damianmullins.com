@@ -1,5 +1,4 @@
 ---
-type: 'blog'
 slug: "/unit-testing-front-end-javacript-with-ava-and-jsdom/"
 title: Unit testing front-end JavaScript with AVA and jsdom
 date: "2016-11-11T11:11"

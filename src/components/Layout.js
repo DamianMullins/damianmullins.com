@@ -12,7 +12,10 @@ import 'prismjs/themes/prism-funky.css';
 import '../styles/global.module.scss';
 import layoutStyles from '../styles/layout.module.scss';
 
-if (process.env.NODE_ENV === 'production') {
+const environment = process.env.NODE_ENV;
+const version = process.env.GATSBY_RELEASE_VERSION;
+
+if (environment === 'production') {
   try {
     LogRocket.init('u8t5r0/damianmullinscom');
 
@@ -20,8 +23,8 @@ if (process.env.NODE_ENV === 'production') {
 
     Sentry.init({
       dsn: 'https://b7ebba6ca5dd4d65a2ee0ea7f7665a22@sentry.io/1197101',
-      environment: process.env.NODE_ENV,
-      release: `damianmullins@${process.env.GATSBY_RELEASE_VERSION}`
+      environment,
+      release: `damianmullins@${version}`
     });
 
     Sentry.configureScope(scope => {
@@ -72,7 +75,7 @@ export default ({ children }) => (
           >
             <html lang="en" />
             <meta name="description" content={authorBio} />
-            <meta name="release" content={process.env.GATSBY_RELEASE_VERSION} />
+            <meta name="release" content={version} />
           </Helmet>
 
           <Header />

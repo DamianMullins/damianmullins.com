@@ -7,9 +7,7 @@ import Strapline from '../components/Strapline';
 import PostListing from '../components/PostListing';
 
 export default ({ data }) => {
-  const posts = data.allMarkdownRemark.edges.filter(
-    e => e.node.frontmatter.type === 'blog'
-  );
+  const posts = data.allMarkdownRemark.edges;
   const { authorBio } = data.site.siteMetadata;
 
   return (
@@ -64,7 +62,6 @@ export const query = graphql`
             slug
             title
             date
-            type
           }
         }
       }

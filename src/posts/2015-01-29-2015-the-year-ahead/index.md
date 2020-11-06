@@ -1,5 +1,4 @@
 ---
-type: 'blog'
 slug: "/2015-the-year-ahead/"
 title: 2015 the year ahead
 date: "2015-01-29T12:54"
