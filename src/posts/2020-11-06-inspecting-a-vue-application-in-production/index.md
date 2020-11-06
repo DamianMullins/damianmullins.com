@@ -41,8 +41,6 @@ To start we need to locate the top-level element of the component using the Chro
 
 ![Screenshot of the component top-level element highlighted in the Chrome devtools elements panel](./devtools-elements.png)
 
-![Filter email address](filter-email-address.gif)
-
 ### Using the $0 Command
 
 Once you have the element selected you can then move to the console panel in devtools and type `$0`.
