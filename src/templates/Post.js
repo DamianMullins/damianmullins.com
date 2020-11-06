@@ -9,7 +9,6 @@ import Layout from "../components/Layout";
 import Tags from '../components/Tags';
 
 import styles from '../styles/post.module.scss';
-import layoutStyles from '../styles/layout.module.scss';
 
 const Post = ({ data }) => {
   const { markdownRemark: post } = data;
@@ -18,22 +17,20 @@ const Post = ({ data }) => {
 
   return (
     <Layout>
-      <div className={layoutStyles.l_container}>
-        <Helmet>
-          <title>{title}</title>
-          <meta name="description" content={description || authorBio} />
-        </Helmet>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={description || authorBio} />
+      </Helmet>
 
-        <h1>{title}</h1>
+      <h1>{title}</h1>
 
-        <p className={styles.post_meta}>
-          <time>{format(new Date(date), 'do MMMM yyyy')}</time> — {post.timeToRead} minute read
+      <p className={styles.post_meta}>
+        <time>{format(new Date(date), 'do MMMM yyyy')}</time> — {post.timeToRead} minute read
       </p>
 
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
-        <Tags tags={tags} />
-      </div>
+      <Tags tags={tags} />
     </Layout>
   );
 };

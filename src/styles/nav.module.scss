@@ -70,7 +70,7 @@ $spacing: 1.45rem;
  * at the top left of the screen
  */
 .menu {
-  background-color: $c-dark;
+  background-color: $c-dark-01;
   -webkit-font-smoothing: antialiased; // stop flickering of text in safari
   list-style-type: none;
   margin: -#{$spacing * 3} 0 0 -#{$spacing};

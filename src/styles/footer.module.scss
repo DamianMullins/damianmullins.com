@@ -2,14 +2,17 @@
 @import 'partials/colors';
 
 .footer {
-  background-color: $c-dark;
+  background-color: $c-dark-01;
   color: $c-light;
   text-align: center;
 }
+
 .links {
   list-style-type: none;
   margin: 0 0 2rem;
+  padding: 0;
 }
+
 .link {
   display: inline;
   margin: 20px 15px;
@@ -17,4 +20,8 @@
   a {
     @include links($c-dark, $c-light);
   }
+}
+
+.noMargin {
+    margin: 0;
 }

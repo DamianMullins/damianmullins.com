@@ -21,8 +21,8 @@ html {
 }
 
 body {
-  background-color: $c-light;
-  color: $c-dark;
+  background-color: $c-dark;
+  color: $c-light;
   font-family: $font-stack;
   font-weight: 300;
   padding-top: 5rem;
@@ -39,9 +39,28 @@ h3,
 h4,
 h5,
 h6 {
-  color: $c-dark;
   font-weight: 600;
   line-height: $spacing;
+}
+
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  border-left: solid 1px #00cd81;
+  padding-left: 1.25rem!important;
+
+  // &:before {
+  //   content: "*";
+  //   color: #00cd81;
+  //   font-weight: 400;
+  //   line-height: 2.2rem;
+  //   margin-left: -1.25rem;
+  //   padding-right: .5rem;
+  //   position: absolute;
+  // }
 }
 
 h1 {
@@ -188,7 +207,7 @@ td:last-child {
 }
 
 a {
-  @include links();
+  @include links($c-dark, $c-light);
 }
 
 a:hover {
