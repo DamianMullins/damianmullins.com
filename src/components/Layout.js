@@ -8,7 +8,7 @@ import * as Sentry from '@sentry/browser';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-import 'prismjs/themes/prism-funky.css';
+import 'prism-themes/themes/prism-material-dark.css';
 import '../styles/global.module.scss';
 import layoutStyles from '../styles/layout.module.scss';
 
