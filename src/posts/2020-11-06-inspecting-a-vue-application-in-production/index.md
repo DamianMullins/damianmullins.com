@@ -90,7 +90,7 @@ document.querySelector('[data-v-763db97b]').__vue__.msg
 Updating the prop value is now a case of updating the variable assignment to your desired value. So, for example, using the `$0` technique above you’d type this into the console:
 
 ```javascript
-$0.__vue__.msg = 'Hello from the update value!'
+$0.__vue__.msg = 'Hello from the updated value!'
 ```
 
 Lo and behold you’ll see the UI update before your very eyes!
