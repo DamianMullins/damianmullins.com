@@ -104,7 +104,10 @@ module.exports = {
         plugins: [
           'gatsby-remark-prismjs',
           {
-            resolve: 'gatsby-remark-copy-linked-files'
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              ignoreFileExtensions: []
+            }
           }
         ]
       }
