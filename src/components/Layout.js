@@ -1,6 +1,6 @@
 import { StaticQuery, graphql } from 'gatsby';
 import React, { Fragment } from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import LogRocket from 'logrocket';
 import setupLogRocketReact from 'logrocket-react';
 import * as Sentry from '@sentry/browser';

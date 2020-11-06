@@ -33,7 +33,6 @@ module.exports = {
         icon: 'src/assets/images/profile-pic--large.png'
       }
     },
-    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
