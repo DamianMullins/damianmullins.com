@@ -1,5 +1,4 @@
 ---
-type: 'diary'
 slug: "/learn-react-by-building-a-web-app-week-5/"
 title: Learn React by building a web app — Week 5
 date: "2018-04-20T15:53"

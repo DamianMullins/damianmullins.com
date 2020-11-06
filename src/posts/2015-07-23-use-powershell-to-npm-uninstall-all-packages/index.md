@@ -1,5 +1,4 @@
 ---
-type: 'blog'
 slug: "/use-powershell-to-npm-uninstall-all-packages/"
 title: Use PowerShell to npm uninstall all packages
 date: "2015-07-23T14:18"

@@ -1,5 +1,4 @@
 ---
-type: 'blog'
 slug: "/my-first-week-with-python-django/"
 title: My first week with Python, Django & Google App Engine
 date: "2012-08-16T13:35"

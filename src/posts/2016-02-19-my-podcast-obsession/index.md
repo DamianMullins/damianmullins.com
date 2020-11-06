@@ -1,5 +1,4 @@
 ---
-type: 'blog'
 slug: "/my-podcast-obsession/"
 title: My podcast obsession
 date: "2016-02-19T09:46"

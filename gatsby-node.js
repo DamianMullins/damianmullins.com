@@ -6,7 +6,6 @@ exports.createPages = ({ actions, graphql }) => {
 
   return new Promise((resolve, reject) => {
     const postTemplate = nodepath.resolve('src/templates/Post.js');
-    const diaryTemplate = nodepath.resolve('src/templates/DiaryPost.js');
     const tagTemplate = nodepath.resolve('src/templates/Tags.js');
 
     resolve(
@@ -20,7 +19,6 @@ exports.createPages = ({ actions, graphql }) => {
                 frontmatter {
                   slug
                   tags
-                  type
                 }
               }
             }
@@ -34,12 +32,11 @@ exports.createPages = ({ actions, graphql }) => {
         const posts = result.data.allMarkdownRemark.edges;
 
         posts.forEach(({ node }) => {
-          const { slug, type } = node.frontmatter;
-          const component = type === 'blog' ? postTemplate : diaryTemplate;
+          const { slug } = node.frontmatter;
 
           createPage({
             path: slug,
-            component
+            component: postTemplate
           });
         });
 
