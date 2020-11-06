@@ -9,7 +9,6 @@ import Layout from "../components/Layout";
 import Tags from '../components/Tags';
 
 import styles from '../styles/post.module.scss';
-import layoutStyles from '../styles/layout.module.scss';
 
 const Post = ({ data }) => {
   const { markdownRemark: post } = data;
