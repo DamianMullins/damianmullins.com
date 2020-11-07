@@ -84,14 +84,14 @@ $spacing: 1.45rem;
   width: 100%;
 
   li {
-    font-size: 22px;
+    font-size: 1.4rem;
     padding: 10px 0;
   }
 
   a {
     background-image: none;
     color: $c-light;
-    font-weight: 700;
+    font-weight: 600;
 
     &:hover {
       @include links($c-dark, $c-light);

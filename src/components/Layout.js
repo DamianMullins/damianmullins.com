@@ -80,9 +80,9 @@ export default ({ children }) => (
 
           <Header />
 
-          <div className={layoutStyles.l_container}>
+          <main className={layoutStyles.l_container}>
             {children}
-          </div>
+          </main>
 
           <Footer
             author={author}

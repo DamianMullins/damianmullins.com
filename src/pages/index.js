@@ -23,8 +23,8 @@ export default ({ data }) => {
 
       {posts.length &&
         posts.map(({ node }) => {
-          const { id, excerpt, timeToRead } = node;
-          const { slug, title, date } = node.frontmatter;
+          const { id, timeToRead } = node;
+          const { slug, title, date, description } = node.frontmatter;
 
           return (
             <PostListing
@@ -32,8 +32,8 @@ export default ({ data }) => {
               slug={slug}
               title={title}
               posted={date}
-              excerpt={excerpt}
               timeToRead={timeToRead}
+              description={description}
             />
           );
         })}
@@ -56,12 +56,12 @@ export const query = graphql`
       edges {
         node {
           id
-          excerpt(pruneLength: 250)
           timeToRead
           frontmatter {
             slug
             title
-            date
+            date,
+            description
           }
         }
       }
