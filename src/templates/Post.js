@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import { format } from 'date-fns';
 
 import Layout from "../components/Layout";
-
 import Tags from '../components/Tags';
+import PostTime from '../components/PostTime';
 
 import styles from '../styles/post.module.scss';
 
@@ -24,11 +23,13 @@ const Post = ({ data }) => {
 
       <h1>{title}</h1>
 
-      <p className={styles.post_meta}>
-        <time>{format(new Date(date), 'do MMMM yyyy')}</time> — {post.timeToRead} minute read
-      </p>
+      <PostTime
+        posted={date}
+        timeToRead={post.timeToRead} />
 
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div
+        className={styles.post}
+        dangerouslySetInnerHTML={{ __html: post.html }} />
 
       <Tags tags={tags} />
     </Layout>

@@ -39,7 +39,7 @@ export default {
 
 To start we need to locate the top-level element of the component using the Chrome devtools elements panel. In this case, the element is the `h1`.
 
-![Screenshot of the component top-level element highlighted in the Chrome devtools elements panel](devtools-elements.png)
+[![Screenshot of the component top-level element highlighted in the Chrome devtools elements panel](devtools-elements.png)](devtools-elements.png)
 
 ### Using the $0 Command
 
@@ -51,7 +51,7 @@ Once you have the element selected you can then move to the console panel in dev
 
 To see the Vue instance details you can type `$0.__vue__`.
 
-![Screenshot of Vue instance object in the Chrome devtools console panel](devtools-$0-collapsed.png)
+[![Screenshot of Vue instance object in the Chrome devtools console panel](devtools-$0-collapsed.png)](devtools-$0-collapsed.png)
 
 ### Using the document.querySelector Method
 
@@ -63,13 +63,13 @@ document.querySelector('[data-v-763db97b]').__vue__
 
 Here we’re using looking up the element via its data attribute, but you can use any valid CSS selector within `querySelector`.
 
-![Screenshot of Vue instance object in the Chrome devtools console panel](devtools-qs-collapsed.png)
+[![Screenshot of Vue instance object in the Chrome devtools console panel](devtools-qs-collapsed.png)](devtools-qs-collapsed.png)
 
 ## Locating the Prop Value
 
 Now that we have a reference to the Vue component instance we can expand it in the console to see what’s inside:
 
-![Screenshot of Vue instance object expanded in the Chrome devtools console panel](devtools-vue-expanded.png)
+[![Screenshot of Vue instance object expanded in the Chrome devtools console panel](devtools-vue-expanded.png)](devtools-vue-expanded.png)
 
 Welcome to the guts of Vue.js! Here you can see all of the object properties Vue has attached to the component. If you're using any plugins such as Vuex or vue-i18n you’ll see a reference to them here as well.
 

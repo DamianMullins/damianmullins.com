@@ -3,7 +3,7 @@
 @import 'partials/variables';
 
 html {
-  font-size: 125%;
+  font-size: 18px;
   line-height: 1.45em;
   box-sizing: border-box;
 }
@@ -20,11 +20,33 @@ html {
   box-sizing: inherit;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dd,
+p,
+figure,
+fieldset,
+form,
+noscript,
+iframe,
+address,
+:global(.gatsby-highlight) {
+  margin: 0 0 $spacing;
+  padding: 0;
+}
+
 body {
   background-color: $c-dark;
   color: $c-light;
   font-family: $font-stack;
   font-weight: 300;
+  font-size: 18px;
+  font-size: 1rem;
   padding-top: 5rem;
   word-wrap: break-word;
 }
@@ -41,6 +63,10 @@ h5,
 h6 {
   font-weight: 600;
   line-height: $spacing;
+
+  a {
+    display: none;
+  }
 }
 
 
@@ -49,18 +75,8 @@ h3,
 h4,
 h5,
 h6 {
-  border-left: solid 1px #00cd81;
-  padding-left: 1.25rem!important;
-
-  // &:before {
-  //   content: "*";
-  //   color: #00cd81;
-  //   font-weight: 400;
-  //   line-height: 2.2rem;
-  //   margin-left: -1.25rem;
-  //   padding-right: .5rem;
-  //   position: absolute;
-  // }
+  border-left: solid 5px $c-green;
+  padding-left: 1.25rem;
 }
 
 h1 {
@@ -98,6 +114,7 @@ ol {
 }
 
 pre {
+  border-radius: 8px;
   margin: 0 0 $spacing;
   padding: 0;
   font-size: 0.85rem;
@@ -127,31 +144,11 @@ blockquote {
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-img,
-dl,
-dd,
-p,
-figure,
-fieldset,
-form,
-noscript,
-iframe,
-address {
-  margin: 0 0 $spacing;
-  padding: 0;
-}
-
 b,
 strong,
 dt,
 th {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 li {
@@ -217,4 +214,9 @@ a:hover {
 
 blockquote > :last-child {
   margin-bottom: 0;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    font-size: 0.9rem;
 }
