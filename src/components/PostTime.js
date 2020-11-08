@@ -12,7 +12,7 @@ const PostTime = ({ posted, timeToRead }) => (
 
 PostTime.propTypes = {
   posted: PropTypes.string.isRequired,
-  timeToRead: PropTypes.string.isRequired
+  timeToRead: PropTypes.number.isRequired
 };
 
 export default PostTime;
