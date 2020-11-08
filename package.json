@@ -18,7 +18,8 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "@sentry/browser": "5.27.3",
+    "@sentry/react": "5.27.3",
+    "@sentry/tracing": "5.27.3",
     "date-fns": "2.16.1",
     "gatsby": "2.25.3",
     "gatsby-plugin-feed": "2.6.0",

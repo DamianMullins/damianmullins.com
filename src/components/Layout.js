@@ -3,7 +3,6 @@ import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import LogRocket from 'logrocket';
 import setupLogRocketReact from 'logrocket-react';
-import * as Sentry from '@sentry/browser';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -20,19 +19,6 @@ if (environment === 'production') {
     LogRocket.init('u8t5r0/damianmullinscom');
 
     setupLogRocketReact(LogRocket);
-
-    Sentry.init({
-      dsn: 'https://b7ebba6ca5dd4d65a2ee0ea7f7665a22@sentry.io/1197101',
-      environment,
-      release: `damianmullins@${version}`
-    });
-
-    Sentry.configureScope(scope => {
-      scope.addEventProcessor(async event => {
-        event.extra.sessionURL = LogRocket.sessionURL;
-        return event;
-      });
-    });
   } catch (e) { }
 }
 
