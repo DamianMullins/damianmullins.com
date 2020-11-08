@@ -7,17 +7,12 @@
 
 .post {
   border-bottom: solid 1px $c-light-01;
+  font-size: 1.1rem;
   margin-bottom: 1.45rem;
 
-  p {
-    font-size: 1.1rem;
-
-    &:first-of-type {
-      font-size: 1.2rem;
-    }
+  > p:first-of-type {
+    font-size: 1.2rem;
   }
-
-
 
   img {
     background-color: $c-dark-02;

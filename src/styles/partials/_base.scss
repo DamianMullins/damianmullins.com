@@ -131,17 +131,11 @@ table {
 }
 
 blockquote {
-  margin: 0 0 $spacing -1.0875rem;
+  margin: 0 0 $spacing 0;
   padding: 1rem;
   line-height: $spacing;
-  border-left: 0.54375rem solid $c-dark;
+  border-left: 5px solid $c-dark-02;
   font-style: italic;
-
-  @media only screen and (min-width: 480px) {
-    margin-left: 0;
-    border: 1px solid $c-dark;
-    border-left: 0.54375rem solid $c-dark;
-  }
 }
 
 b,
