@@ -9,5 +9,3 @@ Sentry.init({
 
     tracesSampleRate: 1.0
 });
-
-throw new Error('ssss');
