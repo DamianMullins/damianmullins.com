@@ -9,7 +9,9 @@ import post from '../styles/post-listing.module.scss';
 const PostListing = ({ slug, title, posted, description, timeToRead }) => (
   <article className={post.post}>
     <Link to={slug} className={post.link}>
-      <h2 onClick={methodDoesNotExist}>{title}</h2>
+      {
+        // eslint-disable-next-line no-undef
+      }<h2 onClick={methodDoesNotExist}>{title}</h2>
 
       <PostTime
         posted={posted}
