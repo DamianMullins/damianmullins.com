@@ -5,7 +5,6 @@ import * as Sentry from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
 
 const environment = process.env.NODE_ENV;
-const version = process.env.GATSBY_RELEASE_VERSION;
 
 if (environment === 'production') {
   LogRocket.init('u8t5r0/damianmullinscom');
@@ -15,7 +14,7 @@ if (environment === 'production') {
   Sentry.init({
     dsn: "https://b7ebba6ca5dd4d65a2ee0ea7f7665a22@o43921.ingest.sentry.io/1197101",
     environment,
-    release: `damianmullins@${version}`,
+    release: '%GATSBY_RELEASE_VERSION%',
 
     integrations: [
       new Integrations.BrowserTracing(),
