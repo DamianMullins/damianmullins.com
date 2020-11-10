@@ -13,6 +13,8 @@ module.exports = {
     linkedInUsername: 'damianmullins'
   },
   plugins: [
+    'gatsby-plugin-preact',
+    'gatsby-plugin-webpack-bundle-analyser-v2',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
