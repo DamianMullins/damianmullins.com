@@ -96,7 +96,13 @@ module.exports = {
         ]
       }
     },
-    'gatsby-plugin-sass',
+    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        implementation: require('sass'),
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-transformer-remark',
