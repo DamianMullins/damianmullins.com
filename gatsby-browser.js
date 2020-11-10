@@ -19,10 +19,7 @@ if (environment === 'production') {
 
     integrations: [
       new Sentry.Integrations.UserAgent(),
-      new Integrations.BrowserTracing(),
-      new Integrations.CaptureConsole({
-        levels: ['error']
-      })
+      new Integrations.BrowserTracing()
     ],
 
     tracesSampleRate: 1.0
