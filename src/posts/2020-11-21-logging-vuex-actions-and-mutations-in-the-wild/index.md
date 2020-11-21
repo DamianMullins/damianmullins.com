@@ -79,7 +79,7 @@ store.subscribe((mutation, state) => {
 });
 ```
 
-> If you are only interested in a single state property you can log that out instead of the entire `state` object.
+> If you are only interested in a single `state` property you can log that out instead of the entire `state` object.
 
 After running this code in the browser devtools console, whenever you trigger a mutation in your application you should see something similar to this:
 
