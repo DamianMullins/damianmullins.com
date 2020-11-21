@@ -20,7 +20,7 @@ Working at Just Eat has been incredible, with so many talented people and some i
 
 My podcast obsession has grown over the course of the year, my commute into work takes around two hours each day so what better way to pass the time than listening to lots of podcasts!
 
-To keep up to date with the latest news on the web I subscribe to a number of email newsletters, this has inspired me to create my own newsletter [_Need Input_](/newsletter) which I send out weekly. The great thing about putting this together is that it forces me to _actually read_ a lot of articles and play around with code, rather than saving them to Pocket where they sit unread forevermore (I'm getting better at working through these).
+To keep up to date with the latest news on the web I subscribe to a number of email newsletters, this has inspired me to create my own newsletter _Need Input_) which I send out weekly. The great thing about putting this together is that it forces me to _actually read_ a lot of articles and play around with code, rather than saving them to Pocket where they sit unread forevermore (I'm getting better at working through these).
 
 #### Tech
 

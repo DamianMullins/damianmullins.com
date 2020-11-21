@@ -18,7 +18,7 @@ If you do not need to programmatically access part of a component there is a way
 
 This is done by first locating the call to `new Vue()` in your compiled code using the sources panel in devtools — this can be quite a pain to track down as the code will likely be minified and obfuscated. One tip which can be useful is to search your JavaScript files for any of the options you might be passing into `new Vue()` e.g. if you are using the render function:
 
-```javascript
+```js
 const app = new Vue({
   render: h => h(App)
 });
@@ -46,7 +46,7 @@ As well as figuring out how to inspect the Vue internal variables let’s also a
 
 Say we have a component which has a prop controlling the text of an element, how can we force the value to change in order to trigger a UI update?
 
-```javascript
+```js
 <template>
   <h1>{{ msg }}</h1>
 </template>
@@ -85,7 +85,7 @@ To see the Vue instance details you can type `$0.__vue__`.
 
 You can also select the element using any of the DOM lookup methods such as `querySelector` or `getElementById` etc. In this case, we’ll use `document.querySelector` to see the Vue instance:
 
-```javascript
+```js
 document.querySelector('[data-v-763db97b]').__vue__
 ```
 
@@ -105,7 +105,7 @@ Let’s continue with our task of updating the prop value. Look carefully and yo
 
 You can view the prop value on its own using your preferred command in the console:
 
-```javascript
+```js
 // Using $0
 $0.__vue__.msg
 
@@ -117,7 +117,7 @@ document.querySelector('[data-v-763db97b]').__vue__.msg
 
 Updating the prop value is now a case of updating the variable assignment to your desired value. So, for example, using the `$0` technique above you’d type this into the console:
 
-```javascript
+```js
 $0.__vue__.msg = 'Hello from the updated value!'
 ```
 
@@ -131,4 +131,4 @@ One thing to note is that you aren’t limited to just string values, you can up
 
 There are limitations with the types of things you can update using this technique such as not being able to update computed properties as they have no setter. Still, being able to inspect the values assigned to components in production can be extremely useful.
 
-In a future post, I’ll use the technique described in this post to set up logging of Vuex actions and mutation information to the devtools console.
+Finally, if you ever need to inspect a Vuex store in production, check out this post which walks you through how to set up [logging of Vuex actions and mutation information to the devtools console](/logging-vuex-actions-and-mutations-in-the-wild/).

@@ -58,7 +58,7 @@ Start by running `npm init` inside a new project folder. This will create a `pac
 
 Add AVA to the project by typing `npm install ava --save-dev`, then update the `scripts` section in `package.json`:
 
-```javascript
+```js
 "scripts": {
   "test": "ava --verbose"
 }
@@ -79,7 +79,7 @@ Let's fix that by adding a test.
 
 Create a `test` directory, with a  file named `demo.test.js` inside, then add a test:
 
-```javascript
+```js
 import test from 'ava';
 
 test('can add numbers', t => {
@@ -121,7 +121,7 @@ As you can see, there is a lot of useful information provided in order to help u
 
 To demonstrate how to test a module, create a new folder called `src` in the root of the project with a file inside called `demo-module.js` with the contents:
 
-```javascript
+```js
 export function demo () {
     return 'Hello, from demo module.';
 }
@@ -129,7 +129,7 @@ export function demo () {
 
 Update `demo.test.js` by first importing the module, then adding a new test:
 
-```javascript
+```js
 import test from 'ava';
 import { demo } from '../src/demo-module';
 
@@ -171,7 +171,7 @@ The next two sections look at how each technique can be achieved.
 
 Add `babel-register` by running `npm install babel-register --save-dev`, then add a `"babel"` config to `package.json`
 
-```javascript
+```js
 "babel": {
   "presets": ["es2015"]
 }
@@ -179,7 +179,7 @@ Add `babel-register` by running `npm install babel-register --save-dev`, then ad
 
 Next, add `"babel-register"` to the AVA `"require"` section
 
-```javascript
+```js
 "ava": {
   "require": ["babel-register"]
 }
@@ -206,7 +206,7 @@ Start by adding the `babel-cli` and `babel-preset-es2015` packages to the projec
 
 Next, add a `"babel"` config to  `package.json`
 
-```javascript
+```js
 "babel": {
   "presets": ["es2015"]
 }
@@ -214,7 +214,7 @@ Next, add a `"babel"` config to  `package.json`
 
 In order to run the tests, we need to update the npm scripts. Add a new npm script called `precompile`
 
-```javascript
+```js
 "scripts": {
     "precompile": "babel src --out-dir=dist",
 
@@ -226,7 +226,7 @@ The `precompile` npm script will tell Babel to take the files in the `src` direc
 
 Next, the `test` npm script needs to be updated so that it runs the precompile step before running the tests
 
-```javascript
+```js
 "test": "npm run precompile && ava --verbose"
 ```
 
@@ -234,7 +234,7 @@ The double ampersand (`&&`) tells npm to first run the precompile script and the
 
 The final task is to update the reference to `demo-module` inside `demo.test.js` to point at the compiled code, we do this by replacing `../src` with `../dist`:
 
-```javascript
+```js
 import { demo } from '../dist/demo-module';
 ```
 
@@ -275,13 +275,13 @@ Add browser-env to the project `npm install browser-env --save-dev`.
 
 Create a `helpers` directory (which is ignored by convention when using AVA) inside `test`, then add `setup-browser-env.js` with the contents
 
-```javascript
+```js
 require('browser-env')();
 ```
 
 We need to tell AVA to require this module before any of the tests are run so that browser-env can create the full browser environment before any DOM references are encountered. Inside your `package.json` add
 
-```javascript
+```js
 "ava": {
   "require": ["./test/helpers/setup-browser-env.js"]
 }
@@ -292,7 +292,7 @@ We need to tell AVA to require this module before any of the tests are run so th
 
 Let's write a test which makes use of the `document` global which has been provided thanks to jsdom. Add a new test to the end of `demo.test.js`:
 
-```javascript
+```js
 ...
 
 test('can query for DOM elements', t => {
@@ -323,7 +323,7 @@ As a bonus let's quickly set up some test coverage. Because AVA runs each test f
 
 Add it to the project with `npm install nyc --save-dev`, then update the `test` npm script by adding `nyc` before the call to `ava`:
 
-```javascript
+```js
 "scripts": {
   "test": "nyc ava --verbose"
 }
@@ -331,7 +331,7 @@ Add it to the project with `npm install nyc --save-dev`, then update the `test` 
 
 You'll also need to update the Babel config to tell it to include source maps when developing so that the reporter can output the correct lines for the transpiled code:
 
-```javascript
+```js
 "babel": {
   ...
 
