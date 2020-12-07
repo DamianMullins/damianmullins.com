@@ -35,12 +35,11 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: 'gatsby-plugin-gtag',
       options: {
         trackingId: 'UA-1425869-12',
-        head: false,
-        anonymize: true,
-        respectDNT: true
+        head: true,
+        anonymize: true
       }
     },
     {
