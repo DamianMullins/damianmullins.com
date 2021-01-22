@@ -99,10 +99,7 @@ module.exports = {
     },
     'gatsby-plugin-sitemap',
     {
-      resolve: 'gatsby-plugin-sass',
-      options: {
-        implementation: require('sass'),
-      },
+      resolve: 'gatsby-plugin-sass'
     },
     'gatsby-plugin-react-helmet',
     {

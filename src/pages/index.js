@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import Strapline from '../components/Strapline';
 import PostListing from '../components/PostListing';
 
-export default ({ data }) => {
+const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
   const { authorBio } = data.site.siteMetadata;
 
@@ -40,6 +40,8 @@ export default ({ data }) => {
     </Layout>
   );
 };
+
+export default IndexPage;
 
 export const query = graphql`
   {

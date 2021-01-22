@@ -1,4 +1,4 @@
-@import 'partials/colors';
+@import '../partials/colors';
 
 @mixin links($foreground: $c-light, $background: $c-dark) {
   color: $background;
