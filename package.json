@@ -2,7 +2,7 @@
   "name": "damianmullins",
   "description": "Development Blog for Damian mullins – Senior Web UI Engineer at JUST EAT.",
   "homepage": "https://www.damianmullins.com",
-  "version": "4.36.0",
+  "version": "4.37.0",
   "author": "Damian Mullins <damian@lowflyingowls.co.uk> (https://www.damianmullins.com/)",
   "keywords": [
     "gatsby"
@@ -18,39 +18,38 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "@sentry/react": "6.0.1",
-    "@sentry/tracing": "6.0.1",
-    "date-fns": "2.16.1",
-    "gatsby": "2.31.1",
-    "gatsby-plugin-catch-links": "2.9.0",
-    "gatsby-plugin-feed": "2.12.0",
-    "gatsby-plugin-manifest": "2.11.0",
-    "gatsby-plugin-react-helmet": "3.9.0",
-    "gatsby-plugin-sass": "3.1.0",
-    "gatsby-plugin-sitemap": "2.11.0",
-    "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.18",
-    "gatsby-remark-copy-linked-files": "2.9.0",
+    "@sentry/react": "6.10.0",
+    "@sentry/tracing": "6.10.0",
+    "date-fns": "2.23.0",
+    "gatsby": "3.10.1",
+    "gatsby-plugin-catch-links": "3.10.0",
+    "gatsby-plugin-feed": "3.10.0",
+    "gatsby-plugin-manifest": "3.10.0",
+    "gatsby-plugin-react-helmet": "4.10.0",
+    "gatsby-plugin-sass": "4.10.0",
+    "gatsby-plugin-sitemap": "4.6.0",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.24",
+    "gatsby-remark-copy-linked-files": "4.7.0",
     "gatsby-remark-heading-slug": "0.2.0",
-    "gatsby-remark-prismjs": "3.12.0",
-    "gatsby-source-filesystem": "2.10.0",
-    "gatsby-transformer-remark": "2.15.0",
-    "logrocket": "1.0.14",
+    "gatsby-remark-prismjs": "5.7.0",
+    "gatsby-source-filesystem": "3.10.0",
+    "gatsby-transformer-remark": "4.7.0",
+    "logrocket": "1.3.0",
     "logrocket-react": "4.0.1",
-    "prism-themes": "1.5.0",
-    "prismjs": "1.23.0",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "prism-themes": "1.8.0",
+    "prismjs": "1.24.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "react-helmet": "6.1.0",
-    "sass": "1.32.5",
-    "slugify": "1.4.6"
+    "sass": "1.36.0",
+    "slugify": "1.6.0"
+  },
+  "devDependencies": {
+    "gatsby-plugin-gtag": "1.0.13"
   },
   "browserslist": [
     "> 5%",
     "last 2 versions",
-    "Safari >= 8",
-    "not ie 10"
-  ],
-  "devDependencies": {
-    "gatsby-plugin-gtag": "1.0.13"
-  }
+    "not ie 11"
+  ]
 }

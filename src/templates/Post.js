@@ -7,11 +7,12 @@ import Layout from "../components/Layout";
 import Tags from '../components/Tags';
 import PostTime from '../components/PostTime';
 
-import styles from '../styles/post.module.scss';
+import { post } from '../styles/post.module.scss';
 
 const Post = ({ data }) => {
-  const { markdownRemark: post } = data;
-  const { title, date, description, tags } = post.frontmatter;
+  const { markdownRemark } = data;
+  const { frontmatter, timeToRead, html } = markdownRemark;
+  const { title, date, description, tags } = frontmatter;
   const { authorBio } = data.site.siteMetadata;
 
   return (
@@ -25,11 +26,11 @@ const Post = ({ data }) => {
 
       <PostTime
         posted={date}
-        timeToRead={post.timeToRead} />
+        timeToRead={timeToRead} />
 
       <div
-        className={styles.post}
-        dangerouslySetInnerHTML={{ __html: post.html }} />
+        className={post}
+        dangerouslySetInnerHTML={{ __html: html }} />
 
       <Tags tags={tags} />
     </Layout>

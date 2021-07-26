@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from '../styles/strapline.module.scss';
+import { strapline, heading } from '../styles/strapline.module.scss';
 
 const Strapline = ({ text }) => (
-  <div className={styles.strapline}>
-    <h1 className={styles.heading}>{text}</h1>
+  <div className={strapline}>
+    <h1 className={heading}>{text}</h1>
   </div>
 );
 
