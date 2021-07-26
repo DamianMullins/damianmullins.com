@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 
-import styles from '../styles/nav.module.scss';
+import { wrapper, input, line, menu } from '../styles/nav.module.scss';
 
 class Nav extends Component {
   navToggleRef = React.createRef();
@@ -14,18 +14,18 @@ class Nav extends Component {
 
   render() {
     return (
-      <nav className={styles.wrapper} role="navigation">
+      <nav className={wrapper} role="navigation">
         <input
-          className={styles.input}
+          className={input}
           type="checkbox"
           ref={this.navToggleRef}
         />
 
-        <span className={styles.line} />
-        <span className={styles.line} />
-        <span className={styles.line} />
+        <span className={line} />
+        <span className={line} />
+        <span className={line} />
 
-        <ul className={styles.menu} onClick={this.handleClick}>
+        <ul className={menu} onClick={this.handleClick}>
           <li>
             <Link to="/">Home</Link>
           </li>

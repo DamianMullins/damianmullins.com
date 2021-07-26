@@ -7,11 +7,11 @@ import Footer from '../components/Footer';
 
 import 'prism-themes/themes/prism-material-dark.css';
 import '../styles/global.module.scss';
-import layoutStyles from '../styles/layout.module.scss';
+import { l_container } from '../styles/layout.module.scss';
 
 const version = process.env.GATSBY_RELEASE_VERSION;
 
-export default ({ children }) => (
+const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
       {
@@ -55,7 +55,7 @@ export default ({ children }) => (
 
           <Header />
 
-          <main className={layoutStyles.l_container}>
+          <main className={l_container}>
             {children}
           </main>
 
@@ -70,3 +70,5 @@ export default ({ children }) => (
       )}
   />
 );
+
+export default Layout;

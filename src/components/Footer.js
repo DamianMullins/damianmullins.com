@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 
-import footer from '../styles/footer.module.scss';
-import layoutStyles from '../styles/layout.module.scss';
+import { footer, links, link, noMargin } from '../styles/footer.module.scss';
+import { l_container } from '../styles/layout.module.scss';
 
 const Footer = ({
   author,
@@ -12,32 +12,32 @@ const Footer = ({
   twitterUsername,
   linkedInUsername
 }) => (
-  <div className={footer.footer}>
-    <div className={layoutStyles.l_container}>
-      <ul className={footer.links}>
+  <div className={footer}>
+    <div className={l_container}>
+      <ul className={links}>
         {authorEmail && (
-          <li className={footer.link}>
+          <li className={link}>
             <a href={`mailto:${authorEmail}`} rel="external">
               Email
             </a>
           </li>
         )}
         {githubUsername && (
-          <li className={footer.link}>
+          <li className={link}>
             <a href={`https://github.com/${githubUsername}`} rel="external">
               GitHub
             </a>
           </li>
         )}
         {twitterUsername && (
-          <li className={footer.link}>
+          <li className={link}>
             <a href={`https://twitter.com/${twitterUsername}`} rel="external">
               Twitter
             </a>
           </li>
         )}
         {linkedInUsername && (
-          <li className={footer.link}>
+          <li className={link}>
             <a
               href={`https://www.linkedin.com/in/${linkedInUsername}`}
               rel="external"
@@ -48,7 +48,7 @@ const Footer = ({
         )}
       </ul>
 
-      <p className={footer.noMargin}>
+      <p className={noMargin}>
         &copy; {author} {format(new Date(), 'yyyy')}
       </p>
     </div>
