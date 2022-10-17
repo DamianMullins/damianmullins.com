@@ -1,8 +1,8 @@
 {
   "name": "damianmullins",
-  "description": "Development Blog for Damian mullins – Senior Web UI Engineer at JUST EAT.",
+  "description": "Development Blog for Damian mullins – Senior Full-Stack Engineer at Growth Kitchen.",
   "homepage": "https://www.damianmullins.com",
-  "version": "4.39.0",
+  "version": "4.40.0",
   "author": "Damian Mullins <damian@lowflyingowls.co.uk> (https://www.damianmullins.com/)",
   "keywords": [
     "gatsby"
