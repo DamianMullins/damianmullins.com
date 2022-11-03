@@ -22,7 +22,18 @@ if (environment === 'production') {
       new Integrations.BrowserTracing()
     ],
 
-    tracesSampleRate: 1.0
+    tracesSampleRate: 1.0,
+
+    beforeSend (event) {
+      const logRocketSession = LogRocket.sessionURL;
+
+      if (logRocketSession !== null) {
+        event.extra["LogRocket"] = logRocketSession;
+        return event;
+      } else {
+        return event;
+      }
+    },
   });
 
   LogRocket.getSessionURL(sessionURL => {
