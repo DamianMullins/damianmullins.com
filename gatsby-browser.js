@@ -18,7 +18,7 @@ if (environment === 'production') {
     release,
 
     integrations: [
-      new Sentry.Integrations.UserAgent(),
+      new Sentry.Integrations.HttpContext(),
       new Integrations.BrowserTracing()
     ],
 
