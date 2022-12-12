@@ -1,4 +1,4 @@
-import { StaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 
@@ -11,64 +11,60 @@ import { l_container } from '../styles/layout.module.scss';
 
 const version = process.env.GATSBY_RELEASE_VERSION;
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      {
-        site {
-          siteMetadata {
-            title
-            author
-            authorEmail
-            authorBio
-            githubUsername
-            twitterUsername
-            linkedInUsername
-          }
-        }
-      }
-    `}
-
-    render={({
-      site: {
-        siteMetadata: {
-          title,
-          author,
-          authorBio,
-          authorEmail,
-          githubUsername,
-          twitterUsername,
+const Layout = ({ children }) => {
+  const {
+    site: {
+      siteMetadata: {
+        title,
+        author,
+        authorBio,
+        authorEmail,
+        githubUsername,
+        twitterUsername,
+        linkedInUsername,
+      },
+    },
+  } = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          title
+          author
+          authorEmail
+          authorBio
+          githubUsername
+          twitterUsername
           linkedInUsername
         }
       }
-    }) => (
-        <Fragment>
-          <Helmet
-            key="app-head"
-            titleTemplate={`%s — ${title}`}
-            defaultTitle={title}
-          >
-            <html lang="en" />
-            <meta name="description" content={authorBio} />
-            <meta name="release" content={version} />
-          </Helmet>
+    }
+  `);
 
-          <Header />
+  return (
+    <Fragment>
+      <Helmet
+        key="app-head"
+        titleTemplate={`%s — ${title}`}
+        defaultTitle={title}
+      >
+        <html lang="en" />
+        <meta name="description" content={authorBio} />
+        <meta name="release" content={version} />
+      </Helmet>
 
-          <main className={l_container}>
-            {children}
-          </main>
+      <Header />
 
-          <Footer
-            author={author}
-            authorEmail={authorEmail}
-            githubUsername={githubUsername}
-            twitterUsername={twitterUsername}
-            linkedInUsername={linkedInUsername}
-          />
-        </Fragment>
-      )}
-  />
-);
+      <main className={l_container}>{children}</main>
+
+      <Footer
+        author={author}
+        authorEmail={authorEmail}
+        githubUsername={githubUsername}
+        twitterUsername={twitterUsername}
+        linkedInUsername={linkedInUsername}
+      />
+    </Fragment>
+  );
+};
 
 export default Layout;
