@@ -60,10 +60,10 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      limit: 2000
+      limit: 2000,
       filter: { frontmatter: { published: { eq: true } } }
     ) {
-      group(field: frontmatter___tags) {
+      group(field: { frontmatter: { tags: SELECT } }) {
         fieldValue
         totalCount
       }
