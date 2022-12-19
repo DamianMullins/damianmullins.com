@@ -31,7 +31,7 @@
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.30",
     "gatsby-remark-copy-linked-files": "6.2.0",
     "gatsby-remark-heading-slug": "0.2.0",
-    "gatsby-remark-prismjs": "7.2.0",
+    "gatsby-remark-prismjs": "7.3.0",
     "gatsby-source-filesystem": "5.2.0",
     "gatsby-transformer-remark": "6.2.0",
     "logrocket": "3.0.1",
