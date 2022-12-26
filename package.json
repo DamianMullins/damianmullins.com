@@ -33,7 +33,7 @@
     "gatsby-remark-heading-slug": "0.2.0",
     "gatsby-remark-prismjs": "7.3.0",
     "gatsby-source-filesystem": "5.3.1",
-    "gatsby-transformer-remark": "6.3.1",
+    "gatsby-transformer-remark": "6.3.2",
     "logrocket": "3.0.1",
     "logrocket-react": "5.0.1",
     "prism-themes": "1.9.0",
