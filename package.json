@@ -2,7 +2,7 @@
   "name": "damianmullins",
   "description": "Development Blog for Damian mullins - Senior Full-Stack Engineer at Growth Kitchen.",
   "homepage": "https://www.damianmullins.com",
-  "version": "4.43.0",
+  "version": "4.44.0",
   "author": "Damian Mullins <damian@lowflyingowls.co.uk> (https://www.damianmullins.com/)",
   "keywords": [
     "gatsby"
@@ -18,10 +18,10 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "@sentry/react": "7.27.0",
-    "@sentry/tracing": "7.27.0",
+    "@sentry/react": "7.29.0",
+    "@sentry/tracing": "7.29.0",
     "date-fns": "2.29.3",
-    "gatsby": "5.3.2",
+    "gatsby": "5.3.3",
     "gatsby-plugin-catch-links": "5.3.0",
     "gatsby-plugin-feed": "5.3.1",
     "gatsby-plugin-manifest": "5.3.1",
@@ -33,7 +33,7 @@
     "gatsby-remark-heading-slug": "0.2.0",
     "gatsby-remark-prismjs": "7.3.0",
     "gatsby-source-filesystem": "5.3.1",
-    "gatsby-transformer-remark": "6.3.1",
+    "gatsby-transformer-remark": "6.3.2",
     "logrocket": "3.0.1",
     "logrocket-react": "5.0.1",
     "prism-themes": "1.9.0",
