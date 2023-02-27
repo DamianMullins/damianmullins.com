@@ -5336,10 +5336,10 @@ gatsby-plugin-sass@6.6.0:
     resolve-url-loader "^3.1.5"
     sass-loader "^10.4.1"
 
-gatsby-plugin-sitemap@6.6.0:
-  version "6.6.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-6.6.0.tgz#6e51f9ffa14eac048dcb76aa4bc1f261bc050082"
-  integrity sha512-VtaoQMDGRBnySNetbgXcszt3w5B8MyTzJXXzUu5v6ljIwMoHvU9xVbheAG0OOUXsBO/RXag2ZqhLeV7/6rLj6g==
+gatsby-plugin-sitemap@6.7.0:
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-6.7.0.tgz#c9c758b66d0f90e4ec922b88cd2b4c139eeb0bb3"
+  integrity sha512-NEN1LQbVjJ1OiNCdvqCzuwL45IzfTQGVpIB8Ts0Wf30CAlfOqrLS3f2Oj2ce9sXu/6csPKMK8j+ndau+BPNvtg==
   dependencies:
     "@babel/runtime" "^7.20.13"
     common-tags "^1.8.2"
