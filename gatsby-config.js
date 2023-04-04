@@ -7,7 +7,7 @@ module.exports = {
     siteUrl: 'https://www.damianmullins.com',
     author,
     authorEmail: 'hello@damianmullins.com',
-    authorBio: `Hi, I'm ${author}, a Senior Full-Stack Engineer working at Growth Kitchen.`,
+    authorBio: `Hi, I'm ${author}, a Senior Full-Stack Engineer.`,
     githubUsername: 'DamianMullins',
     twitterUsername: 'DamianMullins',
     linkedInUsername: 'damianmullins'
