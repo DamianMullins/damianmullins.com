@@ -18,7 +18,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "@sentry/react": "7.50.0",
+    "@sentry/react": "7.51.1",
     "@sentry/tracing": "7.50.0",
     "date-fns": "2.30.0",
     "gatsby": "5.9.0",
