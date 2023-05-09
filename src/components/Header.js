@@ -12,6 +12,8 @@ const Header = ({ modifier }) => (
         src={profilePic}
         alt="Navigate to homepage"
         className={image}
+        height="54px"
+        width="54px"
       />
     </Link>
   </header>
