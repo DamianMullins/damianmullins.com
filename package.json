@@ -41,7 +41,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-helmet": "6.1.0",
-    "sass": "1.63.3",
+    "sass": "1.63.4",
     "slugify": "1.6.6"
   },
   "devDependencies": {
