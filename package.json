@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@sentry/react": "7.57.0",
-    "@sentry/tracing": "7.57.0",
+    "@sentry/tracing": "7.58.1",
     "date-fns": "2.30.0",
     "gatsby": "5.11.0",
     "gatsby-plugin-catch-links": "5.11.0",
