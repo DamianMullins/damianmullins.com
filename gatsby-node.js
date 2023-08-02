@@ -1,12 +1,12 @@
-const nodepath = require('path');
-const kebab = require('slugify');
+const nodepath = require('path')
+const kebab = require('slugify')
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions;
+  const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    const postTemplate = nodepath.resolve('src/templates/Post.js');
-    const tagTemplate = nodepath.resolve('src/templates/Tags.js');
+    const postTemplate = nodepath.resolve('src/templates/Post.js')
+    const tagTemplate = nodepath.resolve('src/templates/Tags.js')
 
     resolve(
       graphql(`
@@ -26,19 +26,19 @@ exports.createPages = ({ actions, graphql }) => {
         }
       `).then(result => {
         if (result.errors) {
-          reject(result.errors);
+          reject(result.errors)
         }
 
-        const posts = result.data.allMarkdownRemark.edges;
+        const posts = result.data.allMarkdownRemark.edges
 
         posts.forEach(({ node }) => {
-          const { slug } = node.frontmatter;
+          const { slug } = node.frontmatter
 
           createPage({
             path: slug,
             component: postTemplate
-          });
-        });
+          })
+        })
 
         // Builds an array of unique tags
         const tags = [
@@ -51,7 +51,7 @@ exports.createPages = ({ actions, graphql }) => {
               []
             )
           )
-        ];
+        ]
 
         tags.forEach(tag => {
           createPage({
@@ -60,9 +60,9 @@ exports.createPages = ({ actions, graphql }) => {
             context: {
               tag
             }
-          });
-        });
+          })
+        })
       })
-    );
-  });
-};
+    )
+  })
+}

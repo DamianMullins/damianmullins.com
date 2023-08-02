@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
-import kebab from 'slugify';
+import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
+import kebab from 'slugify'
 
 const Tags = ({ tags }) =>
   tags.length > 0 && (
@@ -16,10 +16,10 @@ const Tags = ({ tags }) =>
         ))}
       </ul>
     </Fragment>
-  );
+  )
 
 Tags.propTypes = {
   tags: PropTypes.array.isRequired
-};
+}
 
-export default Tags;
+export default Tags

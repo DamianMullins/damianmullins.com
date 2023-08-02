@@ -1,14 +1,14 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { graphql } from 'gatsby';
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { graphql } from 'gatsby'
 
-import Layout from "../components/Layout";
-import Strapline from '../components/Strapline';
-import PostListing from '../components/PostListing';
+import Layout from '../components/Layout'
+import Strapline from '../components/Strapline'
+import PostListing from '../components/PostListing'
 
 const IndexPage = ({ data }) => {
-  const posts = data.allMarkdownRemark.edges;
-  const { authorBio } = data.site.siteMetadata;
+  const posts = data.allMarkdownRemark.edges
+  const { authorBio } = data.site.siteMetadata
 
   return (
     <Layout>
@@ -23,8 +23,8 @@ const IndexPage = ({ data }) => {
 
       {posts.length &&
         posts.map(({ node }) => {
-          const { id, timeToRead } = node;
-          const { slug, title, date, description } = node.frontmatter;
+          const { id, timeToRead } = node
+          const { slug, title, date, description } = node.frontmatter
 
           return (
             <PostListing
@@ -35,13 +35,13 @@ const IndexPage = ({ data }) => {
               timeToRead={timeToRead}
               description={description}
             />
-          );
+          )
         })}
     </Layout>
-  );
-};
+  )
+}
 
-export default IndexPage;
+export default IndexPage
 
 export const query = graphql`
   {
@@ -62,11 +62,11 @@ export const query = graphql`
           frontmatter {
             slug
             title
-            date,
+            date
             description
           }
         }
       }
     }
   }
-`;
+`

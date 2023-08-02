@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
 
-import { header, link, image } from '../styles/header.module.scss';
-import profilePic from '../assets/images/profile-pic.avif';
+import { header, link, image } from '../styles/header.module.scss'
+import profilePic from '../assets/images/profile-pic.avif'
 
 const Header = ({ modifier }) => (
   <header className={header}>
@@ -17,10 +17,10 @@ const Header = ({ modifier }) => (
       />
     </Link>
   </header>
-);
+)
 
 Header.propTypes = {
   showLarge: PropTypes.bool
-};
+}
 
-export default Header;
+export default Header

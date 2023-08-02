@@ -1,7 +1,7 @@
 ---
-slug: "/inspecting-a-vue-application-in-production/"
+slug: '/inspecting-a-vue-application-in-production/'
 title: Inspecting a Vue application in production
-date: "2020-11-06T16:33"
+date: '2020-11-06T16:33'
 description: How can we inspect an application once released to production? In this post, we’ll walk through the options available to you along with some tricks and tips to make the process a little easier.
 tags:
   - javascript
@@ -21,7 +21,7 @@ This is done by first locating the call to `new Vue()` in your compiled code usi
 ```js
 const app = new Vue({
   render: h => h(App)
-});
+})
 ```
 
 Then you can search the minified JavaScript to find a reference to “render: “ and you’ll likely land right at the call to `new Vue()`. In the example below the Vue instance call had been obfuscated to `c = new s.a()`.

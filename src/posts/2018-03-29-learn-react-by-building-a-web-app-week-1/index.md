@@ -1,7 +1,7 @@
 ---
-slug: "/learn-react-by-building-a-web-app-week-1/"
+slug: '/learn-react-by-building-a-web-app-week-1/'
 title: Learn React by building a web app — Week 1
-date: "2018-03-29T22:13"
+date: '2018-03-29T22:13'
 description: I've just completed my first week learning React by building an application and it has gone better than expected 👐
 tags:
   - learning
@@ -15,8 +15,7 @@ published: true
 
 I've just completed my first week learning React by building an application and it has gone better than expected 👐
 
-This post is a run-through of *what* I spent my week working on rather than a guide to *how* I did it.
-
+This post is a run-through of _what_ I spent my week working on rather than a guide to _how_ I did it.
 
 <a id="what-features-will-be-in-the-first-iteration" aria-hidden="true"></a>
 
@@ -34,18 +33,15 @@ This post is a run-through of *what* I spent my week working on rather than a gu
 - Set up continuous integration (stretch goal).
 - Look into unit testing best practices in React (stretch goal).
 
-
 ## Choosing a name
 
 Before I could start creating the project I had to come up with a name. I needed a name which isn't in use in any of the app stores already and something which is easy to remember. I came up with Coinsly, which is nice and short and, I think, sounds "app like".
-
 
 ## Starting out
 
 I started by using [the Create-React-App sandbox on CodeSandbox](https://codesandbox.io/s/new), this provided a great starting point — no need to add npm dependencies, configure webpack config, or set up linting tasks — it's all done for you.
 
 My thinking was that If Create-React-App becomes too restrictive then I'll run the eject task so I can tweak the config in any way I see fit. Hopefully I won't have to do that for a while yet as I'd like to stay focused on building the app rather than having to dig into webpack configuration.
-
 
 ## Component details
 
@@ -95,7 +91,6 @@ PropTypes were added to each component to ensure that while developing the app t
 
 Create-React-App supports async/await out of the box so I went ahead and used the feature in place of the promise syntax across the entire codebase.
 
-
 ## The components
 
 Right, on with the component details!
@@ -116,7 +111,7 @@ This is a stateless functional component which displays details for an individua
 
 Not much to say about this component other than it sets the `checked` property of the owned checkbox by looking up the coin ID in the `owned` state:
 
-```html
+```jsx
 <input
   ...
   checked={owned.find(o => o.coinId === coin.id) !== undefined}
@@ -132,7 +127,6 @@ This is a stateless functional component which contains the filter elements allo
 - `filter` - a string which is set to the current filter. Has a default value of `'all'`.
 - `handleSubmit` - a function which is called when submitting the filters form. It updates the `filter` property in state.
 - `handleChange` - this function is called when selecting a filter. It updates the `filter` property in state.
-
 
 ### `CoinList` component
 
@@ -193,7 +187,9 @@ This is where we tell React how we want all of the imported components to be dis
 I made use of conditional logic a fair bit here, for example the loading indicator is displayed if `state.isLoading` is true:
 
 ```js
-{ this.state.isLoading && <p>Loading</p>}
+{
+  this.state.isLoading && <p>Loading</p>
+}
 ```
 
 React will [only render the HTML if this.state.isLoading has a truthy value](https://reactjs.org/docs/jsx-in-depth.html#booleans-null-and-undefined-are-ignored).
@@ -202,14 +198,13 @@ React will [only render the HTML if this.state.isLoading has a truthy value](htt
 
 Not a component, but included here for completeness, this is the entry point for the app where we tell React where and what it should render.
 
-
 ## Firebase — Stretch goal!
 
 I've looked into hosted database options for web apps in the past and have always felt like there was a mountain of things to learn, loads of config to set up, and the API's tend to be quite complicated when it comes to interacting with the database itself.
 
 Then, whilst looking at the source code for [Kent C. Dodds' Repeat TODO app](https://github.com/kentcdodds/repeat-todo-v2), I noticed he was using Firebase so I decided to check it out.
 
-I found a great [tutorial by Simon Bloom on CSS Tricks called Intro to Firebase and React](https://css-tricks.com/intro-firebase-react/). Following the steps in the article I was able to set up an app with  basic authentication and the ability to talk to a database within 30 minutes.
+I found a great [tutorial by Simon Bloom on CSS Tricks called Intro to Firebase and React](https://css-tricks.com/intro-firebase-react/). Following the steps in the article I was able to set up an app with basic authentication and the ability to talk to a database within 30 minutes.
 
 Because I had such a good experience setting up Firebase I looked at their database offerings and chose to use a [Cloud Firestore database](https://firebase.google.com/products/firestore/). Firestore is in beta but it's heavily documented and, so far, I haven't had any issues with it.
 
@@ -220,23 +215,23 @@ Because I had such a good experience setting up Firebase I looked at their datab
 Firebase provides a few different ways to implement authentication into your application. I went for a Google auth provider which allows users to register or log in with their Google account. The code to get this working was very simple:
 
 ```js
-import firebase from 'firebase';
+import firebase from 'firebase'
 
-export const GoogleAuthProvider = new firebase.auth.GoogleAuthProvider();
-export const auth = firebase.auth();
+export const GoogleAuthProvider = new firebase.auth.GoogleAuthProvider()
+export const auth = firebase.auth()
 
 export const logIn = async () => {
   try {
-    const result = await auth.signInWithPopup(GoogleAuthProvider);
-    return result.user;
+    const result = await auth.signInWithPopup(GoogleAuthProvider)
+    return result.user
   } catch (ex) {
-    return null;
+    return null
   }
-};
+}
 
 export const logOut = async () => {
-  await auth.signOut();
-};
+  await auth.signOut()
+}
 ```
 
 In the `componentDidMount` lifecycle method of the `App` component I added a small bit of code which was able to detect when a user has signed in:
@@ -256,20 +251,18 @@ That's all it took to implement some basic authentication into the app!
 I wanted to add some coin data to the database so I created a `firebaseService.js` module which exposed the Firestore database object:
 
 ```js
-import firebase from 'firebase';
+import firebase from 'firebase'
 
-export const db = firebase.firestore();
+export const db = firebase.firestore()
 ```
 
 Then I created a `coinService.js` module which contained a function that could add one coin to the store at a time using the database object:
 
 ```js
-import { db } from './firebaseService';
+import { db } from './firebaseService'
 
 export const addCoin = async ({ denomination, name, year, order }) =>
-  await db
-    .collection('coins')
-    .add({ denomination, name, year, order });
+  await db.collection('coins').add({ denomination, name, year, order })
 ```
 
 I passed my coin data to this function one coin at a time until it was all added, which took less than a second!
@@ -317,22 +310,19 @@ When a user is signed in I retrieve all of the records from this collection whic
 }
 ```
 
-The reason I added a `userId` property rather than use the generated document ID was because a user ID is passed back when the user logs in when using a sign-in provider which *should* be the same for a single user regardless of which provider they use to sign in.
-
+The reason I added a `userId` property rather than use the generated document ID was because a user ID is passed back when the user logs in when using a sign-in provider which _should_ be the same for a single user regardless of which provider they use to sign in.
 
 ## Unit tests — Stretch goal!
 
-I really wanted to start looking into unit testing best practices in React at this point, and coincidentally [Kent C. Dodds had just sent out a newsletter which covered a new unit testing library which he just released](https://github.com/kentcdodds/react-testing-library) which he described as *"a very light-weight solution for testing React components"*. If you haven't realised already I am a huge fan of Kent and his work!
+I really wanted to start looking into unit testing best practices in React at this point, and coincidentally [Kent C. Dodds had just sent out a newsletter which covered a new unit testing library which he just released](https://github.com/kentcdodds/react-testing-library) which he described as _"a very light-weight solution for testing React components"_. If you haven't realised already I am a huge fan of Kent and his work!
 
 I followed the readme on the GitHub repository and wrote a couple of basic tests but left it at that point as I feel like I need to do some more reading up on writing React unit tests.
-
 
 ## Continuous integration — Stretch goal!
 
 [I set up a TravisCI build](https://travis-ci.org/DamianMullins/Coinsly) which runs the `yarn build` and `yarn test` tasks against NodeJS versions 7, 8, and 9 whenever changes are pushed to the GitHub repository.
 
 It also [pushes the unit test coverage report up to Coveralls](https://coveralls.io/github/DamianMullins/Coinsly) after a successful test run. My hope is that these reports will spur me on to write more tests and get the coverage up!
-
 
 ## Issues
 
@@ -342,7 +332,7 @@ It wasn't all plain sailing this week, I did hit a few issues along the way.
 
 I spent far too long trying to access state in child components which I'd set in the `App` component, completely forgetting that state is private to a component 🤦
 
-Once I (finally) remembered that state in React is private to the component it is defined in I started passing the data down to the child components via  `props`.
+Once I (finally) remembered that state in React is private to the component it is defined in I started passing the data down to the child components via `props`.
 
 ### Filter logic
 
@@ -368,11 +358,11 @@ To get around this I created a single state property called `filter` which holds
 }
 ```
 
-Then I switched the checkboxes to radio buttons and grouped them together using the `name` attribute — this is standard HTML,  nothing React specific here.
+Then I switched the checkboxes to radio buttons and grouped them together using the `name` attribute — this is standard HTML, nothing React specific here.
 
 Each radio button then sets the `checked` attribute based on the filter state value
 
-```html
+```jsx
 <input
   type="radio"
   name="filter"
@@ -406,7 +396,6 @@ To get around this I had to clone the repository onto my laptop and run the unit
 At the end of the week I ended up with most of the app logic and all of the handler functions defined in the `App` component which means that there is some prop drilling happening in order to pass state and event handlers down to child components.
 
 Next week I plan to do some reading up on this subject to find out what the best practices are around this.
-
 
 <a id="end-of-week-one" aria-hidden="true"></a>
 

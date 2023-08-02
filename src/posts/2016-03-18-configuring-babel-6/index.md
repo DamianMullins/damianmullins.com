@@ -1,7 +1,7 @@
 ---
-slug: "/configuring-babel-6/"
+slug: '/configuring-babel-6/'
 title: Configuring Babel 6
-date: "2016-03-18T09:00"
+date: '2016-03-18T09:00'
 description: Babel 6 was released late last year and with it came some core changes. I put these slides together for a lightning talk at work whilst I was learning about these changes.
 tags:
   - javascript

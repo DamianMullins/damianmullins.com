@@ -1,7 +1,7 @@
 ---
-slug: "/learn-react-by-building-a-web-app-week-7/"
+slug: '/learn-react-by-building-a-web-app-week-7/'
 title: Learn React by building a web app — Week 7
-date: "2018-05-03T10:33"
+date: '2018-05-03T10:33'
 description: It has been a busy two weeks of reading, listening to podcasts, and watching talks online. I did manage to make a few updates and bug fixes to Coinsly which I've listed in the sections below.
 tags:
   - learning
@@ -40,6 +40,7 @@ I had some time whilst travelling to London recently which gave me time to catch
 - [Use a Render Prop!](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce)
 
 <a id="changes-to-the-coinsly-app" aria-hidden="true"></a>
+
 ## Changes to the Coinsly app
 
 A very quick run-through of the changes I've made.

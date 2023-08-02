@@ -1,7 +1,7 @@
 ---
-slug: "/learn-react-by-building-a-web-app/"
+slug: '/learn-react-by-building-a-web-app/'
 title: Learn React by building a web app
-date: "2018-03-21T18:01"
+date: '2018-03-21T18:01'
 description: So, I decided a few months back that I'd like to learn a JavaScript framework this year. It's something I've wanted to for quite a while but I've always put it off for various reasons.
 tags:
   - learning
@@ -23,7 +23,7 @@ My plan is to post an update on my progress each week, even if all I did that we
 
 The first step is to choose a framework, this is fairly easy for me as there is one framework in particular which I have noticed has been driving some really great patterns and coding practices, offers a simple API with lots of flexibility in the ways you can build applications using it, as well as being very performant. That framework is React.
 
-I'll be honest, I *have* used the framework before — mostly taking example code from blogs and playing around with it. A colleague and I also [ran a few sessions of a React workshop](https://github.com/react-sessions) where we walked a group of engineers through the basics of React, setting up coding exercises so that everyone got some hands-on experience using the framework. Planning those workshops involved reading a lot of blog posts and taking some online courses but a lot of that knowledge has since faded from memory.
+I'll be honest, I _have_ used the framework before — mostly taking example code from blogs and playing around with it. A colleague and I also [ran a few sessions of a React workshop](https://github.com/react-sessions) where we walked a group of engineers through the basics of React, setting up coding exercises so that everyone got some hands-on experience using the framework. Planning those workshops involved reading a lot of blog posts and taking some online courses but a lot of that knowledge has since faded from memory.
 
 So what I'm trying to say is that whilst I'm already familiar with the basic concepts of React, I've never put what I learned into practice. Running the workshop helped me to learn a lot, and teaching is a great way of learning, but I have a feeling that when it comes to writing some actual code I'll have that classic struggle where I realise that reading and watching videos is all good, but nothing compares to actually building something in order to really solidify that knowledge.
 
@@ -45,7 +45,7 @@ That's about it. I have a few ideas of other features I'd like to add in the fut
 
 ## How am I going to build it?
 
-Before writing this post [I read an article by Kent C. Dodds](https://blog.kentcdodds.com/merry-christmas-77b4380b8cf9) where he mentions that he used CodeSandbox to build an app for his wife. The thought of using an online editor to build an app sounded crazy to me but I tried it out for myself [using their create-react-app sandbox](https://codesandbox.io/s/new) and was really impressed! It's really fast, integrates with your GitHub account, has some great tooling added by default (prettier,  ESLint), plus it will run your unit tests as you work.
+Before writing this post [I read an article by Kent C. Dodds](https://blog.kentcdodds.com/merry-christmas-77b4380b8cf9) where he mentions that he used CodeSandbox to build an app for his wife. The thought of using an online editor to build an app sounded crazy to me but I tried it out for myself [using their create-react-app sandbox](https://codesandbox.io/s/new) and was really impressed! It's really fast, integrates with your GitHub account, has some great tooling added by default (prettier, ESLint), plus it will run your unit tests as you work.
 
 Using CodeSandbox means that I can work on the project wherever I am, as long as I have an internet connection and a browser, and because of the GitHub integration there is also the option to clone the repo and develop on my laptop if I want to.
 
@@ -63,7 +63,7 @@ One other thing to note is that I'll often spend a week or so either writing no 
 
 I find that taking breaks like that allows everything I've learned so far to sink in. Often I find that if I become stuck on an issue which I can't figure out taking a step back allows my brain to recover and sometimes I'll subconsciously figure out a solution which takes minutes to implement.
 
-##  Plan for the first week
+## Plan for the first week
 
 So the plan for the first week looks like this:
 

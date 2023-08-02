@@ -1,7 +1,7 @@
 ---
-slug: "/logging-vuex-actions-and-mutations-in-the-wild/"
+slug: '/logging-vuex-actions-and-mutations-in-the-wild/'
 title: Logging Vuex actions and mutations in the wild
-date: "2020-11-21T13:04"
+date: '2020-11-21T13:04'
 description: How can we inspect an application once released to production? In this post, we’ll walk through the options available to you along with some tricks and tips to make the process a little easier.
 tags:
   - javascript
@@ -23,7 +23,7 @@ The answer is yes! Read on to find out more.
 
 The first step is to locate the Vuex store instance, this will be a property on the Vue instance object.
 
-A quick way to find the store instance is to use the code below which loops through each element on the page, starting at the top, checking for an object called `__vue__`. Once this is found it will return the `$store` instance which is attached to the  `__vue__` object.
+A quick way to find the store instance is to use the code below which loops through each element on the page, starting at the top, checking for an object called `__vue__`. Once this is found it will return the `$store` instance which is attached to the `__vue__` object.
 
 ```js
 const store = [...document.querySelectorAll('*')]
@@ -42,7 +42,7 @@ You'll need to find the Vue instance by locating the root element of your applic
 
 [![Screenshot of the Chrome devtools elements panel showing the root element of the Vue application highlighted.](devtools-root-element.png)](devtools-root-element.png)
 
-In this application, the root element has a data attribute of `data-app`. We can use `querySelector` to target the element using the data attribute and then return the `$store` instance which is attached to the  `__vue__` object:
+In this application, the root element has a data attribute of `data-app`. We can use `querySelector` to target the element using the data attribute and then return the `$store` instance which is attached to the `__vue__` object:
 
 ```js
 const store = document.querySelector('[data-app]')
@@ -72,11 +72,11 @@ We can use these properties to log out the information as mutations occur:
 
 ```js
 store.subscribe((mutation, state) => {
-	console.log(`Mutation: ${mutation.type}`, {
+  console.log(`Mutation: ${mutation.type}`, {
     payload: mutation.payload,
     state
-  });
-});
+  })
+})
 ```
 
 > If you are only interested in a single `state` property you can log that out instead of the entire `state` object.
@@ -114,29 +114,27 @@ const store = [...document.querySelectorAll('*')]
   .__vue__
   .$store;
 
-store
-  .subscribe(({ type, payload }, state) => {
-    console.log(
-      `%c 🧟‍♀️ Mutation:   ${type} `,
-      'background: #333; color: #bada55',
-      {
-        payload,
-        state
-      }
-    );
-  });
+store.subscribe(({ type, payload }, state) => {
+  console.log(
+    `%c 🧟‍♀️ Mutation:   ${type} `,
+    'background: #333; color: #bada55',
+    {
+      payload,
+      state
+    }
+  )
+})
 
-store
-  .subscribeAction(({ type, payload }, state) => {
-    console.log(
-      `%c 🎬 Action:     ${type} `,
-      'background: #333; color: #54afbd',
-      {
-        payload,
-        state
-      }
-    );
-  });
+store.subscribeAction(({ type, payload }, state) => {
+  console.log(
+    `%c 🎬 Action:     ${type} `,
+    'background: #333; color: #54afbd',
+    {
+      payload,
+      state
+    }
+  )
+})
 ```
 
 Here we have

@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { format } from 'date-fns';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { format } from 'date-fns'
 
-import { footer, links, link, noMargin } from '../styles/footer.module.scss';
-import { l_container } from '../styles/layout.module.scss';
+import { footer, links, link, noMargin } from '../styles/footer.module.scss'
+import { l_container } from '../styles/layout.module.scss'
 
 const Footer = ({
   author,
@@ -40,8 +40,7 @@ const Footer = ({
           <li className={link}>
             <a
               href={`https://www.linkedin.com/in/${linkedInUsername}`}
-              rel="external"
-            >
+              rel="external">
               LinkedIn
             </a>
           </li>
@@ -53,7 +52,7 @@ const Footer = ({
       </p>
     </div>
   </div>
-);
+)
 
 Footer.propTypes = {
   author: PropTypes.string.isRequired,
@@ -61,6 +60,6 @@ Footer.propTypes = {
   githubUsername: PropTypes.string.isRequired,
   twitterUsername: PropTypes.string.isRequired,
   linkedInUsername: PropTypes.string.isRequired
-};
+}
 
-export default Footer;
+export default Footer

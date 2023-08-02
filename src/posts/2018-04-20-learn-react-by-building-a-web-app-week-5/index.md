@@ -1,7 +1,7 @@
 ---
-slug: "/learn-react-by-building-a-web-app-week-5/"
+slug: '/learn-react-by-building-a-web-app-week-5/'
 title: Learn React by building a web app — Week 5
-date: "2018-04-20T15:53"
+date: '2018-04-20T15:53'
 description: Two posts in two days? Unheard of! It's hackathon time at work so I have been spending my time working on the Coinsly app.
 tags:
   - learning
@@ -26,7 +26,6 @@ Here's a quick rundown of the changes I have made
 - [Database updates](#database-updates)
 - [Other updates](#other-updates)
 
-
 <a id="styles" aria-hidden="true"></a>
 
 ### Glamorous
@@ -42,7 +41,6 @@ I did look into using CSS modules before settling on glamorous but they aren't s
 I'm familiar with flexbox and have used it a fair bit in the past, however, recently at work we've been using a lot of utility classes which handle grid layouts etc so I've been using those rather than writing the styles myself. I know, excuses excuses..
 
 Because of this I have had to do a lot of searching online to find out how to achieve some pretty basic layouts 😳 I may work my way through [flexbox froggy](https://flexboxfroggy.com/) or [flexbox defence](http://www.flexboxdefense.com/) again to refresh my memory.
-
 
 <a id="filter-updates" aria-hidden="true"></a>
 
@@ -70,7 +68,6 @@ A few other filter properties have been added to state as well:
 ### Dynamic filters
 
 The filter components have been refactored so that the controls are added dynamically based on the props passed in.
-
 
 <a id="patterns" aria-hidden="true"></a>
 
@@ -110,10 +107,12 @@ Then in the consuming component the values can be accessed like this:
 
 I use the `Totals` component to display details for the currently filtered coin denomination:
 
-```js
+```jsx
 <Totals coins={filteredCoins}>
   {({ total, owned, percentage }) => (
-    <p>{this.state.denomination} Total {owned} of {total} ({percentage}%)</p>
+    <p>
+      {this.state.denomination} Total {owned} of {total} ({percentage}%)
+    </p>
   )}
 </Totals>
 ```
@@ -122,16 +121,17 @@ Which results in something like `"25p Crown Total 1 of 4 (25%)"`.
 
 The `Totals` component is also used to display details for all the coins in the app:
 
-```js
+```jsx
 <Totals coins={coins}>
   {({ total, owned, percentage }) => (
-    <p>Total {owned} of {total} ({percentage}%)</p>
+    <p>
+      Total {owned} of {total} ({percentage}%)
+    </p>
   )}
 </Totals>
 ```
 
 Which results in something like `"Total 3 of 30 (10%)"`.
-
 
 <a id="context-api" aria-hidden="true"></a>
 
@@ -143,15 +143,13 @@ Initially I found it a little confusing, but after following the walkthrough in 
 
 I created a `LoadingContext` module which I used in the app to set the context value using `LoadingContext.Provider`:
 
-```html
-<LoadingContext.Provider value={isLoading}>
-  …
-</LoadingContext.Provider>
+```jsx
+<LoadingContext.Provider value={isLoading}>…</LoadingContext.Provider>
 ```
 
 Then in any components which needed to read the value, I used `LoadingContext.Consumer` to provide the value like so:
 
-```html
+```jsx
 <LoadingContext.Consumer>
   {isLoading => (
     ...
@@ -163,13 +161,11 @@ You may notice that it uses a render prop to pass along the context value 🙌
 
 I also used the context API to pass the `handleOwnedChange` event handler from the `App` component down to the `Coin` component. I'm not sure this is the best use of the context API as the event handler is only used in one place and it only removed one level of prop drilling which is probably an acceptable level to have left in place.
 
-
 <a id="database-updates" aria-hidden="true"></a>
 
 ## Database updates
 
 After reading through the Firebase documentation a little more over the last few weeks I decided to do away with the user's collection in the database which I had created to hold a subset of a logged-in users details. All of this information is already saved to Firebase — plus I store the entire user object in state anyway — so removing the collection made sense.
-
 
 <a id="other-updates" aria-hidden="true"></a>
 
@@ -190,19 +186,13 @@ So given an owned list of
 and a coin list of
 
 ```json
-[
-  { "coinId": 2 },
-  { "coinId": 3 }
-]
+[{ "coinId": 2 }, { "coinId": 3 }]
 ```
 
 You end up with
 
 ```json
-[
-  { "coinId": 2, "ownedId": 1 },
-  { "coinId": 3 }
-]
+[{ "coinId": 2, "ownedId": 1 }, { "coinId": 3 }]
 ```
 
 Now the filter logic only has to check that a coin has an `ownedId` property with a value which isn't `undefined` in order to tell that the user has marked that coin as “owned”. Much simpler.
@@ -231,7 +221,6 @@ I've started developing on my laptop rather than using CodeSandox as I find it m
 
 I was also having issues with firebase authentication every now and then using CodeSandox, moving to local development resolved those issues.
 
-
 <a id="end-of-week-five" aria-hidden="true"></a>
 
 ## End of week five
@@ -241,4 +230,3 @@ You can [check out the code on the GitHub repo](https://github.com/DamianMullins
 <iframe src="https://codesandbox.io/embed/k5o3l8jv8r?autoresize=1&module=%2Fsrc%2Fcomponents%2FApp.js&view=editor" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 Another great bit of progress made, I feel like I've learnt a lot over the last few days. Building the app and then writing about my experiences is really helping to solidify my knowledge of React. There is still a hell of a lot more to learn though..
-

@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import { Link, graphql } from 'gatsby';
-import kebab from 'slugify';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Helmet } from 'react-helmet'
+import { Link, graphql } from 'gatsby'
+import kebab from 'slugify'
 
-import Layout from "../components/Layout";
+import Layout from '../components/Layout'
 
 const TagsPage = ({
   data: {
@@ -14,23 +14,23 @@ const TagsPage = ({
     }
   }
 }) => (
-    <Layout>
-      <Helmet title={title} />
-      <div>
-        <h1>Tags</h1>
+  <Layout>
+    <Helmet title={title} />
+    <div>
+      <h1>Tags</h1>
 
-        <ul>
-          {group.map(tag => (
-            <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebab(tag.fieldValue)}/`}>
-                {tag.fieldValue} ({tag.totalCount})
+      <ul>
+        {group.map(tag => (
+          <li key={tag.fieldValue}>
+            <Link to={`/tags/${kebab(tag.fieldValue)}/`}>
+              {tag.fieldValue} ({tag.totalCount})
             </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </Layout>
-  );
+          </li>
+        ))}
+      </ul>
+    </div>
+  </Layout>
+)
 
 TagsPage.propTypes = {
   data: PropTypes.shape({
@@ -48,9 +48,9 @@ TagsPage.propTypes = {
       })
     })
   })
-};
+}
 
-export default TagsPage;
+export default TagsPage
 
 export const pageQuery = graphql`
   {
@@ -60,7 +60,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      limit: 2000,
+      limit: 2000
       filter: { frontmatter: { published: { eq: true } } }
     ) {
       group(field: { frontmatter: { tags: SELECT } }) {
@@ -69,4 +69,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

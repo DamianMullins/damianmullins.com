@@ -1,7 +1,7 @@
 ---
-slug: "/2015-the-year-ahead/"
+slug: '/2015-the-year-ahead/'
 title: 2015 the year ahead
-date: "2015-01-29T12:54"
+date: '2015-01-29T12:54'
 description: A quick rundown of 2014, and my plans and expectations for 2015.
 tags:
   - personal
@@ -19,7 +19,6 @@ This means my focus is moving back to the server side again, but I plan to keep 
 
 Because so much has been changing recently I wanted to write down a few things to focus on over the next 12 months.
 
-
 ## Tech
 
 A lot of my time is spent reading about web frameworks and languages, but I rarely take the time to dive in and try them out in any depth. That will change this year.
@@ -28,24 +27,23 @@ My first target this year will be ECMAScript 6 which I feel that I've put off fo
 
 As a result of this my plan is to record my experiences here and hopefully have a few projects up on GitHub.
 
-
 ## Books
 
 I'm aiming to read one book a month. No more, no less, I don't want to stretch myself or be unrealistic. If it's a technical book and I feel the urge, I'll put some code up on [my GitHub profile](https://github.com/DamianMullins), and write a review here.
 
 These are my books of choice, in no particular order
 
-* Git in practice
-* Release it!
-* JavaScript application design
-* Secrets of the JavaScript ninja
-* The responsive web
-* Soft skills
-* Head first design patterns
-* Dependency injection in .Net
-* C# in depth
-* Seven Languages in Seven Weeks (envisage this being a 2 month read)
-* ReWork: Change the Way You Work Forever
+- Git in practice
+- Release it!
+- JavaScript application design
+- Secrets of the JavaScript ninja
+- The responsive web
+- Soft skills
+- Head first design patterns
+- Dependency injection in .Net
+- C# in depth
+- Seven Languages in Seven Weeks (envisage this being a 2 month read)
+- ReWork: Change the Way You Work Forever
 
 One of the benefits of working for JustEat is a free subscription to [Safari](https://www.safaribooksonline.com/) which means I have access to most of the books in the list.
 

@@ -1,7 +1,7 @@
 ---
-slug: "/my-podcast-obsession/"
+slug: '/my-podcast-obsession/'
 title: My podcast obsession
-date: "2016-02-19T09:46"
+date: '2016-02-19T09:46'
 description: A few years back I discovered the wonderful world of podcasts, I subscribed to one or two and gradually over time the list has grown, I now subscribe to so many podcasts it's not even funny!
 tags:
   - personal

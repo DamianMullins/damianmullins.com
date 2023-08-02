@@ -1,15 +1,15 @@
-import { useStaticQuery, graphql } from 'gatsby';
-import React, { Fragment } from 'react';
-import { Helmet } from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby'
+import React, { Fragment } from 'react'
+import { Helmet } from 'react-helmet'
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
-import 'prism-themes/themes/prism-material-dark.css';
-import '../styles/global.module.scss';
-import { l_container } from '../styles/layout.module.scss';
+import 'prism-themes/themes/prism-material-dark.css'
+import '../styles/global.module.scss'
+import { l_container } from '../styles/layout.module.scss'
 
-const version = process.env.GATSBY_RELEASE_VERSION;
+const version = process.env.GATSBY_RELEASE_VERSION
 
 const Layout = ({ children }) => {
   const {
@@ -21,9 +21,9 @@ const Layout = ({ children }) => {
         authorEmail,
         githubUsername,
         twitterUsername,
-        linkedInUsername,
-      },
-    },
+        linkedInUsername
+      }
+    }
   } = useStaticQuery(graphql`
     {
       site {
@@ -38,15 +38,14 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `);
+  `)
 
   return (
     <Fragment>
       <Helmet
         key="app-head"
         titleTemplate={`%s — ${title}`}
-        defaultTitle={title}
-      >
+        defaultTitle={title}>
         <html lang="en" />
         <meta name="description" content={authorBio} />
         <meta name="release" content={version} />
@@ -64,7 +63,7 @@ const Layout = ({ children }) => {
         linkedInUsername={linkedInUsername}
       />
     </Fragment>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

@@ -1,5 +1,5 @@
-const author = 'Damian Mullins';
-const title = `Blog for ${author}`;
+const author = 'Damian Mullins'
+const title = `Blog for ${author}`
 
 module.exports = {
   siteMetadata: {
@@ -13,6 +13,7 @@ module.exports = {
     linkedInUsername: 'damianmullins'
   },
   plugins: [
+    'gatsby-plugin-no-sourcemaps',
     'gatsby-plugin-webpack-bundle-analyser-v2',
     {
       resolve: 'gatsby-source-filesystem',
@@ -59,7 +60,7 @@ module.exports = {
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
-                const { slug, title, date, tags } = edge.node.frontmatter;
+                const { slug, title, date, tags } = edge.node.frontmatter
                 return Object.assign({}, edge.node.frontmatter, {
                   title,
                   description: edge.node.excerpt,
@@ -67,8 +68,8 @@ module.exports = {
                   guid: site.siteMetadata.siteUrl + slug,
                   pubDate: date,
                   categories: tags
-                });
-              });
+                })
+              })
             },
             query: `
             {
@@ -118,4 +119,4 @@ module.exports = {
     },
     'gatsby-plugin-catch-links'
   ]
-};
+}

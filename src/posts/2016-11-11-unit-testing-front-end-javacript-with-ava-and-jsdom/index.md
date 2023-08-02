@@ -1,7 +1,7 @@
 ---
-slug: "/unit-testing-front-end-javacript-with-ava-and-jsdom/"
+slug: '/unit-testing-front-end-javacript-with-ava-and-jsdom/'
 title: Unit testing front-end JavaScript with AVA and jsdom
-date: "2016-11-11T11:11"
+date: '2016-11-11T11:11'
 description: Writing tests for JavaScript code that interacts with the DOM can be tricky. Luckily, using a combination of AVA and jsdom, writing those tests becomes a lot easier.
 tags:
   - javascript
@@ -17,7 +17,7 @@ This article will walk you through how to set everything up so you can get start
 
 ## What is AVA?
 
-AVA is described as a "*Futuristic JavaScript test runner*". Sounds fancy, huh?! So, what is it exactly that makes it "*futuristic*"?!
+AVA is described as a "_Futuristic JavaScript test runner_". Sounds fancy, huh?! So, what is it exactly that makes it "_futuristic_"?!
 
 #### Tests run quickly
 
@@ -25,7 +25,7 @@ AVA runs test files in parallel, each in its own separate process, with the test
 
 #### Simple API
 
-AVA's API is very small because, in AVA's own words, it is "*highly opinionated*". You won't find any assertion aliases here! This reduces the cognitive load required when writing tests.
+AVA's API is very small because, in AVA's own words, it is "_highly opinionated_". You won't find any assertion aliases here! This reduces the cognitive load required when writing tests.
 
 #### Write tests in ES2015
 
@@ -46,7 +46,7 @@ There are a whole host of other benefits which AVA offers such as:
 - Enhanced assertion messages
 - Clean stack traces
 
-All of this combined sounds very "*futuristic*" to me!
+All of this combined sounds very "_futuristic_" to me!
 
 ## Getting off the launchpad with AVA
 
@@ -74,17 +74,16 @@ When using npm scripts, the path to AVA in the `node_modules` folder will be res
 
 Let's fix that by adding a test.
 
-
 ## Writing a test
 
-Create a `test` directory, with a  file named `demo.test.js` inside, then add a test:
+Create a `test` directory, with a file named `demo.test.js` inside, then add a test:
 
 ```js
-import test from 'ava';
+import test from 'ava'
 
 test('can add numbers', t => {
-    t.is(1 + 1, 2);
-});
+  t.is(1 + 1, 2)
+})
 ```
 
 First, AVA is imported into the module, then the `test` function is called, passing a string as the first parameter which describes what the test is doing. The second parameter is the test implementation function which contains the body of the test, this provides us with an object, `t`, from which we can call the assertion functions.
@@ -122,8 +121,8 @@ As you can see, there is a lot of useful information provided in order to help u
 To demonstrate how to test a module, create a new folder called `src` in the root of the project with a file inside called `demo-module.js` with the contents:
 
 ```js
-export function demo () {
-    return 'Hello, from demo module.';
+export function demo() {
+  return 'Hello, from demo module.'
 }
 ```
 
@@ -194,17 +193,17 @@ Run `npm test` and the tests will once again pass, great!
 2 tests passed
 ```
 
-The recommendation from the AVA team is to use `babel-register` "*[until the performance penalty becomes too great](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md#transpiling-sources)*". As your test base grows you'll need to look into setting up a precompilation step.
+The recommendation from the AVA team is to use `babel-register` "_[until the performance penalty becomes too great](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md#transpiling-sources)_". As your test base grows you'll need to look into setting up a precompilation step.
 
 ### Setting up a precompilation step
 
-A precompilation step will transpile your source modules *before* the tests are run in order to improve performance. Let's look at one way to set this up.
+A precompilation step will transpile your source modules _before_ the tests are run in order to improve performance. Let's look at one way to set this up.
 
 > **Note**: If you were following along with the last section you'll need to remove the references to `babel-register`. First run `npm uninstall babel-register --save-dev`, then remove `"babel-register"` from the AVA `"require"` section in `package.json`.
 
 Start by adding the `babel-cli` and `babel-preset-es2015` packages to the project: `npm install babel-cli babel-preset-es2015 --save-dev`.
 
-Next, add a `"babel"` config to  `package.json`
+Next, add a `"babel"` config to `package.json`
 
 ```js
 "babel": {
@@ -235,7 +234,7 @@ The double ampersand (`&&`) tells npm to first run the precompile script and the
 The final task is to update the reference to `demo-module` inside `demo.test.js` to point at the compiled code, we do this by replacing `../src` with `../dist`:
 
 ```js
-import { demo } from '../dist/demo-module';
+import { demo } from '../dist/demo-module'
 ```
 
 Run `npm test` and we're presented with all green tests!
@@ -259,13 +258,13 @@ Welcome to the stage; jsdom!
 
 ### jsdom
 
-jsdom is described as "*A JavaScript implementation of the WHATWG DOM and HTML standards, for use with Node.js*".
+jsdom is described as "_A JavaScript implementation of the WHATWG DOM and HTML standards, for use with Node.js_".
 
 It supports the DOM, HTML, canvas, and many other web platform APIs, making it ideal for our requirements.
 
 Because it's purely JavaScript, jsdom has very little overhead when creating a new document instance which means that tests run quickly.
 
-There is a downside to using a JavaScript implementation over an actual browser – you are putting your trust in the standards being implemented and tested correctly, and any inconsistencies between browsers will not be detected. This is a deal breaker for some, but for the purposes of *unit* testing I think it is a reasonable risk to take; jsdom has been around since early 2010, is actively maintained, and thoroughly tested. If you are looking to write UI tests then a combination of something like Karma and PhantomJS may be a better fit for you.
+There is a downside to using a JavaScript implementation over an actual browser – you are putting your trust in the standards being implemented and tested correctly, and any inconsistencies between browsers will not be detected. This is a deal breaker for some, but for the purposes of _unit_ testing I think it is a reasonable risk to take; jsdom has been around since early 2010, is actively maintained, and thoroughly tested. If you are looking to write UI tests then a combination of something like Karma and PhantomJS may be a better fit for you.
 
 ### Integrating jsdom
 
@@ -276,7 +275,7 @@ Add browser-env to the project `npm install browser-env --save-dev`.
 Create a `helpers` directory (which is ignored by convention when using AVA) inside `test`, then add `setup-browser-env.js` with the contents
 
 ```js
-require('browser-env')();
+require('browser-env')()
 ```
 
 We need to tell AVA to require this module before any of the tests are run so that browser-env can create the full browser environment before any DOM references are encountered. Inside your `package.json` add
@@ -286,7 +285,8 @@ We need to tell AVA to require this module before any of the tests are run so th
   "require": ["./test/helpers/setup-browser-env.js"]
 }
 ```
-> **Note**: You may have noticed that this file is written in ES5. This is because AVA will transpile ES2015 code in the tests, yet it won't transpile any modules *imported* or, in this case, *required* from outside the tests — see the [*transpiling source files*](#transpiling-source-files) section.
+
+> **Note**: You may have noticed that this file is written in ES5. This is because AVA will transpile ES2015 code in the tests, yet it won't transpile any modules _imported_ or, in this case, _required_ from outside the tests — see the [_transpiling source files_](#transpiling-source-files) section.
 
 ### Testing the DOM
 
@@ -304,7 +304,7 @@ test('can query for DOM elements', t => {
 });
 ```
 
-First, we add a paragraph element with some text to the document body, then query for that element using `document.querySelector`, and finally, we verify that the selected paragraph tag has an  `innerHTML` value equal to `'Hello, world'`.
+First, we add a paragraph element with some text to the document body, then query for that element using `document.querySelector`, and finally, we verify that the selected paragraph tag has an `innerHTML` value equal to `'Hello, world'`.
 
 Run the tests with `npm test`
 

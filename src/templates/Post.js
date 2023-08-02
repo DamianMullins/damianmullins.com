@@ -1,19 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import { graphql } from 'gatsby';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Helmet } from 'react-helmet'
+import { graphql } from 'gatsby'
 
-import Layout from "../components/Layout";
-import Tags from '../components/Tags';
-import PostTime from '../components/PostTime';
+import Layout from '../components/Layout'
+import Tags from '../components/Tags'
+import PostTime from '../components/PostTime'
 
-import { post } from '../styles/post.module.scss';
+import { post } from '../styles/post.module.scss'
 
 const Post = ({ data }) => {
-  const { markdownRemark } = data;
-  const { frontmatter, timeToRead, html } = markdownRemark;
-  const { title, date, description, tags } = frontmatter;
-  const { authorBio } = data.site.siteMetadata;
+  const { markdownRemark } = data
+  const { frontmatter, timeToRead, html } = markdownRemark
+  const { title, date, description, tags } = frontmatter
+  const { authorBio } = data.site.siteMetadata
 
   return (
     <Layout>
@@ -24,18 +24,14 @@ const Post = ({ data }) => {
 
       <h1>{title}</h1>
 
-      <PostTime
-        posted={date}
-        timeToRead={timeToRead} />
+      <PostTime posted={date} timeToRead={timeToRead} />
 
-      <div
-        className={post}
-        dangerouslySetInnerHTML={{ __html: html }} />
+      <div className={post} dangerouslySetInnerHTML={{ __html: html }} />
 
       <Tags tags={tags} />
     </Layout>
-  );
-};
+  )
+}
 
 Post.propTypes = {
   data: PropTypes.shape({
@@ -50,9 +46,9 @@ Post.propTypes = {
       })
     }).isRequired
   })
-};
+}
 
-export default Post;
+export default Post
 
 export const query = graphql`
   query ($path: String!) {
@@ -72,4 +68,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

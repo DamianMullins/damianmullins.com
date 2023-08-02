@@ -1,7 +1,7 @@
 ---
-slug: "/hack-your-gmail-address-to-stay-organised/"
+slug: '/hack-your-gmail-address-to-stay-organised/'
 title: Hack your Gmail address to stay organised
-date: "2016-01-22T09:25"
+date: '2016-01-22T09:25'
 description: Tips and tricks to keep your email inbox organised, and hopefully empty!
 tags:
   - productivity
@@ -55,17 +55,17 @@ This last example is the one I favour; less to type and remember.
 
 ### Creating a filter
 
-The next step is to create a filter from this search, this is done by clicking the ___Create filter with this search___ link at the bottom of the search panel.
+The next step is to create a filter from this search, this is done by clicking the **_Create filter with this search_** link at the bottom of the search panel.
 
 [![Creating a filter](create-filter.gif)](create-filter.gif)
 
-I like to select ___Never send it to Spam___ and ___Never mark it as important___ as shown in the animation above so that I can guarantee that none of these emails are sent to the spam folder and also that there aren't mixed in with other email marked as important.
+I like to select **_Never send it to Spam_** and **_Never mark it as important_** as shown in the animation above so that I can guarantee that none of these emails are sent to the spam folder and also that there aren't mixed in with other email marked as important.
 
 ## Labels
 
 Finally, I make heavy use of labels which when combined with filters can help ensure your email is organised and easily searchable.
 
-Using the same technique as above to create to filters (or editing an existing filter from settings) you can select a label from the ___Apply the label___ dropdown.
+Using the same technique as above to create to filters (or editing an existing filter from settings) you can select a label from the **_Apply the label_** dropdown.
 
 [![Apply label](apply-label.gif)](apply-label.gif)
 

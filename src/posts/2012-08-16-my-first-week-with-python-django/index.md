@@ -1,7 +1,7 @@
 ---
-slug: "/my-first-week-with-python-django/"
+slug: '/my-first-week-with-python-django/'
 title: My first week with Python, Django & Google App Engine
-date: "2012-08-16T13:35"
+date: '2012-08-16T13:35'
 description: Walkthrough of a week spent working with Python, Django & Google App Engine.
 tags:
   - dev
@@ -39,7 +39,7 @@ Next up I installed the latest version of Django with no problems (or so I thoug
 
 To begin I read up on the background of Django to get an idea of where it came from, who developed it, and how it came to be named Django. Some fairly interesting reading, plus I found out the [correct pronunciation of Django](https://docs.djangoproject.com/en/dev/faq/general/#what-does-django-mean-and-how-do-you-pronounce-it)!
 
-Once I'd concluded my history lesson I began the Django tutorial, ran through it no problems. First impressions were that it's almost *completely* different to the .Net C# development that I am used to. Lots of new concepts to get my head around, and habits to unlearn. But hey, nothing I hadn't expected.
+Once I'd concluded my history lesson I began the Django tutorial, ran through it no problems. First impressions were that it's almost _completely_ different to the .Net C# development that I am used to. Lots of new concepts to get my head around, and habits to unlearn. But hey, nothing I hadn't expected.
 
 ### Features that stood out to me
 
@@ -58,7 +58,6 @@ Once I'd concluded my history lesson I began the Django tutorial, ran through it
 The documentation was (usually) extremely helpful; I ended up bookmarking a lot from the docs site. Relying heavily on Stack Overflow during development, it was reassuring to see plenty of other people going through the same issues as me whilst they were learning.
 
 There did seem to be a lot of articles from way back in 2008 onwards whilst searching for solutions, which made me worry that I may not be following the latest best practices. I tried to find examples from the official docs as often as I could.
-
 
 ## Building the blog
 
