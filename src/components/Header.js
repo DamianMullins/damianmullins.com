@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 import { header, link, image } from '../styles/header.module.scss';
-import profilePic from '../assets/images/profile-pic--large.png';
+import profilePic from '../assets/images/profile-pic.avif';
 
 const Header = ({ modifier }) => (
   <header className={header}>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import Layout from "../components/Layout";
-import notFoundImage from '../assets/images/404.jpg';
+import notFoundImage from '../assets/images/404.avif';
 
 const PageNotFound = () => (
   <Layout>
