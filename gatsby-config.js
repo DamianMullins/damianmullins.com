@@ -30,7 +30,7 @@ module.exports = {
         background_color: '#222020',
         theme_color: '#222020',
         display: 'minimal-ui',
-        icon: 'src/assets/images/profile-pic--large.png'
+        icon: 'src/assets/images/profile-pic.avif'
       }
     },
     {
