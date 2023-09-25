@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@sentry/react": "7.70.0",
-    "@sentry/tracing": "7.70.0",
+    "@sentry/tracing": "7.71.0",
     "date-fns": "2.30.0",
     "logrocket": "5.0.1",
     "logrocket-react": "5.0.1",
