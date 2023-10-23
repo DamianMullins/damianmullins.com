@@ -48,7 +48,7 @@
     "gatsby-source-filesystem": "5.12.0",
     "gatsby-transformer-remark": "6.12.1",
     "prettier": "3.0.3",
-    "sass": "1.69.3"
+    "sass": "1.69.4"
   },
   "resolutions": {
     "@types/node": "20.8.6"
