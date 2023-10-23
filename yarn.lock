@@ -5654,10 +5654,10 @@ gatsby-telemetry@^4.12.0:
     lodash "^4.17.21"
     node-fetch "^2.6.11"
 
-gatsby-transformer-remark@6.12.1:
-  version "6.12.1"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-6.12.1.tgz#ed752a1994798a03fedc17a3cbe9b94b2b07a6a0"
-  integrity sha512-iyxK13/pONM2EWLPlpUw+ICYMaCUP/QH9v/t4a9sfLaPsGLIsZsX+b8Ok/b0n08SVbJ0FR3MytHJUlGucUH5gA==
+gatsby-transformer-remark@6.12.2:
+  version "6.12.2"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-6.12.2.tgz#f4f85109e1731378ac5389264261b5a388a6412e"
+  integrity sha512-0HNfqRyjTdJKMknv+tR5VsdkFVE8RRwv7MNafZ3MY/VpY7hzrQj5vHU/pLwjnSmQLdOPt6CIXJSj/E3wrOqjuw==
   dependencies:
     "@babel/runtime" "^7.20.13"
     gatsby-core-utils "^4.12.0"
