@@ -33,7 +33,7 @@
     "slugify": "1.6.6"
   },
   "devDependencies": {
-    "gatsby": "5.12.9",
+    "gatsby": "5.12.11",
     "gatsby-plugin-catch-links": "5.12.0",
     "gatsby-plugin-feed": "5.12.3",
     "gatsby-plugin-gtag": "1.0.13",
