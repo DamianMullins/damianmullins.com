@@ -41,7 +41,7 @@
     "gatsby-plugin-no-sourcemaps": "5.12.0",
     "gatsby-plugin-react-helmet": "6.12.0",
     "gatsby-plugin-sass": "6.12.3",
-    "gatsby-plugin-sitemap": "6.12.3",
+    "gatsby-plugin-sitemap": "6.13.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.32",
     "gatsby-remark-copy-linked-files": "6.12.0",
     "gatsby-remark-heading-slug": "0.2.0",
