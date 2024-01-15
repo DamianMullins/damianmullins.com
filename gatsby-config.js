@@ -1,3 +1,5 @@
+const adapter = require('gatsby-adapter-netlify')
+
 const author = 'Damian Mullins'
 const title = `Blog for ${author}`
 
@@ -12,6 +14,9 @@ module.exports = {
     twitterUsername: 'DamianMullins',
     linkedInUsername: 'damianmullins'
   },
+  adapter: adapter({
+    imageCDN: true
+  }),
   plugins: [
     'gatsby-plugin-no-sourcemaps',
     'gatsby-plugin-webpack-bundle-analyser-v2',
