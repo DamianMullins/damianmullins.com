@@ -2,7 +2,7 @@
   "name": "damianmullins",
   "description": "Development Blog for Damian mullins - Senior Full-Stack Engineer at Growth Kitchen.",
   "homepage": "https://www.damianmullins.com",
-  "version": "5.0.0",
+  "version": "4.97.0",
   "author": "Damian Mullins <damian@mullins.in> (https://www.damianmullins.com)",
   "keywords": [
     "gatsby"
@@ -34,7 +34,6 @@
   },
   "devDependencies": {
     "gatsby": "5.13.1",
-    "gatsby-adapter-netlify": "1.1.1",
     "gatsby-plugin-catch-links": "5.13.0",
     "gatsby-plugin-feed": "5.13.0",
     "gatsby-plugin-gtag": "1.0.13",
