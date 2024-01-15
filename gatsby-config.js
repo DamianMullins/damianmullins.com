@@ -117,7 +117,7 @@ module.exports = {
         ]
       }
     },
-    'gatsby-plugin-catch-links',
-    'gatsby-plugin-netlify'
+    'gatsby-plugin-catch-links'
+    // 'gatsby-plugin-netlify'
   ]
 }
