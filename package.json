@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "gatsby": "5.13.1",
+    "gatsby-adapter-netlify": "1.1.1",
     "gatsby-plugin-catch-links": "5.13.0",
     "gatsby-plugin-feed": "5.13.0",
     "gatsby-plugin-gtag": "1.0.13",
