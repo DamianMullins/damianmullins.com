@@ -1,0 +1,7 @@
+[build.environment]
+NETLIFY_IMAGE_CDN = "true"
+
+[images]
+remote_images = [
+  'https://www.damianmullins.com/.*'
+]
