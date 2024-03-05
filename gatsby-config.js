@@ -14,7 +14,6 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-no-sourcemaps',
-    'gatsby-plugin-webpack-bundle-analyser-v2',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
