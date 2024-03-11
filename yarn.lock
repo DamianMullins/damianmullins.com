@@ -7357,10 +7357,10 @@ logrocket-react@6.0.3:
   resolved "https://registry.yarnpkg.com/logrocket-react/-/logrocket-react-6.0.3.tgz#62c2ce18b9197058f5ba60e54e3f2b084d6588ee"
   integrity sha512-mU2QMFy5lfogXeAb+djy5XcAL5lAxPovRiN62lb4EzeuvuYmXJJmArniK3K2P9Gu02auWTiSwKHISFS0JH+eyA==
 
-logrocket@8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/logrocket/-/logrocket-8.0.1.tgz#99380875e2692c7cf3a7c9f6129c490b8a3d6fd8"
-  integrity sha512-bksVbjcoNpJjwn3EfB4D0JxXBxozPTAwEkRzchfl/nnVuCMp9zlUz4pkp7DgA7FVi4rzjzH4zriam1u3vej+hg==
+logrocket@8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/logrocket/-/logrocket-8.1.0.tgz#2b804985b5370b359831ee03c92423e08ac48044"
+  integrity sha512-0PRv9lnS90KBrL3mfiQzcKEPvNT3N55pRN0PRe/q3DqWFQbIW1p72MmMp9a3Qi9la6o+TXri7r68ZE0AM7vsDA==
 
 longest-streak@^2.0.0:
   version "2.0.4"
