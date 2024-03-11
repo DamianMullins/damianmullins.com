@@ -22,7 +22,7 @@
   "dependencies": {
     "@sentry/react": "7.105.0",
     "@sentry/tracing": "7.105.0",
-    "date-fns": "3.3.1",
+    "date-fns": "3.4.0",
     "logrocket": "8.0.1",
     "logrocket-react": "6.0.3",
     "prism-themes": "1.9.0",
