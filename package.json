@@ -47,13 +47,13 @@
     "gatsby-remark-prismjs": "7.13.1",
     "gatsby-source-filesystem": "5.13.1",
     "gatsby-transformer-remark": "6.13.1",
-    "postcss": "8.4.35",
+    "postcss": "8.4.36",
     "prettier": "3.2.5",
     "sass": "1.71.1"
   },
   "resolutions": {
     "@types/node": "20.11.25",
-    "postcss": "8.4.35"
+    "postcss": "8.4.36"
   },
   "browserslist": [
     "> 5%",
