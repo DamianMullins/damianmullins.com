@@ -1,7 +1,6 @@
 import LogRocket from 'logrocket'
 import setupLogRocketReact from 'logrocket-react'
 import * as Sentry from '@sentry/react'
-import { Integrations } from '@sentry/tracing'
 
 const environment = process.env.NODE_ENV
 const release = process.env.GATSBY_RELEASE_VERSION
@@ -14,11 +13,17 @@ if (environment === 'production') {
   Sentry.init({
     dsn: 'https://b7ebba6ca5dd4d65a2ee0ea7f7665a22@o43921.ingest.sentry.io/1197101',
     environment,
-    release,
+    release: `damianmullins@${release}`,
+
+    replaysSessionSampleRate: 0.1,
+    replaysOnErrorSampleRate: 1.0,
 
     integrations: [
-      new Sentry.Integrations.HttpContext(),
-      new Integrations.BrowserTracing()
+      Sentry.browserTracingIntegration(),
+      Sentry.replayIntegration({
+        maskAllText: false,
+        blockAllMedia: false
+      })
     ],
 
     tracesSampleRate: 1.0,
@@ -35,9 +40,7 @@ if (environment === 'production') {
     }
   })
 
-  LogRocket.getSessionURL(sessionURL => {
-    Sentry.configureScope(scope => {
-      scope.setExtra('sessionURL', sessionURL)
-    })
-  })
+  LogRocket.getSessionURL(sessionURL =>
+    Sentry.getCurrentScope().setExtra('sessionURL', sessionURL)
+  )
 }
