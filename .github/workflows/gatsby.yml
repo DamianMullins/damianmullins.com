@@ -58,6 +58,10 @@ jobs:
           key: ${{ runner.os }}-gatsby-build-${{ hashFiles('public') }}
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
+      - name: Activate latest Yarn
+        shell: bash
+        run: |
+          corepack enable
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build with Gatsby
