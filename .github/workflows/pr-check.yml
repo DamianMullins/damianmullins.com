@@ -18,6 +18,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Activate latest Yarn
+        shell: bash
+        run: |
+          corepack enable
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -32,10 +36,6 @@ jobs:
           key: ${{ runner.os }}-gatsby-build-${{ hashFiles('public') }}
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
-      - name: Activate latest Yarn
-        shell: bash
-        run: |
-          corepack enable
       - name: Install dependencies
         run: yarn install --immutable
       - name: Build with Gatsby
