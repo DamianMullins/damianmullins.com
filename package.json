@@ -2,7 +2,7 @@
   "name": "damianmullins",
   "description": "Development Blog for Damian mullins - Senior Full-Stack Engineer at Growth Kitchen.",
   "homepage": "https://www.damianmullins.com",
-  "version": "4.122.0",
+  "version": "4.123.0",
   "author": "Damian Mullins <damian@mullins.in> (https://www.damianmullins.com)",
   "keywords": [
     "gatsby"
@@ -42,9 +42,9 @@
     "gatsby-plugin-react-helmet": "6.13.1",
     "gatsby-plugin-sass": "6.13.1",
     "gatsby-plugin-sitemap": "6.13.1",
-    "gatsby-remark-copy-linked-files": "6.13.1",
+    "gatsby-remark-copy-linked-files": "6.13.2",
     "gatsby-remark-heading-slug": "0.2.0",
-    "gatsby-remark-prismjs": "7.13.1",
+    "gatsby-remark-prismjs": "7.13.2",
     "gatsby-source-filesystem": "5.13.1",
     "gatsby-transformer-remark": "6.13.1",
     "postcss": "8.4.41",
