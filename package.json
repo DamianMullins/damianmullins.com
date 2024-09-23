@@ -20,7 +20,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "@sentry/react": "8.30.0",
+    "@sentry/react": "8.31.0",
     "@sentry/tracing": "7.119.0",
     "date-fns": "4.0.0",
     "logrocket": "9.0.0",
