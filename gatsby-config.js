@@ -97,9 +97,7 @@ module.exports = {
       }
     },
     'gatsby-plugin-sitemap',
-    {
-      resolve: 'gatsby-plugin-sass'
-    },
+    'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-transformer-remark',
@@ -116,6 +114,7 @@ module.exports = {
         ]
       }
     },
-    'gatsby-plugin-catch-links'
+    'gatsby-plugin-catch-links',
+    '@sentry/gatsby',
   ]
 }

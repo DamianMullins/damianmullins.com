@@ -1,6 +1,6 @@
 import LogRocket from 'logrocket'
 import setupLogRocketReact from 'logrocket-react'
-import * as Sentry from '@sentry/react'
+import * as Sentry from '@sentry/gatsby'
 
 const environment = process.env.NODE_ENV
 const release = process.env.GATSBY_RELEASE_VERSION
