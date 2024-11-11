@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "gatsby": "5.13.7",
-    "gatsby-plugin-catch-links": "5.13.1",
+    "gatsby-plugin-catch-links": "5.14.0",
     "gatsby-plugin-feed": "5.13.1",
     "gatsby-plugin-gtag": "1.0.13",
     "gatsby-plugin-manifest": "5.13.1",
