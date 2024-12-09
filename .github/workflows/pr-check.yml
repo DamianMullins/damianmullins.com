@@ -37,7 +37,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
       - name: Install dependencies
-        run: pnpm install --immutable
+        run: pnpm install
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
