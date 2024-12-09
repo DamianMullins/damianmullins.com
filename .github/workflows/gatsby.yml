@@ -36,7 +36,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Activate latest Yarn
+      - name: Activate latest pnpm
         shell: bash
         run: |
           corepack enable
@@ -44,7 +44,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: yarn
+          cache: pnpm
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
