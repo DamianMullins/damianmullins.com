@@ -48,6 +48,7 @@
     "gatsby-transformer-remark": "6.14.0",
     "postcss": "8.4.49",
     "prettier": "3.4.1",
+    "prop-types": "^15.8.1",
     "rimraf": "6.0.1",
     "sass": "1.81.0"
   },
