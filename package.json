@@ -2,7 +2,7 @@
   "name": "damianmullins",
   "description": "Development Blog for Damian mullins - Senior Full-Stack Engineer at Growth Kitchen.",
   "homepage": "https://www.damianmullins.com",
-  "version": "4.133.0",
+  "version": "4.134.0",
   "author": "Damian Mullins <damian@mullins.in> (https://www.damianmullins.com)",
   "keywords": [
     "gatsby"
@@ -16,7 +16,7 @@
     "clean": "rimraf public .cache",
     "start": "rimraf .cache && GATSBY_RELEASE_VERSION=$npm_package_version gatsby develop",
     "format": "prettier --write .",
-    "build": "yarn run clean && GATSBY_RELEASE_VERSION=$npm_package_version gatsby build",
+    "build": "pnpm run clean && GATSBY_RELEASE_VERSION=$npm_package_version gatsby build",
     "serve": "gatsby serve"
   },
   "dependencies": {
@@ -60,5 +60,5 @@
     "last 2 versions",
     "not ie 11"
   ],
-  "packageManager": "yarn@4.5.1"
+  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c"
 }
