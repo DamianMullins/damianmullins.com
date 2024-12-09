@@ -320,7 +320,7 @@ I followed the readme on the GitHub repository and wrote a couple of basic tests
 
 ## Continuous integration — Stretch goal!
 
-[I set up a TravisCI build](https://travis-ci.org/DamianMullins/Coinsly) which runs the `yarn build` and `yarn test` tasks against NodeJS versions 7, 8, and 9 whenever changes are pushed to the GitHub repository.
+[I set up a TravisCI build](https://travis-ci.org/DamianMullins/Coinsly) which runs the `pnpm build` and `pnpm test` tasks against NodeJS versions 7, 8, and 9 whenever changes are pushed to the GitHub repository.
 
 It also [pushes the unit test coverage report up to Coveralls](https://coveralls.io/github/DamianMullins/Coinsly) after a successful test run. My hope is that these reports will spur me on to write more tests and get the coverage up!
 
@@ -389,7 +389,7 @@ Each radio button then sets the `checked` attribute based on the filter state va
 
 One of the unit tests I wrote used the `.toMatchSnapshot()` assertion, this caused an issue in CodeSandbox as it isn't able to create snapshot files.
 
-To get around this I had to clone the repository onto my laptop and run the unit tests with the `-u` flag (`yarn run tests -u`) to create the snapshot files, then check the updated files in. Once this was done the test passed in CodeSandbox.
+To get around this I had to clone the repository onto my laptop and run the unit tests with the `-u` flag (`pnpm run tests -u`) to create the snapshot files, then check the updated files in. Once this was done the test passed in CodeSandbox.
 
 ### Prop drilling
 

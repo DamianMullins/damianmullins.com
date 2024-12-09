@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Activate latest Yarn
+      - name: Activate latest pnpm
         shell: bash
         run: |
           corepack enable
@@ -26,7 +26,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: yarn
+          cache: pnpm
       - name: Restore cache
         uses: actions/cache@v4
         with:
@@ -37,8 +37,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
       - name: Install dependencies
-        run: yarn install --immutable
+        run: pnpm install --immutable
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
-        run: yarn run build
+        run: pnpm run build

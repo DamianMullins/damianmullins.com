@@ -63,11 +63,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
       - name: Install dependencies
-        run: yarn install --immutable
+        run: pnpm install --immutable
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
-        run: yarn run build
+        run: pnpm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
