@@ -66,7 +66,7 @@ importers:
         version: 6.14.0(gatsby@5.14.0(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.7.2))(react-helmet@6.1.0(react@18.3.1))
       gatsby-plugin-sass:
         specifier: 6.14.0
-        version: 6.14.0(gatsby@5.14.0(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.7.2))(sass@1.82.0)(webpack@5.97.1)
+        version: 6.14.0(gatsby@5.14.0(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.7.2))(sass@1.83.0)(webpack@5.97.1)
       gatsby-plugin-sitemap:
         specifier: 6.14.0
         version: 6.14.0(gatsby@5.14.0(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.7.2))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -98,8 +98,8 @@ importers:
         specifier: 6.0.1
         version: 6.0.1
       sass:
-        specifier: 1.82.0
-        version: 1.82.0
+        specifier: 1.83.0
+        version: 1.83.0
 
 packages:
 
@@ -5366,8 +5366,8 @@ packages:
       sass:
         optional: true
 
-  sass@1.82.0:
-    resolution: {integrity: sha512-j4GMCTa8elGyN9A7x7bEglx0VgSpNUG4W4wNedQ33wSMdnkqQCT8HTwOaVSV4e6yQovcu/3Oc4coJP/l0xhL2Q==}
+  sass@1.83.0:
+    resolution: {integrity: sha512-qsSxlayzoOjdvXMVLkzF84DJFc2HZEL/rFyGIKbbilYtAvlCxyuzUeff9LawTn4btVnLKg75Z8MMr1lxU1lfGw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -5708,6 +5708,7 @@ packages:
 
   sudo-prompt@8.2.5:
     resolution: {integrity: sha512-rlBo3HU/1zAJUrkY6jNxDOC9eVYliG6nS4JA8u8KAshITd07tafMc/Br7xQwCSseXwJ2iCcHCE8SNWX3q8Z+kw==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
@@ -10278,13 +10279,13 @@ snapshots:
       gatsby: 5.14.0(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.7.2)
       react-helmet: 6.1.0(react@18.3.1)
 
-  gatsby-plugin-sass@6.14.0(gatsby@5.14.0(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.7.2))(sass@1.82.0)(webpack@5.97.1):
+  gatsby-plugin-sass@6.14.0(gatsby@5.14.0(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.7.2))(sass@1.83.0)(webpack@5.97.1):
     dependencies:
       '@babel/runtime': 7.26.0
       gatsby: 5.14.0(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.7.2)
       resolve-url-loader: 3.1.5
-      sass: 1.82.0
-      sass-loader: 10.5.2(sass@1.82.0)(webpack@5.97.1)
+      sass: 1.83.0
+      sass-loader: 10.5.2(sass@1.83.0)(webpack@5.97.1)
     transitivePeerDependencies:
       - fibers
       - node-sass
@@ -12803,7 +12804,7 @@ snapshots:
       parse-srcset: 1.0.2
       postcss: 8.4.49
 
-  sass-loader@10.5.2(sass@1.82.0)(webpack@5.97.1):
+  sass-loader@10.5.2(sass@1.83.0)(webpack@5.97.1):
     dependencies:
       klona: 2.0.6
       loader-utils: 2.0.4
@@ -12812,9 +12813,9 @@ snapshots:
       semver: 7.6.3
       webpack: 5.97.1
     optionalDependencies:
-      sass: 1.82.0
+      sass: 1.83.0
 
-  sass@1.82.0:
+  sass@1.83.0:
     dependencies:
       chokidar: 4.0.1
       immutable: 5.0.3
