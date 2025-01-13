@@ -19,11 +19,11 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       logrocket:
-        specifier: 9.0.0
-        version: 9.0.0
+        specifier: 9.0.1
+        version: 9.0.1
       logrocket-react:
         specifier: 6.0.3
-        version: 6.0.3(logrocket@9.0.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 6.0.3(logrocket@9.0.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       prism-themes:
         specifier: 1.9.0
         version: 1.9.0
@@ -4085,8 +4085,8 @@ packages:
       react: '>=18'
       react-dom: '>=18'
 
-  logrocket@9.0.0:
-    resolution: {integrity: sha512-/nYoKA4W8nr3YETPyOin9oiFFzwGDv8Lh02DG8ZnS9coKBYwrEG+dE2OqpOotVbs4zJWjCCPaqhR/HAMi+O3yA==}
+  logrocket@9.0.1:
+    resolution: {integrity: sha512-Mzi/JYUMmZo8ciaBBPlNGgR1yYVB6SzjL05Rj90//faW0snei7lSTuXu89YSCY1g7I1bl7/yIb61KM27aVahOQ==}
 
   longest-streak@2.0.4:
     resolution: {integrity: sha512-vM6rUVCVUJJt33bnmHiZEvr7wPT78ztX7rojL+LW51bHtLh6HTjx84LA5W4+oa6aKEJA7jJu5LR6vQRBpA5DVg==}
@@ -5708,6 +5708,7 @@ packages:
 
   sudo-prompt@8.2.5:
     resolution: {integrity: sha512-rlBo3HU/1zAJUrkY6jNxDOC9eVYliG6nS4JA8u8KAshITd07tafMc/Br7xQwCSseXwJ2iCcHCE8SNWX3q8Z+kw==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
@@ -11428,13 +11429,13 @@ snapshots:
 
   lodash@4.17.21: {}
 
-  logrocket-react@6.0.3(logrocket@9.0.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  logrocket-react@6.0.3(logrocket@9.0.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      logrocket: 9.0.0
+      logrocket: 9.0.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  logrocket@9.0.0: {}
+  logrocket@9.0.1: {}
 
   longest-streak@2.0.4: {}
 
