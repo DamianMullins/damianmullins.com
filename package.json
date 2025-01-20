@@ -54,7 +54,7 @@
   },
   "resolutions": {
     "@types/node": "20.14.8",
-    "postcss": "8.4.49"
+    "postcss": "8.5.1"
   },
   "browserslist": [
     "> 5%",
