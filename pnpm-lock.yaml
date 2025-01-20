@@ -19,11 +19,11 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       logrocket:
-        specifier: 9.0.1
-        version: 9.0.1
+        specifier: 9.0.2
+        version: 9.0.2
       logrocket-react:
         specifier: 6.0.3
-        version: 6.0.3(logrocket@9.0.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 6.0.3(logrocket@9.0.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       prism-themes:
         specifier: 1.9.0
         version: 1.9.0
@@ -4104,8 +4104,8 @@ packages:
       react: '>=18'
       react-dom: '>=18'
 
-  logrocket@9.0.1:
-    resolution: {integrity: sha512-Mzi/JYUMmZo8ciaBBPlNGgR1yYVB6SzjL05Rj90//faW0snei7lSTuXu89YSCY1g7I1bl7/yIb61KM27aVahOQ==}
+  logrocket@9.0.2:
+    resolution: {integrity: sha512-DscsCEi9PLEEXPXWOsf+BGsmwZGIFzn9Ixo+lTezFpR2o3xzZxD7Qz3FWecYYuci6SKvalVciy6msVvMjD16PA==}
 
   longest-streak@2.0.4:
     resolution: {integrity: sha512-vM6rUVCVUJJt33bnmHiZEvr7wPT78ztX7rojL+LW51bHtLh6HTjx84LA5W4+oa6aKEJA7jJu5LR6vQRBpA5DVg==}
@@ -11519,13 +11519,13 @@ snapshots:
 
   lodash@4.17.21: {}
 
-  logrocket-react@6.0.3(logrocket@9.0.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  logrocket-react@6.0.3(logrocket@9.0.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      logrocket: 9.0.1
+      logrocket: 9.0.2
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  logrocket@9.0.1: {}
+  logrocket@9.0.2: {}
 
   longest-streak@2.0.4: {}
 
