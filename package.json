@@ -50,7 +50,7 @@
     "prettier": "3.5.3",
     "prop-types": "^15.8.1",
     "rimraf": "6.0.1",
-    "sass": "1.85.1"
+    "sass": "1.89.0"
   },
   "resolutions": {
     "@types/node": "20.14.8",
