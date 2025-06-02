@@ -41,67 +41,99 @@ Another great piece of gear I can't do without, especially in the colder months,
 
 Enough talk already! Here's a brief rundown of the podcasts I currently subscribe and listen to.
 
-#### [Developer Tea](https://developertea.com/)
+#### Developer Tea
+
+[link](https://developertea.com/)
 
 A mixture of tips on how to better yourself as a developer, and interviews with people who work in tech. Around 10 minutes an episode (some have been a lot longer or split into two), this is one of my favourites as the content is so varied and always seems applicable to my work life.
 
-#### [Javascript Jabber](https://devchat.tv/js-jabber/)
+#### Javascript Jabber
+
+[Link](https://devchat.tv/js-jabber/)
 
 Weekly episodes around an hour long, with guests discussing JS related topics with the panel. I always end up with a bunch of browser tabs open after the picks during the last 10 minutes of the show.
 
-#### [5 Minutes of Javascript](https://fivejs.codeschool.com/)
+#### 5 Minutes of Javascript
+
+[Link](https://fivejs.codeschool.com/)
 
 From the guys at Codeschool, 5 Minutes of Javascript is short and to the point, but full of awesome content with a hint of humour. Great for keeping up to date with the latest in the JavaScript world. Can you guess how long each episode is?
 
-#### [.NET Rocks!](https://www.dotnetrocks.com/)
+#### .NET Rocks!
+
+[Link](https://www.dotnetrocks.com/)
 
 This was the podcast which kicked off my obsession, released three times a week, episodes are around the hour mark, I think I've skipped about two episodes out of hundreds! Carl Franklin & Richard Campbell discuss various topics, not limited to .Net so don't be put off by the title.
 
-#### [CodePen Radio](http://blog.codepen.io/radio/)
+#### CodePen Radio
+
+[Link](http://blog.codepen.io/radio/)
 
 CodePen is awesome and this podcast gives an insight into what is was like setting up the company and how they function day to day, everything from tech to legal issues are discussed, highly recommended.
 
-#### [Shop Talk Show](http://shoptalkshow.com/)
+#### Shop Talk Show
+
+[Link](http://shoptalkshow.com/)
 
 Dave Rupert and Chris Coyier host this weekly show about frontend development which is around an hour in length. The show has various different formats from rapid fire questions to guest interviews. Highly entertaining and informative, I always come away having learned something new.
 
-#### [Toolsday](http://toolsday.io/)
+#### Toolsday
+
+[Link](http://toolsday.io/)
 
 Hosted by Chris Dhanaraj and Una Kravets from IBM, worth listening to for the intro songs alone! Around 20 minutes in length they discuss (in their own words) _the latest in tech tools, tips, and tricks on Tuesdays at 2!_. This is a fairly young podcast but it's already up there as one of my favourites.
 
-#### [Hanselminutes](http://hanselminutes.com/)
+#### Hanselminutes
+
+[Link](http://hanselminutes.com/)
 
 Scott Hanselman discusses a wide variety of topics from 3D printing to computer games. These tend to be around 30 minutes long but are packed with interesting conversations.
 
-#### [A Responsive Web Design Podcast](http://responsivewebdesign.com/podcast/)
+#### A Responsive Web Design Podcast
+
+[Link](http://responsivewebdesign.com/podcast/)
 
 From a frontend perspective this podcast is gold dust, from the legends of the responsive world: Karen McGrane and Ethan Marcotte, an insight into how companies both large and small go about implementing responsive web design into their projects. Around 30 minutes in length.
 
-#### [The Web Ahead](http://thewebahead.net/)
+#### The Web Ahead
+
+[Link](http://thewebahead.net/)
 
 After an hour listening to Jen Simmons and guests you're guaranteed to learn something new each time. Episodes which stand out are [Understanding the Web with Jeremy Keith](http://thewebahead.net/110) and [Remembering the Everyday Developer with Rachel Andrew](http://thewebahead.net/104).
 
-#### [Motion And Meaning](http://motionandmeaning.io/)
+#### Motion And Meaning
+
+[Link](http://motionandmeaning.io/)
 
 Val Head and Cennydd Bowles host this podcast where they discuss motion design roughly once a month for around half an hour. I'm fairly new to the animation world but I find their discussions fascinating and feel inspired long after finishing listening to an episode.
 
-#### [Pete on Software Podcast](http://peteonsoftware.libsyn.com/)
+#### Pete on Software Podcast
+
+[Link](http://peteonsoftware.libsyn.com/)
 
 Not released regularly right now, but it's worth going through the archives as there are a few gems in there. Episodes are around 15 minutes long.
 
-#### [Style Guide Podcast](http://styleguides.io/podcast/)
+#### Style Guide Podcast
+
+[Link](http://styleguides.io/podcast/)
 
 A batch of 12 episodes (hopefully more in the future?) released during 2015, Anna Debenham and Brad Frost host this 40ish minute long podcast where they talk with some big names in tech about style guides; how they've created and used them, and why they think they are important.
 
-#### [The Path to Performance](https://pathtoperf.com/)
+#### The Path to Performance
+
+[Link](https://pathtoperf.com/)
 
 No episodes for a little while, I listened to this one back when I became obsessed with web performance. Listen for around 50 minutes whilst Tim Kadlec and Katie Kovalcin talk with guests from various companies about how they measure performance and ensure that their websites are always adhering to performance best practices.
 
-#### [SVG Immersion](http://svgimmersion.com/)
+#### SVG Immersion
+
+[Link](http://svgimmersion.com/)
 
 One of the more recent podcasts I've been listening to lately, my knowledge around SVG is sorely lacking but after listening to Rob Levin for an hour I always feel a little more enlightened.
 
-#### [The Big Web Show](http://5by5.tv/bigwebshow)
+#### The Big Web Show
+
+[Link](http://5by5.tv/bigwebshow)
 
 Hosted by web veteran Jeffrey Zeldman, listen for an hour whilst he discusses anything and everything about the web with guests. I'm fairly new to this podcast but love it already.
 
@@ -109,15 +141,21 @@ Hosted by web veteran Jeffrey Zeldman, listen for an hour whilst he discusses an
 
 Occasionally I'll break of the tech podcast world and listen to something different, these are the non techie podcasts which I enjoy listening to,
 
-#### [Welcome to Night Vale](http://www.welcometonightvale.com/)
+#### Welcome to Night Vale
+
+[Link](http://www.welcometonightvale.com/)
 
 I've only made it a few episodes in but I intend on engrossing myself further into this mysterious story.
 
-#### [The Complete Guide to Everything](http://tcgte.com/)
+#### The Complete Guide to Everything
+
+[Link](http://tcgte.com/)
 
 Hilarious discussions on the topic of, well everything! Have to be careful with this one as you can look a little crazy laughing to yourself if out in public!
 
-#### [Kumail Nanjiani's The X-Files Files](http://www.feralaudio.com/show/x-files-files/)
+#### Kumail Nanjiani's The X-Files Files
+
+[Link](http://www.feralaudio.com/show/x-files-files/)
 
 I started watching the X-Files from series one recently and this podcast is the perfect accompaniment. If you've never watched the X-Files what have you been doing with your life?!
 
