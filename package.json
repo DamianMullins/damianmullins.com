@@ -46,7 +46,7 @@
     "gatsby-remark-prismjs": "7.14.0",
     "gatsby-source-filesystem": "5.14.0",
     "gatsby-transformer-remark": "6.14.0",
-    "postcss": "8.5.4",
+    "postcss": "8.5.6",
     "prettier": "3.5.3",
     "prop-types": "^15.8.1",
     "rimraf": "6.0.1",
@@ -57,7 +57,7 @@
     "cookie": "^0.7.2",
     "multer": "2.0.0",
     "path-to-regexp": "0.1.12",
-    "postcss": "8.5.4"
+    "postcss": "8.5.6"
   },
   "browserslist": [
     "> 5%",
