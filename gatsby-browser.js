@@ -27,6 +27,7 @@ if (environment === 'production') {
     ],
 
     tracesSampleRate: 1.0,
+    enableLogs: true,
 
     beforeSend(event) {
       const logRocketSession = LogRocket.sessionURL
