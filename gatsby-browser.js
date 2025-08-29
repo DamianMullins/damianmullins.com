@@ -41,6 +41,8 @@ if (environment === 'production') {
     }
   })
 
+  Sentry.logger.info('User triggered test log', { log_source: 'sentry_test' })
+
   LogRocket.getSessionURL(sessionURL =>
     Sentry.getCurrentScope().setExtra('sessionURL', sessionURL)
   )
