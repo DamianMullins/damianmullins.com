@@ -80,8 +80,8 @@ importers:
         specifier: 0.2.0
         version: 0.2.0(gatsby@5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))
       gatsby-remark-prismjs:
-        specifier: 7.14.0
-        version: 7.14.0(gatsby@5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))(prismjs@1.30.0)
+        specifier: 7.15.0
+        version: 7.15.0(gatsby@5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))(prismjs@1.30.0)
       gatsby-source-filesystem:
         specifier: 5.14.0
         version: 5.14.0(gatsby@5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))
@@ -3292,8 +3292,8 @@ packages:
     peerDependencies:
       gatsby: ^2.0.0
 
-  gatsby-remark-prismjs@7.14.0:
-    resolution: {integrity: sha512-GzwAECHpglROwrUQHdYGNiortpMlp59Yz7PeqxG5qncZ9h9tGfuNMH1g5NST6fDnqHX0cqvtXBRqLP0JcMAFYA==}
+  gatsby-remark-prismjs@7.15.0:
+    resolution: {integrity: sha512-L65d8ItdL6tc3DvZYYPBDy4mPB4ifrYFZylXg7rjG8tu2bn2HmJN2VImhP39XfBOv8ohw1D7jge8x/zKsnoQww==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       gatsby: ^5.0.0-next
@@ -10429,7 +10429,7 @@ snapshots:
       mdast-util-to-string: 1.1.0
       unist-util-visit: 1.4.1
 
-  gatsby-remark-prismjs@7.14.0(gatsby@5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))(prismjs@1.30.0):
+  gatsby-remark-prismjs@7.15.0(gatsby@5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))(prismjs@1.30.0):
     dependencies:
       '@babel/runtime': 7.28.3
       gatsby: 5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2)
