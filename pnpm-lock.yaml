@@ -74,8 +74,8 @@ importers:
         specifier: 6.15.0
         version: 6.15.0(gatsby@5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       gatsby-remark-copy-linked-files:
-        specifier: 6.14.0
-        version: 6.14.0(gatsby@5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))
+        specifier: 6.15.0
+        version: 6.15.0(gatsby@5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))
       gatsby-remark-heading-slug:
         specifier: 0.2.0
         version: 0.2.0(gatsby@5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))
@@ -3281,8 +3281,8 @@ packages:
       react: ^18.0.0 || ^0.0.0
       react-dom: ^18.0.0 || ^0.0.0
 
-  gatsby-remark-copy-linked-files@6.14.0:
-    resolution: {integrity: sha512-75s/NvjtgYNiFfThZ8cC6Awy0nP2Nyn5/zLISahIAbRaDfnJm3cTd2R9s+/n+t3y3HXXPwMHskCCLdOJAlGviQ==}
+  gatsby-remark-copy-linked-files@6.15.0:
+    resolution: {integrity: sha512-nLRUEP0d+g2pMgIAet60yxJ8k6D85Kjco5W+QTbmc/Ka4xYqO17oD5nSluLbOoighalJ/b+LBF7EhXTXbbk+dw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       gatsby: ^5.0.0-next
@@ -10407,7 +10407,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  gatsby-remark-copy-linked-files@6.14.0(gatsby@5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2)):
+  gatsby-remark-copy-linked-files@6.15.0(gatsby@5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2)):
     dependencies:
       '@babel/runtime': 7.28.3
       cheerio: 1.0.0-rc.12
