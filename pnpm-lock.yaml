@@ -50,8 +50,8 @@ importers:
         specifier: 5.14.6
         version: 5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2)
       gatsby-plugin-catch-links:
-        specifier: 5.14.0
-        version: 5.14.0(gatsby@5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))
+        specifier: 5.15.0
+        version: 5.15.0(gatsby@5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))
       gatsby-plugin-feed:
         specifier: 5.15.0
         version: 5.15.0(gatsby@5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))(graphql@16.11.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3201,8 +3201,8 @@ packages:
     peerDependencies:
       '@parcel/core': ^2.0.0
 
-  gatsby-plugin-catch-links@5.14.0:
-    resolution: {integrity: sha512-dKMrQOHj0FCMz02FCARI50kFh5jnh1YWA4FoASzaggmhknmgm6A4JIRAwSQo2iEhxnMNgYOHN0FKLz0XSwjdTA==}
+  gatsby-plugin-catch-links@5.15.0:
+    resolution: {integrity: sha512-1/4rMadWkw5cfIVVZXIQF8rGjDBt6uUXM0r+3lEnUAy+BY9aTTY3TSSb6kNQC12O3hZPdbFmqCoRWW2SsIW2hw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       gatsby: ^5.0.0-next
@@ -10281,7 +10281,7 @@ snapshots:
       '@parcel/transformer-js': 2.8.3(@parcel/core@2.8.3)
       '@parcel/transformer-json': 2.8.3(@parcel/core@2.8.3)
 
-  gatsby-plugin-catch-links@5.14.0(gatsby@5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2)):
+  gatsby-plugin-catch-links@5.15.0(gatsby@5.14.6(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2)):
     dependencies:
       '@babel/runtime': 7.28.3
       escape-string-regexp: 1.0.5
