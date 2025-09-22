@@ -70,7 +70,7 @@ importers:
         version: 6.15.0(gatsby@5.15.0(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))(react-helmet@6.1.0(react@18.3.1))
       gatsby-plugin-sass:
         specifier: 6.15.0
-        version: 6.15.0(gatsby@5.15.0(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))(sass@1.92.1)(webpack@5.98.0)
+        version: 6.15.0(gatsby@5.15.0(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))(sass@1.93.0)(webpack@5.98.0)
       gatsby-plugin-sitemap:
         specifier: 6.15.0
         version: 6.15.0(gatsby@5.15.0(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -102,8 +102,8 @@ importers:
         specifier: 6.0.1
         version: 6.0.1
       sass:
-        specifier: 1.92.1
-        version: 1.92.1
+        specifier: 1.93.0
+        version: 1.93.0
 
 packages:
 
@@ -2593,6 +2593,10 @@ packages:
 
   detect-libc@2.0.4:
     resolution: {integrity: sha512-3UDv+G9CsCKO1WKMGw9fwq/SWJYbI0c5Y7LU1AXYoDdbhE2AHQ6N6Nb34sG8Fj7T5APy8qXDCKuuIHd1BR0tVA==}
+    engines: {node: '>=8'}
+
+  detect-libc@2.1.0:
+    resolution: {integrity: sha512-vEtk+OcP7VBRtQZ1EJ3bdgzSfBjgnEalLTp5zjJrS+2Z1w2KZly4SBdac/WDU3hhsNAZ9E8SC96ME4Ey8MZ7cg==}
     engines: {node: '>=8'}
 
   detect-port-alt@1.1.6:
@@ -5422,8 +5426,8 @@ packages:
       sass:
         optional: true
 
-  sass@1.92.1:
-    resolution: {integrity: sha512-ffmsdbwqb3XeyR8jJR6KelIXARM9bFQe8A6Q3W4Klmwy5Ckd5gz7jgUNHo4UOqutU5Sk1DtKLbpDP0nLCg1xqQ==}
+  sass@1.93.0:
+    resolution: {integrity: sha512-CQi5/AzCwiubU3dSqRDJ93RfOfg/hhpW1l6wCIvolmehfwgCI35R/0QDs1+R+Ygrl8jFawwwIojE2w47/mf94A==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -9597,6 +9601,9 @@ snapshots:
 
   detect-libc@2.0.4: {}
 
+  detect-libc@2.1.0:
+    optional: true
+
   detect-port-alt@1.1.6:
     dependencies:
       address: 1.2.2
@@ -10589,13 +10596,13 @@ snapshots:
       gatsby: 5.15.0(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2)
       react-helmet: 6.1.0(react@18.3.1)
 
-  gatsby-plugin-sass@6.15.0(gatsby@5.15.0(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))(sass@1.92.1)(webpack@5.98.0):
+  gatsby-plugin-sass@6.15.0(gatsby@5.15.0(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2))(sass@1.93.0)(webpack@5.98.0):
     dependencies:
       '@babel/runtime': 7.28.3
       gatsby: 5.15.0(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@0.21.3)(typescript@5.9.2)
       resolve-url-loader: 3.1.5
-      sass: 1.92.1
-      sass-loader: 10.5.2(sass@1.92.1)(webpack@5.98.0)
+      sass: 1.93.0
+      sass-loader: 10.5.2(sass@1.93.0)(webpack@5.98.0)
     transitivePeerDependencies:
       - fibers
       - node-sass
@@ -12166,7 +12173,7 @@ snapshots:
 
   node-gyp-build-optional-packages@5.2.2:
     dependencies:
-      detect-libc: 2.0.4
+      detect-libc: 2.1.0
     optional: true
 
   node-html-parser@5.4.2:
@@ -13146,7 +13153,7 @@ snapshots:
       parse-srcset: 1.0.2
       postcss: 8.5.6
 
-  sass-loader@10.5.2(sass@1.92.1)(webpack@5.98.0):
+  sass-loader@10.5.2(sass@1.93.0)(webpack@5.98.0):
     dependencies:
       klona: 2.0.6
       loader-utils: 2.0.4
@@ -13155,9 +13162,9 @@ snapshots:
       semver: 7.7.2
       webpack: 5.98.0
     optionalDependencies:
-      sass: 1.92.1
+      sass: 1.93.0
 
-  sass@1.92.1:
+  sass@1.93.0:
     dependencies:
       chokidar: 4.0.3
       immutable: 5.1.3
