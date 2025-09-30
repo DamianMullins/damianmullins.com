@@ -2,7 +2,7 @@
   "name": "damianmullins",
   "description": "Development Blog for Damian mullins - Senior Software Engineer.",
   "homepage": "https://www.damianmullins.com",
-  "version": "4.148.0",
+  "version": "4.149.0",
   "author": "Damian Mullins <damian@mullins.in> (https://www.damianmullins.com)",
   "keywords": [
     "gatsby"
@@ -20,7 +20,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "@sentry/gatsby": "10.13.0",
+    "@sentry/gatsby": "10.16.0",
     "date-fns": "4.1.0",
     "logrocket": "10.1.0",
     "logrocket-react": "6.0.3",
@@ -50,7 +50,7 @@
     "prettier": "3.6.2",
     "prop-types": "^15.8.1",
     "rimraf": "6.0.1",
-    "sass": "1.93.0"
+    "sass": "1.93.2"
   },
   "resolutions": {
     "@types/node": "20.14.8",
