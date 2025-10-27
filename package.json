@@ -20,7 +20,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "@sentry/gatsby": "10.19.0",
+    "@sentry/gatsby": "10.22.0",
     "date-fns": "4.1.0",
     "logrocket": "10.1.0",
     "logrocket-react": "6.0.3",
