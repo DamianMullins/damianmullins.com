@@ -21,13 +21,14 @@ if (environment === 'production') {
     integrations: [
       Sentry.browserTracingIntegration(),
       Sentry.replayIntegration({
-        maskAllText: false,
-        blockAllMedia: false
+        // ✅ SECURITY: Mask all text and block all media by default to prevent PII leakage
+        maskAllText: true,
+        blockAllMedia: true
       })
     ],
 
     tracesSampleRate: 1.0,
-    enableLogs: true,
+    enableLogs: false,
 
     beforeSend(event) {
       const logRocketSession = LogRocket.sessionURL
