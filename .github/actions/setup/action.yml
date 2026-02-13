@@ -1,0 +1,16 @@
+name: Setup
+description: Activate pnpm, install Node.js, and install dependencies
+
+runs:
+  using: composite
+  steps:
+    - name: Activate latest pnpm
+      shell: bash
+      run: npm i -g corepack@latest && corepack enable
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: '24'
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install
