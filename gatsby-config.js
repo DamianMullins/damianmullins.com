@@ -115,6 +115,6 @@ module.exports = {
       }
     },
     'gatsby-plugin-catch-links',
-    '@sentry/gatsby',
+    '@sentry/gatsby'
   ]
 }
