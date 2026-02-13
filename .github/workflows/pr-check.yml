@@ -4,26 +4,43 @@ permissions:
 
 on:
   pull_request:
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Default to bash
 defaults:
   run:
     shell: bash
 
 jobs:
-  # Build job
-  build:
+  test:
+    name: Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Activate latest pnpm
-        shell: bash
-        run: |
-          npm i -g corepack@latest && corepack enable
+        run: npm i -g corepack@latest && corepack enable
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Unit tests
+        run: pnpm test:unit
+      - name: Test content
+        run: pnpm test:content
+      - name: Test build output
+        run: pnpm test:build
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Activate latest pnpm
+        run: npm i -g corepack@latest && corepack enable
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -33,9 +50,3 @@ jobs:
         run: pnpm install
       - name: Build with Astro
         run: pnpm run build
-      - name: Unit tests
-        run: pnpm test:unit
-      - name: Content validation
-        run: pnpm test:content
-      - name: Build output tests
-        run: pnpm test:build
