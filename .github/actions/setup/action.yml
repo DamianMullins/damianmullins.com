@@ -1,5 +1,5 @@
 name: Setup
-description: Checkout, install pnpm, Node.js, and restore/cache node_modules
+description: Activate pnpm, install Node.js, and install dependencies
 
 runs:
   using: composite
@@ -11,14 +11,6 @@ runs:
       uses: actions/setup-node@v4
       with:
         node-version: '24'
-        cache: pnpm
-    - name: Cache node_modules
-      id: cache-modules
-      uses: actions/cache@v4
-      with:
-        path: node_modules
-        key: modules-${{ hashFiles('pnpm-lock.yaml') }}
     - name: Install dependencies
-      if: steps.cache-modules.outputs.cache-hit != 'true'
       shell: bash
       run: pnpm install
