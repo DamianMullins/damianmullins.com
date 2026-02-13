@@ -1,0 +1,71 @@
+---
+import {
+  AUTHOR,
+  AUTHOR_EMAIL,
+  GITHUB_USERNAME,
+  TWITTER_USERNAME,
+  LINKEDIN_USERNAME
+} from '@/consts'
+
+const year = new Date().getFullYear()
+---
+
+<div class="bg-dark-01 text-light text-center">
+  <div class="mx-auto max-w-220 px-4 py-8">
+    <ul class="m-0 mb-8 list-none p-0">
+      {
+        AUTHOR_EMAIL && (
+          <li class="mx-4 my-5 inline">
+            <a
+              href={`mailto:${AUTHOR_EMAIL}`}
+              rel="external"
+              class="text-light decoration-light underline underline-offset-2 hover:no-underline">
+              Email
+            </a>
+          </li>
+        )
+      }
+      {
+        GITHUB_USERNAME && (
+          <li class="mx-4 my-5 inline">
+            <a
+              href={`https://github.com/${GITHUB_USERNAME}`}
+              rel="external"
+              class="text-light decoration-light underline underline-offset-2 hover:no-underline">
+              GitHub
+            </a>
+          </li>
+        )
+      }
+      {
+        TWITTER_USERNAME && (
+          <li class="mx-4 my-5 inline">
+            <a
+              href={`https://twitter.com/${TWITTER_USERNAME}`}
+              rel="external"
+              class="text-light decoration-light underline underline-offset-2 hover:no-underline">
+              Twitter
+            </a>
+          </li>
+        )
+      }
+      {
+        LINKEDIN_USERNAME && (
+          <li class="mx-4 my-5 inline">
+            <a
+              href={`https://www.linkedin.com/in/${LINKEDIN_USERNAME}`}
+              rel="external"
+              class="text-light decoration-light underline underline-offset-2 hover:no-underline">
+              LinkedIn
+            </a>
+          </li>
+        )
+      }
+    </ul>
+
+    <p class="m-0">
+      &copy; {AUTHOR}
+      {year}
+    </p>
+  </div>
+</div>

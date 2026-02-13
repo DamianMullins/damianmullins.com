@@ -1,0 +1,67 @@
+---
+import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
+import { SITE_TITLE, AUTHOR_BIO } from '@/consts'
+import '@/styles/global.css'
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const { title, description = AUTHOR_BIO } = Astro.props
+const pageTitle = title ? `${title} — ${SITE_TITLE}` : SITE_TITLE
+const version = import.meta.env.npm_package_version ?? ''
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="release" content={version} />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="/icons/icon-48x48.png"
+    />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#222020" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Analytics -->
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-NMJS073VTS"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-NMJS073VTS', { anonymize_ip: true })
+    </script>
+    <slot name="head" />
+  </head>
+  <body>
+    <Header />
+
+    <main class="mx-auto max-w-220 px-4 py-8">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <script>
+      import '@/scripts/logrocket'
+    </script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import notFoundImage from '@/assets/images/404.avif'
+---
+
+<Layout title="Page Not Found">
+  <h1>Page Not Found</h1>
+  <p>The page you are looking for couldn't be found.</p>
+  <img src={notFoundImage.src} alt="" />
+</Layout>

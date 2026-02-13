@@ -1,0 +1,243 @@
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --color-dark: #1c1b1b;
+  --color-dark-01: #222020;
+  --color-dark-02: #2f2f2f;
+  --color-light: #dadada;
+  --color-light-01: #656565;
+  --color-green: #00cd81;
+
+  --font-sans: 'Open Sans', sans-serif;
+}
+
+@layer base {
+  html {
+    font-size: 18px;
+    line-height: 1.45em;
+    box-sizing: border-box;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  body {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-size: 1rem;
+    padding-top: 5rem;
+    word-wrap: break-word;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    line-height: 1.45rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0 0 1.45rem;
+    padding: 0;
+  }
+
+  /* Hide auto-generated heading anchor links */
+  h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a,
+  h6 a {
+    display: none;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    border-left: solid 5px var(--color-green);
+    padding-left: 1.25rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 2.9rem;
+  }
+
+  h2 {
+    font-size: 1.51572rem;
+    line-height: 2.175rem;
+  }
+
+  h3 {
+    font-size: 1.31951rem;
+    line-height: 2.175rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  h5 {
+    font-size: 0.87055rem;
+  }
+
+  h6 {
+    font-size: 0.81225rem;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 1.45rem;
+    list-style-position: outside;
+    list-style-image: none;
+  }
+
+  li {
+    margin-bottom: calc(1.45rem / 4);
+  }
+
+  p,
+  dl,
+  dd,
+  figure,
+  fieldset,
+  form,
+  noscript,
+  iframe,
+  address {
+    margin: 0 0 1.45rem;
+    padding: 0;
+  }
+
+  pre {
+    border-radius: 8px;
+    margin: 0 0 1.45rem;
+    padding: 0;
+    font-size: 0.85rem;
+    line-height: 1.45rem;
+  }
+
+  table {
+    margin: 0 0 1.45rem;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.45rem;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  blockquote {
+    margin: 0 0 1.45rem 0;
+    padding: 1rem;
+    line-height: 1.45rem;
+    border-left: 5px solid var(--color-dark-02);
+    font-style: italic;
+  }
+
+  blockquote > :last-child {
+    margin-bottom: 0;
+  }
+
+  b,
+  strong,
+  dt,
+  th {
+    font-weight: 600;
+  }
+
+  code {
+    line-height: 1.45rem;
+  }
+
+  kbd,
+  samp {
+    font-size: 0.85rem;
+    line-height: 1.45rem;
+  }
+
+  abbr,
+  acronym {
+    border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
+    cursor: help;
+  }
+
+  abbr[title] {
+    border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
+    cursor: help;
+    text-decoration: none;
+  }
+
+  thead {
+    text-align: left;
+  }
+
+  td,
+  th {
+    text-align: left;
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
+    font-feature-settings: 'tnum';
+    padding: 0.725rem 0.96667rem calc(0.725rem - 1px) 0.96667rem;
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 0;
+  }
+
+  th:last-child,
+  td:last-child {
+    padding-right: 0;
+  }
+
+  a {
+    color: var(--color-light);
+    text-decoration: none;
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0) 1px,
+      var(--color-light) 1px,
+      var(--color-light) 2px,
+      rgba(0, 0, 0, 0) 2px
+    );
+  }
+
+  a:hover {
+    text-shadow: none;
+    background-image: none;
+  }
+
+  /* Shiki code block styling */
+  .astro-code {
+    margin: 0 0 1.45rem;
+    border-radius: 8px;
+    padding: 1.25em 1em;
+  }
+
+  .astro-code code {
+    font-size: 0.9rem;
+    background: none;
+    padding: 0;
+  }
+}

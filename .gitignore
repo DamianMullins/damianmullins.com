@@ -59,6 +59,7 @@ typings/
 .env
 
 .cache/
-public
+.astro/
+dist/
 yarn-error.log
 .DS_Store

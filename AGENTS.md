@@ -4,30 +4,30 @@
 
 ## Project
 
-Personal blog and portfolio site for [damianmullins.com](https://www.damianmullins.com), built with Gatsby and deployed to GitHub Pages.
+Personal blog and portfolio site for [damianmullins.com](https://www.damianmullins.com), built with Astro and deployed to GitHub Pages.
 
 ## Tech Stack
 
 Refer to `package.json` for exact versions.
 
-| Technology | Purpose                            |
-| ---------- | ---------------------------------- |
-| Gatsby     | Static site generator              |
-| React      | UI library                         |
-| Dart Sass  | SCSS Modules for component styling |
-| Node.js    | Runtime (see `.nvmrc`)             |
-| pnpm       | Package manager (corepack-managed) |
-| Prettier   | Code formatting (no linter)        |
+| Technology     | Purpose                            |
+| -------------- | ---------------------------------- |
+| Astro          | Static site generator              |
+| Tailwind CSS 4 | Utility-first styling              |
+| TypeScript     | Type-safe scripting                |
+| Node.js        | Runtime (see `.nvmrc`)             |
+| pnpm           | Package manager (corepack-managed) |
+| Prettier       | Code formatting (no linter)        |
 
 ## Scripts
 
 | Command           | Purpose                          |
 | ----------------- | -------------------------------- |
-| `pnpm start`      | Clean cache and start dev server |
+| `pnpm start`      | Start Astro dev server           |
 | `pnpm run build`  | Production build                 |
-| `pnpm run serve`  | Serve production build locally   |
+| `pnpm run serve`  | Preview production build locally |
 | `pnpm run format` | Format all files with Prettier   |
-| `pnpm run clean`  | Remove `public/` and `.cache/`   |
+| `pnpm run clean`  | Remove `dist/` and `.astro/`     |
 
 ## Documentation
 
@@ -38,7 +38,6 @@ Refer to `package.json` for exact versions.
 
 Do not modify or reference these paths:
 
-- `public/` — Build output (gitignored)
-- `.cache/` — Gatsby cache (gitignored)
+- `dist/` — Build output (gitignored)
+- `.astro/` — Astro cache (gitignored)
 - `pnpm-lock.yaml` — Auto-generated lockfile
-- `pages/robots.txt` — Leftover artifact, not part of the Gatsby build

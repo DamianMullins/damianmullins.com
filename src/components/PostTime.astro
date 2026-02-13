@@ -1,0 +1,18 @@
+---
+interface Props {
+  posted: string
+  minutesRead: number
+}
+
+const { posted, minutesRead } = Astro.props
+
+const formattedDate = new Intl.DateTimeFormat('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric'
+}).format(new Date(posted))
+---
+
+<p class="font-semibold italic">
+  <time>{formattedDate}</time> — {minutesRead} minute read
+</p>
