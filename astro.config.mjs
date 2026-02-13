@@ -24,19 +24,10 @@ export default defineConfig({
   ],
   markdown: {
     shikiConfig: {
-      theme: 'material-theme-darker',
-      transformers: [
-        {
-          span(node) {
-            if (node.properties?.style?.includes('#545454')) {
-              node.properties.style = node.properties.style.replace(
-                '#545454',
-                '#9e9e9e'
-              )
-            }
-          }
-        }
-      ]
+      themes: {
+        light: 'github-light',
+        dark: 'material-theme-darker'
+      }
     },
     remarkPlugins: [remarkReadingTime],
     rehypePlugins: [rehypeSlug]

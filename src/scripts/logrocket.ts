@@ -6,7 +6,8 @@ if (import.meta.env.PROD) {
 
     // Store session URL on window for Sentry's beforeSend hook
     LogRocket.getSessionURL(sessionURL => {
-      ;(window as unknown as Record<string, unknown>).__LOGROCKET_SESSION_URL = sessionURL
+      ;(window as unknown as Record<string, unknown>).__LOGROCKET_SESSION_URL =
+        sessionURL
     })
   })
 }

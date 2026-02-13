@@ -2,7 +2,7 @@
   "name": "damianmullins",
   "description": "Development Blog for Damian mullins - Senior Software Engineer.",
   "homepage": "https://www.damianmullins.com",
-  "version": "5.0.1",
+  "version": "5.1.0",
   "author": "Damian Mullins <damian@mullins.in> (https://www.damianmullins.com)",
   "keywords": [
     "astro",
@@ -15,9 +15,9 @@
   },
   "scripts": {
     "clean": "rimraf dist .astro",
-    "start": "astro dev",
+    "start": "PUBLIC_RELEASE_VERSION=$npm_package_version astro dev",
     "format": "prettier --write .",
-    "build": "pnpm run clean && astro build",
+    "build": "pnpm run clean && PUBLIC_RELEASE_VERSION=$npm_package_version astro build",
     "serve": "astro preview",
     "test": "vitest run",
     "test:unit": "vitest run tests/unit",

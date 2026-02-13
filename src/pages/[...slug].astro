@@ -31,24 +31,36 @@ const minutesRead = remarkPluginFrontmatter?.minutesRead ?? 1
 
   <PostTime posted={date} minutesRead={minutesRead} />
 
+  <div class="ornament" aria-hidden="true">&bull; &bull; &bull;</div>
+
   <div
-    class="post-content prose prose-invert prose-headings:font-semibold prose-headings:text-light prose-h2:border-l-[5px] prose-h2:border-l-green prose-h2:pl-5 prose-h3:border-l-[5px] prose-h3:border-l-green prose-h3:pl-5 prose-h4:border-l-[5px] prose-h4:border-l-green prose-h4:pl-5 prose-p:text-light prose-a:text-light prose-strong:text-light prose-code:text-light prose-li:text-light prose-blockquote:text-light border-b-light-01 mb-[1.45rem] pb-[1.45rem] max-w-none border-b text-[1.1rem]">
+    class="post-content prose prose-headings:font-[var(--font-heading)] prose-headings:font-bold prose-a:text-[var(--color-accent)] prose-blockquote:not-italic max-w-none text-[1.1rem]">
     <Content />
   </div>
 
   <Tags tags={tags} />
 </Layout>
 
-<style>
-  .post-content :global(> p:first-of-type) {
-    font-size: 1.2rem;
+<script>
+  function initImageReveal() {
+    const images = document.querySelectorAll('.post-content img')
+    if (!images.length) return
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    )
+
+    images.forEach(img => observer.observe(img))
   }
 
-  .post-content :global(img) {
-    background-color: var(--color-dark-02);
-    border-radius: 8px;
-    display: block;
-    margin: 0 auto;
-    padding: 1.25em 1em;
-  }
-</style>
+  initImageReveal()
+  document.addEventListener('astro:after-swap', initImageReveal)
+</script>

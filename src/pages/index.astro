@@ -3,10 +3,20 @@ import Layout from '@/layouts/Layout.astro'
 import Strapline from '@/components/Strapline.astro'
 import PostListing from '@/components/PostListing.astro'
 import { AUTHOR_BIO } from '@/consts'
-import { getCollection } from 'astro:content'
+import { getCollection, render } from 'astro:content'
 
 const posts = (await getCollection('posts', ({ data }) => data.published)).sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+)
+
+const postsWithReadingTime = await Promise.all(
+  posts.map(async post => {
+    const { remarkPluginFrontmatter } = await render(post)
+    return {
+      ...post,
+      minutesRead: remarkPluginFrontmatter?.minutesRead ?? 1
+    }
+  })
 )
 ---
 
@@ -21,12 +31,12 @@ const posts = (await getCollection('posts', ({ data }) => data.published)).sort(
   <Strapline text={AUTHOR_BIO} />
 
   {
-    posts.map(post => (
+    postsWithReadingTime.map(post => (
       <PostListing
         slug={post.data.slug}
         title={post.data.title}
         posted={post.data.date}
-        minutesRead={post.data.minutesRead ?? 1}
+        minutesRead={post.minutesRead}
         description={post.data.description}
       />
     ))

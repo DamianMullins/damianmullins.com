@@ -13,15 +13,40 @@ const { slug, title, posted, description, minutesRead } = Astro.props
 ---
 
 <article class="post-listing">
-  <a href={slug} class="block bg-none py-4 no-underline shadow-none">
-    <h2>{title}</h2>
+  <a href={slug} class="block py-6 no-underline">
+    <h2 class="font-heading text-heading mt-0 mb-2 border-0 pt-0 text-xl">
+      {title}
+    </h2>
     <PostTime posted={posted} minutesRead={minutesRead} />
-    <p>{description}</p>
+    <p class="text-text mb-0 leading-relaxed">
+      {description}
+    </p>
   </a>
 </article>
 
-<style>
-  .post-listing + .post-listing {
-    border-top: solid 1px var(--color-light-01);
+<script>
+  function initPostReveal() {
+    const posts = document.querySelectorAll('.post-listing')
+    if (!posts.length) return
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            ;(entry.target as HTMLElement).classList.add('visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    )
+
+    posts.forEach((post, i) => {
+      ;(post as HTMLElement).style.transitionDelay = `${i * 40}ms`
+      observer.observe(post)
+    })
   }
-</style>
+
+  initPostReveal()
+  document.addEventListener('astro:after-swap', initPostReveal)
+</script>

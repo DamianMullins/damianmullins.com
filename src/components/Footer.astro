@@ -10,62 +10,52 @@ import {
 const year = new Date().getFullYear()
 ---
 
-<div class="bg-dark-01 text-light text-center">
-  <div class="mx-auto max-w-220 px-4 py-8">
-    <ul class="m-0 mb-8 list-none p-0">
-      {
-        AUTHOR_EMAIL && (
-          <li class="mx-4 my-5 inline">
-            <a
-              href={`mailto:${AUTHOR_EMAIL}`}
-              rel="external"
-              class="text-light decoration-light underline underline-offset-2 hover:no-underline">
-              Email
-            </a>
-          </li>
-        )
-      }
-      {
-        GITHUB_USERNAME && (
-          <li class="mx-4 my-5 inline">
-            <a
-              href={`https://github.com/${GITHUB_USERNAME}`}
-              rel="external"
-              class="text-light decoration-light underline underline-offset-2 hover:no-underline">
-              GitHub
-            </a>
-          </li>
-        )
-      }
-      {
-        TWITTER_USERNAME && (
-          <li class="mx-4 my-5 inline">
-            <a
-              href={`https://twitter.com/${TWITTER_USERNAME}`}
-              rel="external"
-              class="text-light decoration-light underline underline-offset-2 hover:no-underline">
-              Twitter
-            </a>
-          </li>
-        )
-      }
-      {
-        LINKEDIN_USERNAME && (
-          <li class="mx-4 my-5 inline">
-            <a
-              href={`https://www.linkedin.com/in/${LINKEDIN_USERNAME}`}
-              rel="external"
-              class="text-light decoration-light underline underline-offset-2 hover:no-underline">
-              LinkedIn
-            </a>
-          </li>
-        )
-      }
-    </ul>
+<footer class="mx-auto max-w-[680px] px-6 pt-4 pb-12 text-center">
+  <div class="ornament" aria-hidden="true">&#10045;</div>
 
-    <p class="m-0">
-      &copy; {AUTHOR}
-      {year}
-    </p>
-  </div>
-</div>
+  <ul class="m-0 mb-6 list-none p-0">
+    {
+      AUTHOR_EMAIL && (
+        <li class="mx-3 my-2 inline">
+          <a href={`mailto:${AUTHOR_EMAIL}`} rel="external">
+            Email
+          </a>
+        </li>
+      )
+    }
+    {
+      GITHUB_USERNAME && (
+        <li class="mx-3 my-2 inline">
+          <a href={`https://github.com/${GITHUB_USERNAME}`} rel="external">
+            GitHub
+          </a>
+        </li>
+      )
+    }
+    {
+      TWITTER_USERNAME && (
+        <li class="mx-3 my-2 inline">
+          <a href={`https://twitter.com/${TWITTER_USERNAME}`} rel="external">
+            Twitter
+          </a>
+        </li>
+      )
+    }
+    {
+      LINKEDIN_USERNAME && (
+        <li class="mx-3 my-2 inline">
+          <a
+            href={`https://www.linkedin.com/in/${LINKEDIN_USERNAME}`}
+            rel="external">
+            LinkedIn
+          </a>
+        </li>
+      )
+    }
+  </ul>
+
+  <p class="text-text-muted m-0 text-sm">
+    &copy; {AUTHOR}
+    {year}
+  </p>
+</footer>

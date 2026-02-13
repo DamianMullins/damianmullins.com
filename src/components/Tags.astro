@@ -10,15 +10,21 @@ const { tags } = Astro.props
 
 {
   tags.length > 0 && (
-    <>
-      <h2>Related tags</h2>
-      <ul>
+    <div class="border-divider mt-8 border-t pt-6">
+      <h2 class="font-heading text-text-muted mb-3 border-0 pt-0 text-base">
+        Related tags
+      </h2>
+      <ul class="m-0 flex list-none flex-wrap gap-2 p-0">
         {tags.map(tag => (
           <li>
-            <a href={`/tags/${slugify(tag)}/`}>{tag.toLowerCase()}</a>
+            <a
+              href={`/tags/${slugify(tag)}/`}
+              class="tag-pill border-divider bg-surface text-accent inline-block rounded-full border px-3 py-1 text-sm no-underline transition-all">
+              {tag.toLowerCase()}
+            </a>
           </li>
         ))}
       </ul>
-    </>
+    </div>
   )
 }

@@ -1,6 +1,6 @@
 import * as Sentry from '@sentry/browser'
 
-const release = `damianmullins@${import.meta.env.npm_package_version ?? ''}`
+const release = `damianmullins@${import.meta.env.PUBLIC_RELEASE_VERSION ?? ''}`
 
 Sentry.init({
   dsn: 'https://xFG59rFyabkNnXQ9RKc4GhqC@s1733957.eu-fsn-3.betterstackdata.com/1733957',

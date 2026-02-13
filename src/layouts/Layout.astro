@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from 'astro:transitions'
 import Header from '@/components/Header.astro'
 import Footer from '@/components/Footer.astro'
 import { SITE_TITLE, AUTHOR_BIO } from '@/consts'
@@ -11,7 +12,7 @@ interface Props {
 
 const { title, description = AUTHOR_BIO } = Astro.props
 const pageTitle = title ? `${title} — ${SITE_TITLE}` : SITE_TITLE
-const version = import.meta.env.npm_package_version ?? ''
+const version = import.meta.env.PUBLIC_RELEASE_VERSION ?? ''
 ---
 
 <!doctype html>
@@ -29,13 +30,44 @@ const version = import.meta.env.npm_package_version ?? ''
       href="/icons/icon-48x48.png"
     />
     <link rel="manifest" href="/manifest.webmanifest" />
-    <meta name="theme-color" content="#222020" />
+    <meta
+      name="theme-color"
+      content="#f8f3eb"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#1e1c1a"
+      media="(prefers-color-scheme: dark)"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     />
+    <!-- Prevent flash of wrong theme -->
+    <script is:inline>
+      ;(function () {
+        const saved = localStorage.getItem('theme')
+        if (
+          saved === 'dark' ||
+          (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+          document.documentElement.classList.add('dark')
+        } else {
+          document.documentElement.classList.remove('dark')
+        }
+      })()
+
+      document.addEventListener('astro:before-swap', e => {
+        const saved = localStorage.getItem('theme')
+        const isDark =
+          saved === 'dark' ||
+          (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        e.newDocument.documentElement.classList.toggle('dark', isDark)
+      })
+    </script>
     <!-- Google Analytics -->
     <script
       is:inline
@@ -50,11 +82,12 @@ const version = import.meta.env.npm_package_version ?? ''
       gtag('config', 'G-NMJS073VTS', { anonymize_ip: true })
     </script>
     <slot name="head" />
+    <ClientRouter />
   </head>
   <body>
     <Header />
 
-    <main class="mx-auto max-w-220 px-4 py-8">
+    <main class="mx-auto max-w-[680px] px-6 py-10">
       <slot />
     </main>
 

@@ -13,6 +13,6 @@ const formattedDate = new Intl.DateTimeFormat('en-GB', {
 }).format(new Date(posted))
 ---
 
-<p class="font-semibold italic">
-  <time>{formattedDate}</time> — {minutesRead} minute read
+<p class="text-text-muted mb-3 text-sm">
+  <time>{formattedDate}</time> &middot; {minutesRead} minute read
 </p>

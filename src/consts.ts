@@ -1,4 +1,4 @@
-export const SITE_TITLE = 'Blog for Damian Mullins'
+export const SITE_TITLE = 'Damian Mullins'
 export const SITE_URL = 'https://www.damianmullins.com'
 export const AUTHOR = 'Damian Mullins'
 export const AUTHOR_EMAIL = 'hello@damianmullins.com'

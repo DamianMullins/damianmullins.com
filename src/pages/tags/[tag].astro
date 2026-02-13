@@ -43,17 +43,19 @@ const tagHeader = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with 
 ---
 
 <Layout title={`Posts tagged "${tag}"`}>
-  <h1>{tagHeader}</h1>
+  <h1 class="font-heading text-heading mb-8">
+    {tagHeader}
+  </h1>
 
-  <ul>
+  <ul class="mb-8">
     {
       posts.map(post => (
-        <li>
+        <li class="mb-2">
           <a href={post.slug}>{post.title}</a>
         </li>
       ))
     }
   </ul>
 
-  <a href="/tags/">All tags</a>
+  <a href="/tags/" class="text-text-muted text-sm"> &larr; All tags </a>
 </Layout>

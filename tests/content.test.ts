@@ -83,7 +83,10 @@ describe('content validation', () => {
         if (imagePath.startsWith('http')) continue
 
         const fullPath = join(POSTS_DIR, dir, imagePath)
-        expect(existsSync(fullPath), `Missing image: ${imagePath} in ${dir}`).toBe(true)
+        expect(
+          existsSync(fullPath),
+          `Missing image: ${imagePath} in ${dir}`
+        ).toBe(true)
       }
     })
   })

@@ -20,8 +20,10 @@ function getHtmlFiles(): string[] {
   }
 
   // Include root index.html and 404.html
-  if (existsSync(resolve(DIST, 'index.html'))) files.push(resolve(DIST, 'index.html'))
-  if (existsSync(resolve(DIST, '404.html'))) files.push(resolve(DIST, '404.html'))
+  if (existsSync(resolve(DIST, 'index.html')))
+    files.push(resolve(DIST, 'index.html'))
+  if (existsSync(resolve(DIST, '404.html')))
+    files.push(resolve(DIST, '404.html'))
 
   walk(DIST)
   return [...new Set(files)]
@@ -68,7 +70,9 @@ describe('HTML quality', () => {
       for (const file of htmlFiles) {
         const $ = cheerio.load(readFileSync(file, 'utf-8'))
         const charset = $('meta[charset]').attr('charset')
-        expect(charset?.toLowerCase(), `Missing charset in ${file}`).toBe('utf-8')
+        expect(charset?.toLowerCase(), `Missing charset in ${file}`).toBe(
+          'utf-8'
+        )
       }
     })
 
@@ -85,7 +89,10 @@ describe('HTML quality', () => {
         const $ = cheerio.load(readFileSync(file, 'utf-8'))
         $('img').each((_, el) => {
           const alt = $(el).attr('alt')
-          expect(alt, `Image missing alt attribute in ${file}: ${$(el).attr('src')}`).toBeDefined()
+          expect(
+            alt,
+            `Image missing alt attribute in ${file}: ${$(el).attr('src')}`
+          ).toBeDefined()
         })
       }
     })
@@ -97,7 +104,13 @@ describe('HTML quality', () => {
           const href = $(el).attr('href')
           if (!href) return
           // Only check internal links
-          if (href.startsWith('http') || href.startsWith('//') || href.startsWith('mailto:') || href.startsWith('#')) return
+          if (
+            href.startsWith('http') ||
+            href.startsWith('//') ||
+            href.startsWith('mailto:') ||
+            href.startsWith('#')
+          )
+            return
 
           // Normalise path
           const cleanHref = href.split('#')[0].split('?')[0]
@@ -117,7 +130,9 @@ describe('HTML quality', () => {
             }
           }
 
-          expect(existsSync(target), `Broken link in ${file}: ${href}`).toBe(true)
+          expect(existsSync(target), `Broken link in ${file}: ${href}`).toBe(
+            true
+          )
         })
       }
     })

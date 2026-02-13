@@ -4,7 +4,16 @@ import notFoundImage from '@/assets/images/404.avif'
 ---
 
 <Layout title="Page Not Found">
-  <h1>Page Not Found</h1>
-  <p>The page you are looking for couldn't be found.</p>
-  <img src={notFoundImage.src} alt="" />
+  <div class="py-12 text-center">
+    <h1 class="font-heading text-heading mb-4 text-3xl">Page Not Found</h1>
+    <p class="text-text-muted mb-8">
+      The page you are looking for couldn&apos;t be found.
+    </p>
+    <img
+      src={notFoundImage.src}
+      alt=""
+      class="mx-auto mb-8 max-w-xs rounded-lg shadow-md"
+    />
+    <a href="/" class="text-accent">Return home</a>
+  </div>
 </Layout>

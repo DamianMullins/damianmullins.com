@@ -51,11 +51,21 @@ describe('build output', () => {
 
   describe('post pages', () => {
     it('generates an HTML page for each published post', () => {
-      const postDirs = readdirSync(resolve(__dirname, '..', 'src', 'content', 'posts'))
+      const postDirs = readdirSync(
+        resolve(__dirname, '..', 'src', 'content', 'posts')
+      )
 
       // Read each post's frontmatter to get slug and published status
       for (const dir of postDirs) {
-        const mdPath = resolve(__dirname, '..', 'src', 'content', 'posts', dir, 'index.md')
+        const mdPath = resolve(
+          __dirname,
+          '..',
+          'src',
+          'content',
+          'posts',
+          dir,
+          'index.md'
+        )
         if (!existsSync(mdPath)) continue
 
         const content = readFileSync(mdPath, 'utf-8')
@@ -66,12 +76,16 @@ describe('build output', () => {
         const isPublished = publishedMatch?.[1] === 'true'
         if (!isPublished) continue
 
-        const slugMatch = frontmatter.match(/slug:\s*['"]?\/?([^'"\/\n]+)\/?['"]?/)
+        const slugMatch = frontmatter.match(
+          /slug:\s*['"]?\/?([^'"\/\n]+)\/?['"]?/
+        )
         const slug = slugMatch?.[1]
         if (!slug) continue
 
         const pagePath = resolve(DIST, slug, 'index.html')
-        expect(existsSync(pagePath), `Missing page for post: ${slug}`).toBe(true)
+        expect(existsSync(pagePath), `Missing page for post: ${slug}`).toBe(
+          true
+        )
       }
     })
   })
@@ -97,7 +111,9 @@ describe('build output', () => {
     })
 
     it('has a manifest link', () => {
-      expect($('link[rel="manifest"]').attr('href')).toBe('/manifest.webmanifest')
+      expect($('link[rel="manifest"]').attr('href')).toBe(
+        '/manifest.webmanifest'
+      )
     })
 
     it('has Open Graph or meta description for SEO', () => {
@@ -111,7 +127,13 @@ describe('build output', () => {
       const links = $('a[href]')
         .toArray()
         .map(el => $(el).attr('href'))
-        .filter(href => href && href.startsWith('/') && href !== '/' && !href.startsWith('/tags'))
+        .filter(
+          href =>
+            href &&
+            href.startsWith('/') &&
+            href !== '/' &&
+            !href.startsWith('/tags')
+        )
       expect(links.length).toBeGreaterThan(0)
     })
   })
@@ -121,13 +143,12 @@ describe('build output', () => {
 
     beforeAll(() => {
       // Use the first published post we can find
-      const postDirs = readdirSync(resolve(DIST))
-        .filter(d => {
-          const indexPath = resolve(DIST, d, 'index.html')
-          if (!existsSync(indexPath)) return false
-          if (['tags', '_astro', 'icons'].includes(d)) return false
-          return true
-        })
+      const postDirs = readdirSync(resolve(DIST)).filter(d => {
+        const indexPath = resolve(DIST, d, 'index.html')
+        if (!existsSync(indexPath)) return false
+        if (['tags', '_astro', 'icons'].includes(d)) return false
+        return true
+      })
 
       const postDir = postDirs[0]
       if (!postDir) throw new Error('No post pages found in dist/')

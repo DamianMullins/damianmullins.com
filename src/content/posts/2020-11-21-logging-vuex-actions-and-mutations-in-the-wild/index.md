@@ -26,10 +26,8 @@ The first step is to locate the Vuex store instance, this will be a property on 
 A quick way to find the store instance is to use the code below which loops through each element on the page, starting at the top, checking for an object called `__vue__`. Once this is found it will return the `$store` instance which is attached to the `__vue__` object.
 
 ```js
-const store = [...document.querySelectorAll('*')]
-  .find(el => el.__vue__)
-  .__vue__
-  .$store;
+const store = [...document.querySelectorAll('*')].find(el => el.__vue__).__vue__
+  .$store
 ```
 
 > Note that the result of `querySelectorAll` is spread into [an array using the spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax), this is because it returns a `NodeList` rather than an array and doesn't have the array prototype functions such as `find` available.
@@ -45,9 +43,7 @@ You'll need to find the Vue instance by locating the root element of your applic
 In this application, the root element has a data attribute of `data-app`. We can use `querySelector` to target the element using the data attribute and then return the `$store` instance which is attached to the `__vue__` object:
 
 ```js
-const store = document.querySelector('[data-app]')
-	.__vue__
-	.$store;
+const store = document.querySelector('[data-app]').__vue__.$store
 ```
 
 > You can specify any valid CSS selector when using `querySelector`.
@@ -109,10 +105,8 @@ Running this code and triggering an action will output something similar to this
 Let's take those dull `console.log` statements and make them a little more exciting by adding some emoji and colour. We can also do a little refactoring along the way.
 
 ```js
-const store = [...document.querySelectorAll('*')]
-  .find(el => el.__vue__)
-  .__vue__
-  .$store;
+const store = [...document.querySelectorAll('*')].find(el => el.__vue__).__vue__
+  .$store
 
 store.subscribe(({ type, payload }, state) => {
   console.log(
