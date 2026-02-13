@@ -26,7 +26,11 @@ if (environment === 'production') {
       })
     ],
 
-    tracesSampleRate: 1.0,
+    // Performance optimization: Reduce traces sample rate to 0.1 (10%) in production
+    // to reduce overhead and network traffic while still providing enough data
+    // for performance monitoring.
+    tracesSampleRate: 0.1,
+    enableLogs: false,
 
     beforeSend(event) {
       const logRocketSession = LogRocket.sessionURL
