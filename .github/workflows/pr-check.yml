@@ -31,11 +31,11 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm install
+      - name: Build with Astro
+        run: pnpm run build
       - name: Unit tests
         run: pnpm test:unit
       - name: Content validation
         run: pnpm test:content
-      - name: Build with Astro
-        run: pnpm run build
       - name: Build output tests
         run: pnpm test:build
