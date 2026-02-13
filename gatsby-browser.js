@@ -11,7 +11,7 @@ if (environment === 'production') {
   setupLogRocketReact(LogRocket)
 
   Sentry.init({
-    dsn: 'https://b7ebba6ca5dd4d65a2ee0ea7f7665a22@o43921.ingest.sentry.io/1197101',
+    dsn: 'https://xFG59rFyabkNnXQ9RKc4GhqC@s1733957.eu-fsn-3.betterstackdata.com/1733957',
     environment,
     release: `damianmullins@${release}`,
 
@@ -21,7 +21,6 @@ if (environment === 'production') {
     integrations: [
       Sentry.browserTracingIntegration(),
       Sentry.replayIntegration({
-        // ✅ SECURITY: Mask all text and block all media by default to prevent PII leakage
         maskAllText: true,
         blockAllMedia: true
       })
@@ -44,8 +43,6 @@ if (environment === 'production') {
       }
     }
   })
-
-  Sentry.logger.info('User triggered test log', { log_source: 'sentry_test' })
 
   LogRocket.getSessionURL(sessionURL =>
     Sentry.getCurrentScope().setExtra('sessionURL', sessionURL)
