@@ -7,128 +7,156 @@ High-level map of how the codebase is organized and how data flows through the s
 ```
 src/
 ├── assets/images/       Static images (404.avif, profile-pic.avif)
-├── components/          Reusable React components (8 files)
-├── pages/               Gatsby auto-routed pages (index, 404, tags)
-├── posts/               Markdown blog posts (15 posts)
-├── styles/              SCSS modules, partials, and mixins
-└── templates/           Programmatically created page templates (Post, Tags)
+├── components/          Reusable Astro components (7 files)
+├── content/
+│   ├── config.ts        Content collection config with Zod schema
+│   └── posts/           Markdown blog posts (15 posts)
+├── layouts/             Layout component (Layout.astro)
+├── pages/               File-based routes (index, 404, tags, [...slug], rss.xml)
+├── plugins/             Custom remark plugins (remark-reading-time.ts)
+├── scripts/             Client-side scripts (logrocket.ts)
+└── styles/              Global CSS with Tailwind v4 theme tokens
 ```
 
 ### `src/components/`
 
-| File             | Role                                                                                     |
-| ---------------- | ---------------------------------------------------------------------------------------- |
-| `Layout.js`      | Root wrapper — fetches site metadata, renders Header, Nav, Footer, applies global styles |
-| `Header.js`      | Site title and profile image                                                             |
-| `Nav.js`         | Navigation links with mobile toggle (class component)                                    |
-| `Footer.js`      | Author info, social links, copyright                                                     |
-| `Strapline.js`   | Hero tagline text on the homepage                                                        |
-| `PostListing.js` | Renders a single post preview (title, date, description, tags)                           |
-| `PostTime.js`    | Formatted publish date display                                                           |
-| `Tags.js`        | Renders a list of tag links                                                              |
+| File                | Role                                                     |
+| ------------------- | -------------------------------------------------------- |
+| `Header.astro`      | Site title and profile image                             |
+| `Nav.astro`         | Navigation links with mobile toggle                      |
+| `Footer.astro`      | Author info, social links, copyright                     |
+| `Strapline.astro`   | Hero tagline text on the homepage                        |
+| `PostListing.astro` | Renders a single post preview (title, date, description) |
+| `PostTime.astro`    | Formatted publish date and reading time display          |
+| `Tags.astro`        | Renders a list of tag links                              |
+
+### `src/layouts/`
+
+| File           | Role                                                                                         |
+| -------------- | -------------------------------------------------------------------------------------------- |
+| `Layout.astro` | Root wrapper — imports site metadata from `consts.ts`, renders `<head>`, Header, Nav, Footer |
 
 ### `src/pages/`
 
-| File       | Route   | Purpose                                             |
-| ---------- | ------- | --------------------------------------------------- |
-| `index.js` | `/`     | Homepage — author bio + list of all published posts |
-| `404.js`   | `/404`  | Custom 404 page                                     |
-| `tags.js`  | `/tags` | Lists all tags with post counts                     |
+| File               | Route          | Purpose                                             |
+| ------------------ | -------------- | --------------------------------------------------- |
+| `index.astro`      | `/`            | Homepage — author bio + list of all published posts |
+| `404.astro`        | `/404`         | Custom 404 page                                     |
+| `[...slug].astro`  | `/{slug}/`     | Individual blog post page (dynamic route)           |
+| `tags/index.astro` | `/tags/`       | Lists all tags with post counts                     |
+| `tags/[tag].astro` | `/tags/{tag}/` | Posts filtered by a specific tag                    |
+| `rss.xml.ts`       | `/rss.xml`     | RSS feed endpoint via `@astrojs/rss`                |
 
-### `src/templates/`
+### `src/content/`
 
-| File      | Route pattern | Purpose                          |
-| --------- | ------------- | -------------------------------- |
-| `Post.js` | `/{slug}`     | Individual blog post page        |
-| `Tags.js` | `/tags/{tag}` | Posts filtered by a specific tag |
+| File / Directory | Purpose                                                        |
+| ---------------- | -------------------------------------------------------------- |
+| `config.ts`      | Defines the `posts` collection with glob loader and Zod schema |
+| `posts/`         | Markdown blog posts (`YYYY-MM-DD-slug/index.md`)               |
 
-## Gatsby Lifecycle Files
+## Astro Configuration
 
-These files live at the project root and control the build pipeline:
+Configuration lives in `astro.config.mjs` at the project root:
 
-### `gatsby-config.js`
+### Site settings
 
-- **Site metadata**: title, siteUrl, author, authorEmail, authorBio, social usernames (GitHub, Twitter, LinkedIn).
-- **Plugins** (in load order):
-  1. `gatsby-plugin-no-sourcemaps`
-  2. `gatsby-source-filesystem` — sources all files under `src/`
-  3. `gatsby-plugin-manifest` — PWA manifest, icon from `profile-pic.avif`
-  4. `gatsby-plugin-gtag` — Google Analytics (G-NMJS073VTS)
-  5. `gatsby-plugin-feed` — RSS feed at `/rss.xml`
-  6. `gatsby-plugin-sitemap`
-  7. `gatsby-plugin-sass`
-  8. `gatsby-plugin-react-helmet`
-  9. `gatsby-transformer-remark` with `gatsby-remark-heading-slug`, `gatsby-remark-prismjs`, `gatsby-remark-copy-linked-files`
-  10. `gatsby-plugin-catch-links`
-  11. `@sentry/gatsby`
+- **`site`**: `https://www.damianmullins.com`
+- **`trailingSlash`**: `always`
+- **Source maps**: Disabled via `vite.build.sourcemap: false`
 
-### `gatsby-node.js`
+### Integrations
 
-Programmatically creates pages at build time:
+1. `@astrojs/sitemap` — generates `sitemap-index.xml` at build time
+2. `@sentry/astro` — Sentry error tracking integration (source map upload disabled)
 
-1. **Post pages** — Queries all published Markdown nodes, creates a page for each at its `frontmatter.slug` using `src/templates/Post.js`.
-2. **Tag pages** — Collects all unique tags across posts, generates `/tags/{kebab-slug}` routes using `src/templates/Tags.js`. Tag slugs are generated via the `slugify` package.
+### Vite plugins
 
-### `gatsby-browser.js`
+1. `@tailwindcss/vite` — Tailwind CSS v4 integration
 
-Runs client-side in **production only**:
+### Markdown processing
 
-- Initializes **LogRocket** session replay.
-- Initializes **Sentry** error tracking with browser tracing and session replay. Attaches LogRocket session URL to Sentry events.
-- Release version is set from `GATSBY_RELEASE_VERSION` (populated from `package.json` version during build).
+- **Shiki** code highlighting with `material-theme-darker` theme (Astro built-in)
+- **`remarkReadingTime`** — custom remark plugin at `src/plugins/remark-reading-time.ts`, injects `minutesRead` into frontmatter
+- **`rehype-slug`** — adds `id` attributes to headings for anchor links
+
+### Site metadata — `src/consts.ts`
+
+All site-wide constants (title, URL, author name, email, bio, social usernames) are exported from `src/consts.ts` and imported directly wherever needed.
+
+### Content collection — `src/content/config.ts`
+
+Defines the `posts` collection using the `glob` loader (`**/index.md` under `src/content/posts`). Frontmatter is validated with a Zod schema (slug, title, date, description, tags, published, optional minutesRead).
 
 ## Data Flow
 
 ```
-Markdown files (src/posts/**/index.md)
+Markdown files (src/content/posts/**/index.md)
         │
         ▼
-gatsby-source-filesystem (reads files into Gatsby's data layer)
+Astro content collection (glob loader in src/content/config.ts)
         │
         ▼
-gatsby-transformer-remark (parses Markdown + frontmatter into GraphQL nodes)
+Zod schema validation (frontmatter type-checked at build time)
         │
         ▼
-GraphQL data layer
+getCollection('posts') API
         │
-        ├──► useStaticQuery (Layout.js fetches site metadata)
-        ├──► Page queries (index.js, tags.js fetch post lists)
-        └──► Template queries (Post.js, Tags.js fetch individual content)
+        ├──► Page data (index.astro fetches sorted post list)
+        ├──► Dynamic routes ([...slug].astro, tags/[tag].astro via getStaticPaths)
+        └──► RSS feed (rss.xml.ts fetches posts for feed)
                 │
                 ▼
-        React components render HTML
+        Astro components render HTML
                 │
                 ▼
-        Static HTML + JS bundle (output to public/)
+        Static HTML (output to dist/)
 ```
 
 ## Component Tree
 
 ```
 Layout
+├── <head> (title, meta, GA script, fonts, manifest)
 ├── Header
 ├── Nav
-├── {page content}
-│   ├── index.js → Strapline + PostListing[] + Tags
-│   ├── Post.js → PostTime + Tags + rendered Markdown
-│   └── Tags.js → PostListing[]
-└── Footer
+├── <main> {page content}
+│   ├── index.astro → Strapline + PostListing[]
+│   ├── [...slug].astro → PostTime + rendered Markdown (prose) + Tags
+│   ├── tags/index.astro → tag list with counts
+│   └── tags/[tag].astro → filtered post links
+├── Footer
+└── <script> (LogRocket import)
 ```
 
 ## Third-Party Integrations
 
-| Service          | Purpose                           | Configuration                                               |
-| ---------------- | --------------------------------- | ----------------------------------------------------------- |
-| Sentry           | Error tracking and session replay | `@sentry/gatsby` plugin + `gatsby-browser.js`               |
-| LogRocket        | Session replay                    | Initialized in `gatsby-browser.js` (production only)        |
-| Google Analytics | Page tracking                     | `gatsby-plugin-gtag` (measurement ID in `gatsby-config.js`) |
-| Checkly          | Uptime monitoring                 | External service, badge in `README.md`                      |
+| Service          | Purpose                           | Configuration                                                                 |
+| ---------------- | --------------------------------- | ----------------------------------------------------------------------------- |
+| Sentry           | Error tracking and session replay | `@sentry/astro` integration in `astro.config.mjs` + `sentry.client.config.ts` |
+| LogRocket        | Session replay                    | Loaded via `src/scripts/logrocket.ts` (production only), imported in Layout   |
+| Google Analytics | Page tracking                     | Inline `<script>` tag in `Layout.astro` (measurement ID: `G-NMJS073VTS`)      |
+| Checkly          | Uptime monitoring                 | External service, badge in `README.md`                                        |
+
+## Key Libraries
+
+| Package                   | Purpose                                      |
+| ------------------------- | -------------------------------------------- |
+| `@astrojs/rss`            | RSS feed generation (`src/pages/rss.xml.ts`) |
+| `@astrojs/sitemap`        | Sitemap generation                           |
+| `@tailwindcss/typography` | Prose styling for rendered Markdown content  |
+| `@tailwindcss/vite`       | Tailwind CSS v4 Vite integration             |
+| `rehype-slug`             | Adds `id` attributes to Markdown headings    |
+| `reading-time`            | Calculates reading time for posts            |
+| `slugify`                 | Generates URL-safe tag slugs                 |
+| `Intl.DateTimeFormat`     | Native date formatting (replaces `date-fns`) |
 
 ## Deployment
 
 - **Platform**: GitHub Pages
+- **Build output**: `dist/` directory
+- **Static assets**: `public/` (icons, `manifest.webmanifest`) — copied as-is to `dist/`
 - **Trigger**: Push to `main` branch
-- **Workflow**: `.github/workflows/gatsby.yml`
+- **Workflow**: `.github/workflows/astro.yml`
 - **PR validation**: `.github/workflows/pr-check.yml` (runs build)
 - **Dependency updates**: Dependabot (`.github/dependabot.yml`) — weekly npm update PRs
-- **Build environment**: Node 22, pnpm via corepack, caches `public/` and `.cache/`
+- **Build environment**: Node 22, pnpm via corepack

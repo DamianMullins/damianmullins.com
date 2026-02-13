@@ -12,73 +12,69 @@ Key rules: single quotes, no semicolons, no trailing commas, 2-space indentation
 
 ## Component Conventions
 
-- **Functional arrow components** with `export default` at the bottom of the file.
-- **PropTypes** from the `prop-types` package for prop validation (declared as a static property after the component definition).
+- **Astro components** (`.astro` files) with frontmatter script in the `---` fence and template below.
+- **TypeScript** is used throughout — props are typed via `interface Props` in the component frontmatter.
 - One component per file in `src/components/`.
 
 ### Reference Examples
 
-- **Standard UI component**: `src/components/PostListing.js` — PropTypes, SCSS module imports, clean functional pattern.
-- **Data-fetching component**: `src/components/Layout.js` — Uses `useStaticQuery` hook to fetch site metadata from GraphQL.
-- **Class component**: `src/components/Nav.js` — The only class component in the codebase; uses `React.createRef()`.
+- **Standard UI component**: `src/components/PostListing.astro` — typed props, Tailwind utility classes.
+- **Layout component**: `src/layouts/Layout.astro` — imports site metadata from `src/consts.ts`, renders `<head>`, Header, Nav, Footer.
+- **Navigation component**: `src/components/Nav.astro` — navigation links with mobile toggle.
 
 ## Data Fetching
 
-All data is fetched via Gatsby's GraphQL layer. Three patterns are used:
+All data is fetched via Astro **content collections** and static imports. Three patterns are used:
 
-### 1. `useStaticQuery` (component-level)
+### 1. Content collections with `getCollection()` (page-level)
 
-For non-page components that need static data at build time.
+Pages and dynamic routes call `getCollection('posts')` from `astro:content` to query the posts collection at build time. An optional filter callback excludes unpublished drafts.
 
-**Reference**: `src/components/Layout.js`
+**Reference**: `src/pages/index.astro`, `src/pages/[...slug].astro`
 
-### 2. Exported page queries (page-level)
+### 2. Static imports from `src/consts.ts` (component-level)
 
-Pages export a `graphql` tagged template literal. Gatsby injects the result as `data` prop.
+Site metadata (title, URL, author, social usernames) is defined as named exports in `src/consts.ts` and imported directly by any component that needs it.
 
-**Reference**: `src/pages/index.js`
+**Reference**: `src/layouts/Layout.astro`, `src/pages/rss.xml.ts`
 
-### 3. Parameterized template queries
+### 3. Dynamic route `getStaticPaths()` (parameterized pages)
 
-Templates receive context variables (e.g., `$path`, `$tag`) from `gatsby-node.js` and use them in GraphQL query filters.
+Dynamic route files export a `getStaticPaths` function that queries the collection and returns `params` + `props` for each page.
 
-**Reference**: `src/templates/Post.js`, `src/templates/Tags.js`
+**Reference**: `src/pages/[...slug].astro`, `src/pages/tags/[tag].astro`
 
 ### Query convention
 
-All queries that fetch posts filter by `frontmatter: { published: { eq: true } }` to exclude unpublished drafts.
+All calls to `getCollection()` pass a filter callback `({ data }) => data.published` to exclude unpublished drafts.
 
 ## Styling
 
-The project uses **SCSS Modules** via `gatsby-plugin-sass`.
+The project uses **Tailwind CSS v4** utility classes with the `@tailwindcss/typography` plugin for Markdown content rendering. Tailwind is loaded via `@tailwindcss/vite` in `astro.config.mjs`.
 
 ### Rules
 
-- Each component has a corresponding `.module.scss` file in `src/styles/`.
-- Import styles as **named destructured imports**: `import { footer, links } from '../styles/footer.module.scss'`.
-- Apply classes via `className={footer}` (no `styles.` prefix).
+- Use Tailwind utility classes directly in component templates via `class` attributes.
+- For component-specific overrides, use `<style>` blocks scoped to the `.astro` component.
+- Use `:global()` selectors within scoped `<style>` blocks only when targeting rendered Markdown content.
 
 ### Style architecture
 
-| Path                                  | Purpose                                                  |
-| ------------------------------------- | -------------------------------------------------------- |
-| `src/styles/partials/_variables.scss` | Font family, base font size, line height                 |
-| `src/styles/partials/_colors.scss`    | Color palette (`$c-dark`, `$c-light`, `$c-green`, etc.)  |
-| `src/styles/partials/_base.scss`      | Global typography and element styles                     |
-| `src/styles/partials/_normalize.scss` | Vendored normalize.css v8.0.0                            |
-| `src/styles/mixins/_mixins.scss`      | Shared mixins (e.g., `links()` for underline decoration) |
-| `src/styles/_dependencies.scss`       | Aggregates partials for global import                    |
-| `src/styles/global.module.scss`       | Entry point for global styles (imported in `Layout.js`)  |
+| Path                    | Purpose                                                                                               |
+| ----------------------- | ----------------------------------------------------------------------------------------------------- |
+| `src/styles/global.css` | Entry point — imports Tailwind, registers the typography plugin, defines theme tokens and base styles |
 
 ### Colors
 
-```scss
-$c-dark: #1c1b1b;
-$c-dark-01: #222020;
-$c-dark-02: #2f2f2f;
-$c-light: #dadada;
-$c-light-01: #656565;
-$c-green: #00cd81;
+Defined as CSS custom properties (Tailwind `@theme` tokens) in `src/styles/global.css`:
+
+```css
+--color-dark: #1c1b1b;
+--color-dark-01: #222020;
+--color-dark-02: #2f2f2f;
+--color-light: #dadada;
+--color-light-01: #656565;
+--color-green: #00cd81;
 ```
 
 ### Font
@@ -87,11 +83,30 @@ Open Sans, sans-serif — base size 18px, line-height 1.45em.
 
 ### Code highlighting
 
-PrismJS with the `prism-material-dark` theme, imported globally in `Layout.js`.
+Shiki (Astro built-in) with the `material-theme-darker` theme, configured in `astro.config.mjs` under `markdown.shikiConfig`.
 
 ## Content Authoring
 
-Blog posts are Markdown files located at `src/posts/YYYY-MM-DD-slug/index.md`.
+Blog posts are Markdown files located at `src/content/posts/YYYY-MM-DD-slug/index.md`. They are loaded as a content collection via the `glob` loader defined in `src/content/config.ts`.
+
+### Content collection config
+
+The posts collection is defined in `src/content/config.ts` with a Zod schema that validates all frontmatter fields:
+
+```typescript
+const posts = defineCollection({
+  loader: glob({ pattern: '**/index.md', base: './src/content/posts' }),
+  schema: z.object({
+    slug: z.string(),
+    title: z.string(),
+    date: z.string(),
+    description: z.string(),
+    tags: z.array(z.string()),
+    published: z.boolean(),
+    minutesRead: z.number().optional()
+  })
+})
+```
 
 ### Required frontmatter
 
@@ -108,18 +123,19 @@ published: true
 ---
 ```
 
-| Field         | Type     | Notes                                   |
-| ------------- | -------- | --------------------------------------- |
-| `slug`        | string   | Must start and end with `/`             |
-| `title`       | string   | Post title                              |
-| `date`        | string   | ISO 8601 datetime                       |
-| `description` | string   | Used in meta tags and post listings     |
-| `tags`        | string[] | Lowercase, used for tag pages           |
-| `published`   | boolean  | Set `false` to exclude from all queries |
+| Field         | Type     | Notes                                                      |
+| ------------- | -------- | ---------------------------------------------------------- |
+| `slug`        | string   | Must start and end with `/`                                |
+| `title`       | string   | Post title                                                 |
+| `date`        | string   | ISO 8601 datetime                                          |
+| `description` | string   | Used in meta tags and post listings                        |
+| `tags`        | string[] | Lowercase, used for tag pages                              |
+| `published`   | boolean  | Set `false` to exclude from all `getCollection()` queries  |
+| `minutesRead` | number?  | Injected automatically by the `remark-reading-time` plugin |
 
 ### Images
 
-Co-locate images in the post directory alongside `index.md`. Reference them with relative Markdown image syntax. `gatsby-remark-copy-linked-files` handles copying them to the build output.
+Co-locate images in the post directory alongside `index.md`. Reference them with relative Markdown image syntax. Astro handles copying them to the build output.
 
 ## Testing
 
@@ -128,5 +144,5 @@ No test framework or tests currently exist in this project.
 ## CI / CD
 
 - **PR checks**: `.github/workflows/pr-check.yml` — runs `pnpm run build` on every pull request.
-- **Deployment**: `.github/workflows/gatsby.yml` — builds and deploys to GitHub Pages on push to `main`.
+- **Deployment**: `.github/workflows/astro.yml` — builds and deploys to GitHub Pages on push to `main`.
 - **Dependency updates**: `.github/dependabot.yml` — weekly npm update PRs.

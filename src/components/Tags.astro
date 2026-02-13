@@ -1,0 +1,24 @@
+---
+import slugify from 'slugify'
+
+interface Props {
+  tags: string[]
+}
+
+const { tags } = Astro.props
+---
+
+{
+  tags.length > 0 && (
+    <>
+      <h2>Related tags</h2>
+      <ul>
+        {tags.map(tag => (
+          <li>
+            <a href={`/tags/${slugify(tag)}/`}>{tag.toLowerCase()}</a>
+          </li>
+        ))}
+      </ul>
+    </>
+  )
+}

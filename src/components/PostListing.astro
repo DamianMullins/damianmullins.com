@@ -1,0 +1,27 @@
+---
+import PostTime from './PostTime.astro'
+
+interface Props {
+  slug: string
+  title: string
+  posted: string
+  description: string
+  minutesRead: number
+}
+
+const { slug, title, posted, description, minutesRead } = Astro.props
+---
+
+<article class="post-listing">
+  <a href={slug} class="block bg-none py-4 no-underline shadow-none">
+    <h2>{title}</h2>
+    <PostTime posted={posted} minutesRead={minutesRead} />
+    <p>{description}</p>
+  </a>
+</article>
+
+<style>
+  .post-listing + .post-listing {
+    border-top: solid 1px var(--color-light-01);
+  }
+</style>

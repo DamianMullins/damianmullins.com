@@ -1,0 +1,34 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Strapline from '@/components/Strapline.astro'
+import PostListing from '@/components/PostListing.astro'
+import { AUTHOR_BIO } from '@/consts'
+import { getCollection } from 'astro:content'
+
+const posts = (await getCollection('posts', ({ data }) => data.published)).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+)
+---
+
+<Layout>
+  <Fragment slot="head">
+    <meta
+      name="google-site-verification"
+      content="a6Ox8VBA5N9ohpNFIepLCkROEGmvZc2eqnm6msYIMSk"
+    />
+  </Fragment>
+
+  <Strapline text={AUTHOR_BIO} />
+
+  {
+    posts.map(post => (
+      <PostListing
+        slug={post.data.slug}
+        title={post.data.title}
+        posted={post.data.date}
+        minutesRead={post.data.minutesRead ?? 1}
+        description={post.data.description}
+      />
+    ))
+  }
+</Layout>

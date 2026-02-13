@@ -2,10 +2,11 @@
   "name": "damianmullins",
   "description": "Development Blog for Damian mullins - Senior Software Engineer.",
   "homepage": "https://www.damianmullins.com",
-  "version": "4.150.1",
+  "version": "5.0.0",
   "author": "Damian Mullins <damian@mullins.in> (https://www.damianmullins.com)",
   "keywords": [
-    "gatsby"
+    "astro",
+    "blog"
   ],
   "license": "MIT",
   "repository": {
@@ -13,57 +14,51 @@
     "url": "git@github.com:DamianMullins/damianmullins.com.git"
   },
   "scripts": {
-    "clean": "rimraf public .cache",
-    "start": "rimraf .cache && GATSBY_RELEASE_VERSION=$npm_package_version gatsby develop",
+    "clean": "rimraf dist .astro",
+    "start": "astro dev",
     "format": "prettier --write .",
-    "build": "pnpm run clean && GATSBY_RELEASE_VERSION=$npm_package_version gatsby build",
-    "serve": "gatsby serve"
+    "build": "pnpm run clean && astro build",
+    "serve": "astro preview",
+    "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:content": "vitest run tests/content.test.ts",
+    "test:build": "vitest run tests/build.test.ts tests/html.test.ts"
   },
   "dependencies": {
-    "@sentry/gatsby": "10.22.0",
-    "date-fns": "4.1.0",
+    "@astrojs/rss": "^4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
+    "@sentry/astro": "^10.38.0",
+    "@sentry/browser": "^10.38.0",
+    "@sentry/node": "^10.38.0",
+    "astro": "^5.17.2",
     "logrocket": "10.1.0",
-    "logrocket-react": "6.0.3",
-    "prism-themes": "1.9.0",
-    "prismjs": "1.30.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-helmet": "6.1.0",
+    "mdast-util-to-string": "^4.0.0",
+    "reading-time": "^1.5.0",
+    "rehype-slug": "^6.0.0",
+    "sharp": "^0.34.5",
     "slugify": "1.6.6"
   },
   "devDependencies": {
-    "gatsby": "5.15.0",
-    "gatsby-plugin-catch-links": "5.15.0",
-    "gatsby-plugin-feed": "5.15.0",
-    "gatsby-plugin-gtag": "1.0.13",
-    "gatsby-plugin-manifest": "5.15.0",
-    "gatsby-plugin-no-sourcemaps": "5.15.0",
-    "gatsby-plugin-react-helmet": "6.15.0",
-    "gatsby-plugin-sass": "6.15.0",
-    "gatsby-plugin-sitemap": "6.15.0",
-    "gatsby-remark-copy-linked-files": "6.15.0",
-    "gatsby-remark-heading-slug": "0.2.0",
-    "gatsby-remark-prismjs": "7.15.0",
-    "gatsby-source-filesystem": "5.15.0",
-    "gatsby-transformer-remark": "6.15.0",
-    "postcss": "8.5.6",
+    "@axe-core/cli": "^4.11.1",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/node": "20.14.8",
+    "cheerio": "^1.2.0",
     "prettier": "3.6.2",
-    "prop-types": "^15.8.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.7.2",
     "rimraf": "6.1.0",
-    "sass": "1.93.3"
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
   },
   "resolutions": {
-    "@types/node": "20.14.8",
-    "cookie": "^0.7.2",
-    "multer": "2.0.2",
-    "path-to-regexp": "0.1.12",
-    "postcss": "8.5.6",
-    "tmp": "0.2.4"
+    "@types/node": "20.14.8"
   },
   "browserslist": [
-    "> 5%",
+    ">0.3%",
     "last 2 versions",
-    "not ie 11"
+    "not dead"
   ],
-  "packageManager": "pnpm@9.15.5+sha256.8472168c3e1fd0bff287e694b053fccbbf20579a3ff9526b6333beab8df65a8d"
+  "packageManager": "pnpm@9.15.9+sha512.68046141893c66fad01c079231128e9afb89ef87e2691d69e4d40eee228988295fd4682181bae55b58418c3a253bde65a505ec7c5f9403ece5cc3cd37dcf2531"
 }

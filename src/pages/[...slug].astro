@@ -1,0 +1,54 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import Tags from '@/components/Tags.astro'
+import PostTime from '@/components/PostTime.astro'
+import { AUTHOR_BIO } from '@/consts'
+import { getCollection, render } from 'astro:content'
+import type { GetStaticPaths } from 'astro'
+import type { CollectionEntry } from 'astro:content'
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getCollection('posts', ({ data }) => data.published)
+
+  return posts.map(post => {
+    // Strip leading/trailing slashes from the frontmatter slug for the URL param
+    const slug = post.data.slug.replace(/^\/|\/$/g, '')
+    return {
+      params: { slug },
+      props: { post }
+    }
+  })
+}
+
+const { post } = Astro.props as { post: CollectionEntry<'posts'> }
+const { Content, remarkPluginFrontmatter } = await render(post)
+const { title, date, description, tags } = post.data
+const minutesRead = remarkPluginFrontmatter?.minutesRead ?? 1
+---
+
+<Layout title={title} description={description || AUTHOR_BIO}>
+  <h1>{title}</h1>
+
+  <PostTime posted={date} minutesRead={minutesRead} />
+
+  <div
+    class="post-content prose prose-invert prose-headings:font-semibold prose-headings:text-light prose-h2:border-l-[5px] prose-h2:border-l-green prose-h2:pl-5 prose-h3:border-l-[5px] prose-h3:border-l-green prose-h3:pl-5 prose-h4:border-l-[5px] prose-h4:border-l-green prose-h4:pl-5 prose-p:text-light prose-a:text-light prose-strong:text-light prose-code:text-light prose-li:text-light prose-blockquote:text-light border-b-light-01 mb-[1.45rem] max-w-none border-b text-[1.1rem]">
+    <Content />
+  </div>
+
+  <Tags tags={tags} />
+</Layout>
+
+<style>
+  .post-content :global(> p:first-of-type) {
+    font-size: 1.2rem;
+  }
+
+  .post-content :global(img) {
+    background-color: var(--color-dark-02);
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    padding: 1.25em 1em;
+  }
+</style>

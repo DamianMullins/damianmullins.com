@@ -1,0 +1,33 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import slugify from 'slugify'
+
+const posts = await getCollection('posts', ({ data }) => data.published)
+
+const tagCounts = new Map<string, number>()
+for (const post of posts) {
+  for (const tag of post.data.tags) {
+    tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1)
+  }
+}
+
+const sortedTags = [...tagCounts.entries()].sort((a, b) =>
+  a[0].localeCompare(b[0])
+)
+---
+
+<Layout title="Tags">
+  <h1>Tags</h1>
+  <ul>
+    {
+      sortedTags.map(([tag, count]) => (
+        <li>
+          <a href={`/tags/${slugify(tag)}/`}>
+            {tag} ({count})
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

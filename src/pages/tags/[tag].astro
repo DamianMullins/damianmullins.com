@@ -1,0 +1,59 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import slugify from 'slugify'
+import type { GetStaticPaths } from 'astro'
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getCollection('posts', ({ data }) => data.published)
+
+  // Build a map of tag slug → { original tag name, matching posts }
+  const tagMap = new Map<
+    string,
+    { originalTag: string; posts: { slug: string; title: string }[] }
+  >()
+
+  for (const post of posts) {
+    for (const tag of post.data.tags) {
+      const tagSlug = slugify(tag)
+      if (!tagMap.has(tagSlug)) {
+        tagMap.set(tagSlug, { originalTag: tag, posts: [] })
+      }
+      tagMap.get(tagSlug)!.posts.push({
+        slug: post.data.slug,
+        title: post.data.title
+      })
+    }
+  }
+
+  return [...tagMap.entries()].map(([tagSlug, { originalTag, posts }]) => ({
+    params: { tag: tagSlug },
+    props: { tag: originalTag, posts }
+  }))
+}
+
+interface Props {
+  tag: string
+  posts: { slug: string; title: string }[]
+}
+
+const { tag, posts } = Astro.props
+const totalCount = posts.length
+const tagHeader = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${tag}"`
+---
+
+<Layout title={`Posts tagged "${tag}"`}>
+  <h1>{tagHeader}</h1>
+
+  <ul>
+    {
+      posts.map(post => (
+        <li>
+          <a href={post.slug}>{post.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <a href="/tags/">All tags</a>
+</Layout>

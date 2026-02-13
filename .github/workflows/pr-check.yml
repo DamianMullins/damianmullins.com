@@ -29,18 +29,13 @@ jobs:
         with:
           node-version: '22'
           cache: pnpm
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            public
-            .cache
-          key: v1-${{ runner.os }}-gatsby-build-${{ hashFiles('public') }}
-          restore-keys: |
-            ${{ runner.os }}-gatsby-build-
       - name: Install dependencies
         run: pnpm install
-      - name: Build with Gatsby
-        env:
-          PREFIX_PATHS: 'true'
+      - name: Unit tests
+        run: pnpm test:unit
+      - name: Content validation
+        run: pnpm test:content
+      - name: Build with Astro
         run: pnpm run build
+      - name: Build output tests
+        run: pnpm test:build
