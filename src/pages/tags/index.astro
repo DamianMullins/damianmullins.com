@@ -25,7 +25,7 @@ const sortedTags = [...tagCounts.entries()].sort((a, b) =>
         <li>
           <a
             href={`/tags/${slugify(tag)}/`}
-            class="border-divider bg-surface text-accent inline-block rounded-full border px-4 py-2 text-sm no-underline transition-colors">
+            class="tag-pill border-divider bg-surface text-accent inline-block rounded-full border px-3 py-1 text-sm no-underline transition-all">
             {tag} ({count})
           </a>
         </li>

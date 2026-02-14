@@ -270,13 +270,7 @@
     font-family: var(--font-mono);
   }
 
-  /* Dual Shiki theme support */
-  .astro-code,
-  .astro-code span {
-    color: var(--shiki-light) !important;
-    background-color: var(--shiki-light-bg) !important;
-  }
-
+  /* Dual Shiki theme support — light values are inline styles, dark values are CSS vars */
   .dark .astro-code,
   .dark .astro-code span {
     color: var(--shiki-dark) !important;
@@ -293,19 +287,6 @@
     padding-top: 0.05em;
     color: var(--color-heading);
     font-weight: 700;
-    animation: drop-cap-in 0.8s ease both;
-    animation-delay: 0.2s;
-  }
-
-  @keyframes drop-cap-in {
-    from {
-      opacity: 0;
-      transform: scale(0.6);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
   }
 
   /* Decorative divider */
