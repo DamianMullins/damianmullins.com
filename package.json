@@ -29,7 +29,7 @@
     "@astrojs/sitemap": "^3.7.0",
     "@sentry/astro": "^10.38.0",
     "@sentry/browser": "^10.38.0",
-    "@sentry/node": "^10.38.0",
+    "@sentry/node": "^10.39.0",
     "astro": "^5.17.2",
     "logrocket": "10.1.0",
     "mdast-util-to-string": "^4.0.0",
