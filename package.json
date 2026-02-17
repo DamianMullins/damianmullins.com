@@ -2,7 +2,7 @@
   "name": "damianmullins",
   "description": "Development Blog for Damian mullins - Senior Software Engineer.",
   "homepage": "https://www.damianmullins.com",
-  "version": "5.1.1",
+  "version": "5.1.2",
   "author": "Damian Mullins <damian@mullins.in> (https://www.damianmullins.com)",
   "keywords": [
     "astro",
@@ -27,9 +27,9 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
-    "@sentry/astro": "^10.38.0",
-    "@sentry/browser": "^10.38.0",
-    "@sentry/node": "^10.38.0",
+    "@sentry/astro": "^10.39.0",
+    "@sentry/browser": "^10.39.0",
+    "@sentry/node": "^10.39.0",
     "astro": "^5.17.2",
     "logrocket": "10.1.0",
     "mdast-util-to-string": "^4.0.0",
@@ -47,7 +47,7 @@
     "prettier": "3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "rimraf": "6.1.2",
+    "rimraf": "6.1.3",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"
