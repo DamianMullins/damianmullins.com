@@ -21,8 +21,8 @@ importers:
         specifier: ^10.41.0
         version: 10.41.0(astro@5.18.0(@types/node@20.14.8)(jiti@2.6.1)(lightningcss@1.31.1)(rollup@4.59.0)(sass@1.93.3)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1))(rollup@4.59.0)
       '@sentry/browser':
-        specifier: ^10.39.0
-        version: 10.39.0
+        specifier: ^10.41.0
+        version: 10.41.0
       '@sentry/node':
         specifier: ^10.39.0
         version: 10.39.0
@@ -1118,32 +1118,16 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@sentry-internal/browser-utils@10.39.0':
-    resolution: {integrity: sha512-W6WODonMGiI13Az5P7jd/m2lj/JpIyuVKg7wE4X+YdlMehLspAv6I7gRE4OBSumS14ZjdaYDpD/lwtnBwKAzcA==}
-    engines: {node: '>=18'}
-
   '@sentry-internal/browser-utils@10.41.0':
     resolution: {integrity: sha512-Nsy7wqdWWqqNaoB/t5iqwAwTkHB73+UmyOU9k4OAmKuizSwj98h0fgPzoil3RgGzR7bjMxvaxXWKZyi//zEr0g==}
-    engines: {node: '>=18'}
-
-  '@sentry-internal/feedback@10.39.0':
-    resolution: {integrity: sha512-cRXmmDeOr5FzVsBNRLU4WDEuC3fhuD0XV362EWl4DI3XBGao8ukaueKcLIKic5WZx6uXimjWw/UJmDLgxeCqkg==}
     engines: {node: '>=18'}
 
   '@sentry-internal/feedback@10.41.0':
     resolution: {integrity: sha512-fRWntZkEPVG7aBMjL7+NPpCTW9FW8RRmx7KZy8AzK51yCXhLwmM1aTR8RKJnz7zZC6XZozvhEXvtI9ud3b0LYA==}
     engines: {node: '>=18'}
 
-  '@sentry-internal/replay-canvas@10.39.0':
-    resolution: {integrity: sha512-TTiX0XWCcqTqFGJjEZYObk93j/sJmXcqPzcu0cN2mIkKnnaHDY3w74SHZCshKqIr0AOQdt1HDNa36s3TCdt0Jw==}
-    engines: {node: '>=18'}
-
   '@sentry-internal/replay-canvas@10.41.0':
     resolution: {integrity: sha512-fVirArw97oTm851JwJ3R1fC5rL+E8G3qx2XMmwU890UzovBcPo//DMDCGG2kkS62VVlZJ01HWF96a0Trer245g==}
-    engines: {node: '>=18'}
-
-  '@sentry-internal/replay@10.39.0':
-    resolution: {integrity: sha512-obZoYOrUfxIYBHkmtPpItRdE38VuzF1VIxSgZ8Mbtq/9UvCWh+eOaVWU2stN/cVu1KYuYX0nQwBvdN28L6y/JA==}
     engines: {node: '>=18'}
 
   '@sentry-internal/replay@10.41.0':
@@ -1159,10 +1143,6 @@ packages:
   '@sentry/babel-plugin-component-annotate@5.1.1':
     resolution: {integrity: sha512-x2wEpBHwsTyTF2rWsLKJlzrRF1TTIGOfX+ngdE+Yd5DBkoS58HwQv824QOviPGQRla4/ypISqAXzjdDPL/zalg==}
     engines: {node: '>= 18'}
-
-  '@sentry/browser@10.39.0':
-    resolution: {integrity: sha512-I50W/1PDJWyqgNrGufGhBYCmmO3Bb159nx2Ut2bKoVveTfgH/hLEtDyW0kHo8Fu454mW+ukyXfU4L4s+kB9aaw==}
-    engines: {node: '>=18'}
 
   '@sentry/browser@10.41.0':
     resolution: {integrity: sha512-7hwcgpl/RSCRAlSCDSq2U93MRa43W1E3z9pArmlSqraQ4pRIVhVRMhHwSyZZ8yPRlcRa16nIh7d04oZE3Zqniw==}
@@ -4337,36 +4317,18 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.59.0':
     optional: true
 
-  '@sentry-internal/browser-utils@10.39.0':
-    dependencies:
-      '@sentry/core': 10.39.0
-
   '@sentry-internal/browser-utils@10.41.0':
     dependencies:
       '@sentry/core': 10.41.0
-
-  '@sentry-internal/feedback@10.39.0':
-    dependencies:
-      '@sentry/core': 10.39.0
 
   '@sentry-internal/feedback@10.41.0':
     dependencies:
       '@sentry/core': 10.41.0
 
-  '@sentry-internal/replay-canvas@10.39.0':
-    dependencies:
-      '@sentry-internal/replay': 10.39.0
-      '@sentry/core': 10.39.0
-
   '@sentry-internal/replay-canvas@10.41.0':
     dependencies:
       '@sentry-internal/replay': 10.41.0
       '@sentry/core': 10.41.0
-
-  '@sentry-internal/replay@10.39.0':
-    dependencies:
-      '@sentry-internal/browser-utils': 10.39.0
-      '@sentry/core': 10.39.0
 
   '@sentry-internal/replay@10.41.0':
     dependencies:
@@ -4386,14 +4348,6 @@ snapshots:
       - supports-color
 
   '@sentry/babel-plugin-component-annotate@5.1.1': {}
-
-  '@sentry/browser@10.39.0':
-    dependencies:
-      '@sentry-internal/browser-utils': 10.39.0
-      '@sentry-internal/feedback': 10.39.0
-      '@sentry-internal/replay': 10.39.0
-      '@sentry-internal/replay-canvas': 10.39.0
-      '@sentry/core': 10.39.0
 
   '@sentry/browser@10.41.0':
     dependencies:
