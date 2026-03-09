@@ -30,8 +30,8 @@ importers:
         specifier: ^5.18.0
         version: 5.18.0(@types/node@20.14.8)(jiti@2.6.1)(lightningcss@1.31.1)(rollup@4.59.0)(sass@1.93.3)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1)
       logrocket:
-        specifier: 12.0.0
-        version: 12.0.0
+        specifier: 12.1.0
+        version: 12.1.0
       mdast-util-to-string:
         specifier: ^4.0.0
         version: 4.0.0
@@ -1621,8 +1621,8 @@ packages:
     resolution: {integrity: sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw==}
     engines: {node: '>= 20.19.0'}
 
-  chromedriver@146.0.0:
-    resolution: {integrity: sha512-fDAbuEy+Dn9F/h8fphiQIUEyUDOTGlfjZHfI9dJZz75+ui/LIHqWzStQt87vpwA9oV3ut4C2W3flfvbn3KELFQ==}
+  chromedriver@146.0.1:
+    resolution: {integrity: sha512-XT1FnStrsGAS6l3M0yLtLjqSZWcOK0cBoR/QKLzA0rvf4oGtxnxYtCv6G0j8/0xNZTY2Zv9GOARZ5uBNc3bjTw==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -2269,8 +2269,8 @@ packages:
     resolution: {integrity: sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==}
     engines: {node: '>=10'}
 
-  logrocket@12.0.0:
-    resolution: {integrity: sha512-7VUI2gi3XxACLqJGZJ/8hRx3KT7z2joNXcBqbefkfWI6rLqMJOq0LUmfLbw3qRPPZTjOBiwpKKVecusL3V5K7Q==}
+  logrocket@12.1.0:
+    resolution: {integrity: sha512-WZXCwtPam15ktseKzP2SAd2PgHXmr41++8Lgg30VyW/mpAbHaJAZm5//C+l9Yt5x6HLfwH76PuY47RXpKUvTuA==}
 
   longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
@@ -3403,7 +3403,7 @@ snapshots:
     dependencies:
       '@axe-core/webdriverjs': 4.11.1(selenium-webdriver@4.39.0)
       axe-core: 4.11.1
-      chromedriver: 146.0.0
+      chromedriver: 146.0.1
       colors: 1.4.0
       commander: 9.5.0
       dotenv: 17.3.1
@@ -4891,7 +4891,7 @@ snapshots:
     dependencies:
       readdirp: 5.0.0
 
-  chromedriver@146.0.0:
+  chromedriver@146.0.1:
     dependencies:
       '@testim/chrome-version': 1.1.4
       axios: 1.13.6
@@ -5578,7 +5578,7 @@ snapshots:
     dependencies:
       p-locate: 5.0.0
 
-  logrocket@12.0.0: {}
+  logrocket@12.1.0: {}
 
   longest-streak@3.1.0: {}
 
