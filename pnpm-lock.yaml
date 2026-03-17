@@ -21,8 +21,8 @@ importers:
         specifier: ^10.41.0
         version: 10.41.0(astro@5.18.0(@types/node@20.14.8)(jiti@2.6.1)(lightningcss@1.31.1)(rollup@4.59.0)(sass@1.93.3)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1))(rollup@4.59.0)
       '@sentry/browser':
-        specifier: ^10.41.0
-        version: 10.41.0
+        specifier: ^10.44.0
+        version: 10.44.0
       '@sentry/node':
         specifier: ^10.42.0
         version: 10.42.0
@@ -1112,16 +1112,32 @@ packages:
     resolution: {integrity: sha512-Nsy7wqdWWqqNaoB/t5iqwAwTkHB73+UmyOU9k4OAmKuizSwj98h0fgPzoil3RgGzR7bjMxvaxXWKZyi//zEr0g==}
     engines: {node: '>=18'}
 
+  '@sentry-internal/browser-utils@10.44.0':
+    resolution: {integrity: sha512-z9xz3T/v+MnfHY6kdUCmOZI8CiAl3LlKYtGH2p3rAsrxhwX+BTnUp01VhMVnEZIDgUXNt3AhJac+4kcDIPu1Hg==}
+    engines: {node: '>=18'}
+
   '@sentry-internal/feedback@10.41.0':
     resolution: {integrity: sha512-fRWntZkEPVG7aBMjL7+NPpCTW9FW8RRmx7KZy8AzK51yCXhLwmM1aTR8RKJnz7zZC6XZozvhEXvtI9ud3b0LYA==}
+    engines: {node: '>=18'}
+
+  '@sentry-internal/feedback@10.44.0':
+    resolution: {integrity: sha512-yNS2EGK1bNm8YUI+Orzpa7yr05Da+b1VEe/9x7dl7gTjw/+tfutoXlG6Y+iFZBB3gQ9QU+nxZAhU+KcxiPEURw==}
     engines: {node: '>=18'}
 
   '@sentry-internal/replay-canvas@10.41.0':
     resolution: {integrity: sha512-fVirArw97oTm851JwJ3R1fC5rL+E8G3qx2XMmwU890UzovBcPo//DMDCGG2kkS62VVlZJ01HWF96a0Trer245g==}
     engines: {node: '>=18'}
 
+  '@sentry-internal/replay-canvas@10.44.0':
+    resolution: {integrity: sha512-RA7XgYZWHY7M+vaHvuMxDFT51wCs4puS2smElM5oh+j3YqbFXY7P16fOCwIAGoyI4gVsj8aTeBgVqUmrmzhAXQ==}
+    engines: {node: '>=18'}
+
   '@sentry-internal/replay@10.41.0':
     resolution: {integrity: sha512-2CstiGYsE15nZ0K2HJB9SH2+/XcAvPf4erT3Y4/NNWogaz+g0RpRMpYM2ybHFX2x0sXggLXYrddHAUPFltiTjg==}
+    engines: {node: '>=18'}
+
+  '@sentry-internal/replay@10.44.0':
+    resolution: {integrity: sha512-KDmoqBsRmkaoc+eKLR2CbScd2eBmLcw+1+D441lLttAO3WWhvYyCaYdu/HIGGUoybuSgt+IcpCJdi7hFuCvYqw==}
     engines: {node: '>=18'}
 
   '@sentry/astro@10.41.0':
@@ -1136,6 +1152,10 @@ packages:
 
   '@sentry/browser@10.41.0':
     resolution: {integrity: sha512-7hwcgpl/RSCRAlSCDSq2U93MRa43W1E3z9pArmlSqraQ4pRIVhVRMhHwSyZZ8yPRlcRa16nIh7d04oZE3Zqniw==}
+    engines: {node: '>=18'}
+
+  '@sentry/browser@10.44.0':
+    resolution: {integrity: sha512-UpMx5forbVKieNULma3gT2SsLYqsYT4nLXa6s1io/Y8BFej9sH2dD5ExA8TrkQThQwAWFI3qKsQzYnF+EX/Bfg==}
     engines: {node: '>=18'}
 
   '@sentry/bundler-plugin-core@5.1.1':
@@ -1200,6 +1220,10 @@ packages:
 
   '@sentry/core@10.42.0':
     resolution: {integrity: sha512-L4rMrXMqUKBanpjpMT+TuAVk6xAijz6AWM6RiEYpohAr7SGcCEc1/T0+Ep1eLV8+pwWacfU27OvELIyNeOnGzA==}
+    engines: {node: '>=18'}
+
+  '@sentry/core@10.44.0':
+    resolution: {integrity: sha512-aa7CiDaNFZvHpqd97LJhuskolfJ/4IH5xyuVVLnv7l6B0v9KTwskPUxb0tH1ej3FxuzfH+i8iTiTFuqpfHS3QA==}
     engines: {node: '>=18'}
 
   '@sentry/node-core@10.41.0':
@@ -1666,8 +1690,8 @@ packages:
     resolution: {integrity: sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw==}
     engines: {node: '>= 20.19.0'}
 
-  chromedriver@146.0.1:
-    resolution: {integrity: sha512-XT1FnStrsGAS6l3M0yLtLjqSZWcOK0cBoR/QKLzA0rvf4oGtxnxYtCv6G0j8/0xNZTY2Zv9GOARZ5uBNc3bjTw==}
+  chromedriver@146.0.4:
+    resolution: {integrity: sha512-/yNqo99Xm0qgAjSh7DYy2KX6pfgyGnIM/k+2jUSc0T6CUCP5k26DWrAYU7Sy0t/dKCntMl45FDWfqP+yRWaCZQ==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -2324,6 +2348,10 @@ packages:
     resolution: {integrity: sha512-ESL2CrkS/2wTPfuend7Zhkzo2u0daGJ/A2VucJOgQ/C48S/zB8MMeMHSGKYpXhIjbPxfuezITkaBH1wqv00DDQ==}
     engines: {node: 20 || >=22}
 
+  lru-cache@11.2.7:
+    resolution: {integrity: sha512-aY/R+aEsRelme17KGQa/1ZSIpLpNYYrhcrepKTZgE+W3WM16YMCaPwOHLHsmopZHELU0Ojin1lPVxKR0MihncA==}
+    engines: {node: 20 || >=22}
+
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
@@ -2773,8 +2801,9 @@ packages:
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
 
-  proxy-from-env@2.0.0:
-    resolution: {integrity: sha512-h2lD3OfRraP3R51rNFKIE8nX+qoLr1mE74X91YhVxtDbt+OD6ntoNZv56+JgI4RCdtwQ5eexsOk1KdOQDfvPCQ==}
+  proxy-from-env@2.1.0:
+    resolution: {integrity: sha512-cJ+oHTW1VAEa8cJslgmUZrc+sjRKgAKl3Zyse6+PV38hZe/V6Z14TbCuXcan9F9ghlz4QrFr2c92TNF82UkYHA==}
+    engines: {node: '>=10'}
 
   pump@3.0.4:
     resolution: {integrity: sha512-VS7sjc6KR7e1ukRFhQSY5LM2uBWAUPiOPa/A3mkKmiMwSmRFUITt0xuj+/lesgnCv+dPIEYlkzrcyXgquIHMcA==}
@@ -3448,7 +3477,7 @@ snapshots:
     dependencies:
       '@axe-core/webdriverjs': 4.11.1(selenium-webdriver@4.39.0)
       axe-core: 4.11.1
-      chromedriver: 146.0.1
+      chromedriver: 146.0.4
       colors: 1.4.0
       commander: 9.5.0
       dotenv: 17.3.1
@@ -4289,19 +4318,37 @@ snapshots:
     dependencies:
       '@sentry/core': 10.41.0
 
+  '@sentry-internal/browser-utils@10.44.0':
+    dependencies:
+      '@sentry/core': 10.44.0
+
   '@sentry-internal/feedback@10.41.0':
     dependencies:
       '@sentry/core': 10.41.0
+
+  '@sentry-internal/feedback@10.44.0':
+    dependencies:
+      '@sentry/core': 10.44.0
 
   '@sentry-internal/replay-canvas@10.41.0':
     dependencies:
       '@sentry-internal/replay': 10.41.0
       '@sentry/core': 10.41.0
 
+  '@sentry-internal/replay-canvas@10.44.0':
+    dependencies:
+      '@sentry-internal/replay': 10.44.0
+      '@sentry/core': 10.44.0
+
   '@sentry-internal/replay@10.41.0':
     dependencies:
       '@sentry-internal/browser-utils': 10.41.0
       '@sentry/core': 10.41.0
+
+  '@sentry-internal/replay@10.44.0':
+    dependencies:
+      '@sentry-internal/browser-utils': 10.44.0
+      '@sentry/core': 10.44.0
 
   '@sentry/astro@10.41.0(astro@5.18.0(@types/node@20.14.8)(jiti@2.6.1)(lightningcss@1.31.1)(rollup@4.59.0)(sass@1.93.3)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1))(rollup@4.59.0)':
     dependencies:
@@ -4324,6 +4371,14 @@ snapshots:
       '@sentry-internal/replay': 10.41.0
       '@sentry-internal/replay-canvas': 10.41.0
       '@sentry/core': 10.41.0
+
+  '@sentry/browser@10.44.0':
+    dependencies:
+      '@sentry-internal/browser-utils': 10.44.0
+      '@sentry-internal/feedback': 10.44.0
+      '@sentry-internal/replay': 10.44.0
+      '@sentry-internal/replay-canvas': 10.44.0
+      '@sentry/core': 10.44.0
 
   '@sentry/bundler-plugin-core@5.1.1':
     dependencies:
@@ -4385,6 +4440,8 @@ snapshots:
   '@sentry/core@10.41.0': {}
 
   '@sentry/core@10.42.0': {}
+
+  '@sentry/core@10.44.0': {}
 
   '@sentry/node-core@10.41.0(@opentelemetry/api@1.9.0)(@opentelemetry/context-async-hooks@2.6.0(@opentelemetry/api@1.9.0))(@opentelemetry/core@2.6.0(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.211.0(@opentelemetry/api@1.9.0))(@opentelemetry/resources@2.6.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.6.0(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.40.0)':
     dependencies:
@@ -5001,14 +5058,14 @@ snapshots:
     dependencies:
       readdirp: 5.0.0
 
-  chromedriver@146.0.1:
+  chromedriver@146.0.4:
     dependencies:
       '@testim/chrome-version': 1.1.4
       axios: 1.13.6
       compare-versions: 6.1.1
       extract-zip: 2.0.1
       proxy-agent: 6.5.0
-      proxy-from-env: 2.0.0
+      proxy-from-env: 2.1.0
       tcp-port-used: 1.0.2
     transitivePeerDependencies:
       - debug
@@ -5694,6 +5751,8 @@ snapshots:
 
   lru-cache@11.2.6: {}
 
+  lru-cache@11.2.7: {}
+
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
@@ -6176,7 +6235,7 @@ snapshots:
 
   path-scurry@2.0.2:
     dependencies:
-      lru-cache: 11.2.6
+      lru-cache: 11.2.7
       minipass: 7.1.3
 
   pathe@2.0.3: {}
@@ -6266,7 +6325,7 @@ snapshots:
 
   proxy-from-env@1.1.0: {}
 
-  proxy-from-env@2.0.0: {}
+  proxy-from-env@2.1.0: {}
 
   pump@3.0.4:
     dependencies:
