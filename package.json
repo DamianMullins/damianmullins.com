@@ -28,7 +28,7 @@
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
     "@sentry/astro": "^10.44.0",
-    "@sentry/browser": "^10.44.0",
+    "@sentry/browser": "^10.45.0",
     "@sentry/node": "^10.42.0",
     "astro": "^5.18.0",
     "logrocket": "12.1.0",
