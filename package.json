@@ -30,7 +30,7 @@
     "@sentry/astro": "^10.48.0",
     "@sentry/browser": "^10.48.0",
     "@sentry/node": "^10.48.0",
-    "astro": "^6.1.5",
+    "astro": "^6.1.6",
     "logrocket": "12.1.0",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",
