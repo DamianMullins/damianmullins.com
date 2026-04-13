@@ -42,7 +42,7 @@
     "@axe-core/cli": "^4.11.1",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.2",
-    "@types/node": "^24.0.0",
+    "@types/node": "^25.6.0",
     "cheerio": "^1.2.0",
     "prettier": "3.8.2",
     "prettier-plugin-astro": "^0.14.1",
