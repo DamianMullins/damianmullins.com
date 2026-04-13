@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  yaml: '>=2.8.3'
+
 importers:
 
   .:
@@ -16,7 +19,7 @@ importers:
         version: 3.7.2
       '@sentry/astro':
         specifier: ^10.48.0
-        version: 10.48.0(astro@6.1.5(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@6.0.2)(yaml@2.8.1))(rollup@4.60.1)
+        version: 10.48.0(astro@6.1.5(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@6.0.2))(rollup@4.60.1)
       '@sentry/browser':
         specifier: ^10.48.0
         version: 10.48.0
@@ -25,7 +28,7 @@ importers:
         version: 10.48.0
       astro:
         specifier: ^6.1.5
-        version: 6.1.5(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@6.0.2)(yaml@2.8.1)
+        version: 6.1.5(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@6.0.2)
       logrocket:
         specifier: 12.1.0
         version: 12.1.0
@@ -53,7 +56,7 @@ importers:
         version: 0.5.19(tailwindcss@4.2.2)
       '@tailwindcss/vite':
         specifier: ^4.2.2
-        version: 4.2.2(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)(yaml@2.8.1))
+        version: 4.2.2(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0))
       '@types/node':
         specifier: ^24.0.0
         version: 24.12.2
@@ -80,7 +83,7 @@ importers:
         version: 6.0.2
       vitest:
         specifier: ^4.1.4
-        version: 4.1.4(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)(yaml@2.8.1))
+        version: 4.1.4(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0))
 
 packages:
 
@@ -2958,7 +2961,7 @@ packages:
       sugarss: ^5.0.0
       terser: ^5.16.0
       tsx: ^4.8.1
-      yaml: ^2.4.2
+      yaml: '>=2.8.3'
     peerDependenciesMeta:
       '@types/node':
         optional: true
@@ -3088,11 +3091,6 @@ packages:
 
   yallist@3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
-
-  yaml@2.8.1:
-    resolution: {integrity: sha512-lcYcMxX2PO9XMGvAJkJ3OsNMw+/7FKes7/hgerGUYWIoWu5j/+YQqcZr5JnPZWzOsEBgMbSbiSTn/dv/69Mkpw==}
-    engines: {node: '>= 14.6'}
-    hasBin: true
 
   yargs-parser@22.0.0:
     resolution: {integrity: sha512-rwu/ClNdSMpkSrUb+d6BRsSkLUq1fmfsY6TOpYzTwvwkg1/NRG85KBy3kq++A8LKQwX6lsu+aWad+2khvuXrqw==}
@@ -3958,13 +3956,13 @@ snapshots:
       '@sentry-internal/browser-utils': 10.48.0
       '@sentry/core': 10.48.0
 
-  '@sentry/astro@10.48.0(astro@6.1.5(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@6.0.2)(yaml@2.8.1))(rollup@4.60.1)':
+  '@sentry/astro@10.48.0(astro@6.1.5(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@6.0.2))(rollup@4.60.1)':
     dependencies:
       '@sentry/browser': 10.48.0
       '@sentry/core': 10.48.0
       '@sentry/node': 10.48.0
       '@sentry/vite-plugin': 5.2.0(rollup@4.60.1)
-      astro: 6.1.5(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@6.0.2)(yaml@2.8.1)
+      astro: 6.1.5(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@6.0.2)
     transitivePeerDependencies:
       - '@opentelemetry/exporter-trace-otlp-http'
       - encoding
@@ -4230,12 +4228,12 @@ snapshots:
       postcss-selector-parser: 6.0.10
       tailwindcss: 4.2.2
 
-  '@tailwindcss/vite@4.2.2(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)(yaml@2.8.1))':
+  '@tailwindcss/vite@4.2.2(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0))':
     dependencies:
       '@tailwindcss/node': 4.2.2
       '@tailwindcss/oxide': 4.2.2
       tailwindcss: 4.2.2
-      vite: 7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)(yaml@2.8.1)
+      vite: 7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)
 
   '@testim/chrome-version@1.1.4': {}
 
@@ -4316,13 +4314,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.1.0
 
-  '@vitest/mocker@4.1.4(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)(yaml@2.8.1))':
+  '@vitest/mocker@4.1.4(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0))':
     dependencies:
       '@vitest/spy': 4.1.4
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)(yaml@2.8.1)
+      vite: 7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)
 
   '@vitest/pretty-format@4.1.4':
     dependencies:
@@ -4381,7 +4379,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  astro@6.1.5(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@6.0.2)(yaml@2.8.1):
+  astro@6.1.5(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@6.0.2):
     dependencies:
       '@astrojs/compiler': 3.0.1
       '@astrojs/internal-helpers': 0.8.0
@@ -4432,8 +4430,8 @@ snapshots:
       unist-util-visit: 5.1.0
       unstorage: 1.17.5
       vfile: 6.0.3
-      vite: 7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)(yaml@2.8.1)
-      vitefu: 1.1.3(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)(yaml@2.8.1))
+      vite: 7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)
+      vitefu: 1.1.3(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0))
       xxhash-wasm: 1.1.0
       yargs-parser: 22.0.0
       zod: 4.3.6
@@ -6290,7 +6288,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)(yaml@2.8.1):
+  vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0):
     dependencies:
       esbuild: 0.27.7
       fdir: 6.5.0(picomatch@4.0.4)
@@ -6305,16 +6303,15 @@ snapshots:
       lightningcss: 1.32.0
       sass: 1.93.3
       terser: 5.44.0
-      yaml: 2.8.1
 
-  vitefu@1.1.3(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)(yaml@2.8.1)):
+  vitefu@1.1.3(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)):
     optionalDependencies:
-      vite: 7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)(yaml@2.8.1)
+      vite: 7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)
 
-  vitest@4.1.4(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)(yaml@2.8.1)):
+  vitest@4.1.4(@opentelemetry/api@1.9.1)(@types/node@24.12.2)(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)):
     dependencies:
       '@vitest/expect': 4.1.4
-      '@vitest/mocker': 4.1.4(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)(yaml@2.8.1))
+      '@vitest/mocker': 4.1.4(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0))
       '@vitest/pretty-format': 4.1.4
       '@vitest/runner': 4.1.4
       '@vitest/snapshot': 4.1.4
@@ -6331,7 +6328,7 @@ snapshots:
       tinyexec: 1.1.1
       tinyglobby: 0.2.16
       tinyrainbow: 3.1.0
-      vite: 7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)(yaml@2.8.1)
+      vite: 7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@opentelemetry/api': 1.9.1
@@ -6374,9 +6371,6 @@ snapshots:
   xxhash-wasm@1.1.0: {}
 
   yallist@3.1.1: {}
-
-  yaml@2.8.1:
-    optional: true
 
   yargs-parser@22.0.0: {}
 
