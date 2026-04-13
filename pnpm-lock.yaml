@@ -19,7 +19,7 @@ importers:
         version: 3.7.2
       '@sentry/astro':
         specifier: ^10.48.0
-        version: 10.48.0(astro@5.18.1(@types/node@20.14.8)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1))(rollup@4.60.1)
+        version: 10.48.0(astro@5.18.1(@types/node@20.14.8)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@6.0.2)(yaml@2.8.1))(rollup@4.60.1)
       '@sentry/browser':
         specifier: ^10.48.0
         version: 10.48.0
@@ -28,7 +28,7 @@ importers:
         version: 10.48.0
       astro:
         specifier: ^5.18.1
-        version: 5.18.1(@types/node@20.14.8)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1)
+        version: 5.18.1(@types/node@20.14.8)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@6.0.2)(yaml@2.8.1)
       logrocket:
         specifier: 12.1.0
         version: 12.1.0
@@ -79,8 +79,8 @@ importers:
         specifier: ^4.2.2
         version: 4.2.2
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.2
+        version: 6.0.2
       vitest:
         specifier: ^4.1.4
         version: 4.1.4(@opentelemetry/api@1.9.1)(@types/node@20.14.8)(vite@6.4.2(@types/node@20.14.8)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.93.3)(terser@5.44.0)(yaml@2.8.1))
@@ -3025,8 +3025,8 @@ packages:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
     engines: {node: '>=16'}
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+  typescript@6.0.2:
+    resolution: {integrity: sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -4266,13 +4266,13 @@ snapshots:
       '@sentry-internal/browser-utils': 10.48.0
       '@sentry/core': 10.48.0
 
-  '@sentry/astro@10.48.0(astro@5.18.1(@types/node@20.14.8)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1))(rollup@4.60.1)':
+  '@sentry/astro@10.48.0(astro@5.18.1(@types/node@20.14.8)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@6.0.2)(yaml@2.8.1))(rollup@4.60.1)':
     dependencies:
       '@sentry/browser': 10.48.0
       '@sentry/core': 10.48.0
       '@sentry/node': 10.48.0
       '@sentry/vite-plugin': 5.2.0(rollup@4.60.1)
-      astro: 5.18.1(@types/node@20.14.8)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1)
+      astro: 5.18.1(@types/node@20.14.8)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@6.0.2)(yaml@2.8.1)
     transitivePeerDependencies:
       - '@opentelemetry/exporter-trace-otlp-http'
       - encoding
@@ -4692,7 +4692,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  astro@5.18.1(@types/node@20.14.8)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1):
+  astro@5.18.1(@types/node@20.14.8)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.93.3)(terser@5.44.0)(typescript@6.0.2)(yaml@2.8.1):
     dependencies:
       '@astrojs/compiler': 2.13.1
       '@astrojs/internal-helpers': 0.7.6
@@ -4743,7 +4743,7 @@ snapshots:
       svgo: 4.0.1
       tinyexec: 1.1.1
       tinyglobby: 0.2.16
-      tsconfck: 3.1.6(typescript@5.9.3)
+      tsconfck: 3.1.6(typescript@6.0.2)
       ultrahtml: 1.6.0
       unifont: 0.7.4
       unist-util-visit: 5.1.0
@@ -4756,7 +4756,7 @@ snapshots:
       yocto-spinner: 0.2.3
       zod: 3.25.76
       zod-to-json-schema: 3.25.2(zod@3.25.76)
-      zod-to-ts: 1.2.0(typescript@5.9.3)(zod@3.25.76)
+      zod-to-ts: 1.2.0(typescript@6.0.2)(zod@3.25.76)
     optionalDependencies:
       sharp: 0.34.5
     transitivePeerDependencies:
@@ -6579,15 +6579,15 @@ snapshots:
 
   trough@2.2.0: {}
 
-  tsconfck@3.1.6(typescript@5.9.3):
+  tsconfck@3.1.6(typescript@6.0.2):
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 6.0.2
 
   tslib@2.8.1: {}
 
   type-fest@4.41.0: {}
 
-  typescript@5.9.3: {}
+  typescript@6.0.2: {}
 
   ufo@1.6.3: {}
 
@@ -6810,9 +6810,9 @@ snapshots:
     dependencies:
       zod: 3.25.76
 
-  zod-to-ts@1.2.0(typescript@5.9.3)(zod@3.25.76):
+  zod-to-ts@1.2.0(typescript@6.0.2)(zod@3.25.76):
     dependencies:
-      typescript: 5.9.3
+      typescript: 6.0.2
       zod: 3.25.76
 
   zod@3.25.76: {}
