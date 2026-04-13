@@ -25,7 +25,7 @@
     "test:build": "vitest run tests/build.test.ts tests/html.test.ts"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.15",
+    "@astrojs/rss": "^4.0.17",
     "@astrojs/sitemap": "^3.7.0",
     "@sentry/astro": "^10.44.0",
     "@sentry/browser": "^10.45.0",
