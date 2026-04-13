@@ -30,7 +30,7 @@
     "@sentry/astro": "^10.48.0",
     "@sentry/browser": "^10.48.0",
     "@sentry/node": "^10.48.0",
-    "astro": "^5.18.1",
+    "astro": "^6.1.5",
     "logrocket": "12.1.0",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",
@@ -42,7 +42,7 @@
     "@axe-core/cli": "^4.11.1",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.2",
-    "@types/node": "20.14.8",
+    "@types/node": "^24.0.0",
     "cheerio": "^1.2.0",
     "prettier": "3.8.2",
     "prettier-plugin-astro": "^0.14.1",
@@ -51,9 +51,6 @@
     "tailwindcss": "^4.2.2",
     "typescript": "^6.0.2",
     "vitest": "^4.1.4"
-  },
-  "resolutions": {
-    "@types/node": "20.14.8"
   },
   "browserslist": [
     ">0.3%",
