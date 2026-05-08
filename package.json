@@ -31,7 +31,7 @@
     "@sentry/browser": "^10.49.0",
     "@sentry/node": "^10.49.0",
     "astro": "^6.1.9",
-    "logrocket": "12.1.0",
+    "logrocket": "12.1.1",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",
     "rehype-slug": "^6.0.0",
