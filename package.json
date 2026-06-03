@@ -27,7 +27,7 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
-    "@sentry/astro": "^10.53.1",
+    "@sentry/astro": "^10.56.0",
     "@sentry/browser": "^10.53.1",
     "@sentry/node": "^10.53.1",
     "astro": "^6.3.7",
