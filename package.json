@@ -25,17 +25,17 @@
     "test:build": "vitest run tests/build.test.ts tests/html.test.ts"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.18",
-    "@astrojs/sitemap": "^3.7.2",
-    "@sentry/astro": "^10.53.1",
-    "@sentry/browser": "^10.53.1",
-    "@sentry/node": "^10.53.1",
-    "astro": "^6.3.7",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.3",
+    "@sentry/astro": "^10.69.0",
+    "@sentry/browser": "^10.69.0",
+    "@sentry/node": "^10.69.0",
+    "astro": "^6.4.8",
     "logrocket": "12.1.1",
     "mdast-util-to-string": "^4.0.0",
     "reading-time": "^1.5.0",
     "rehype-slug": "^6.0.0",
-    "sharp": "^0.34.5",
+    "sharp": "^0.35.3",
     "slugify": "1.6.9"
   },
   "devDependencies": {
