@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config'
+import { unified } from '@astrojs/markdown-remark'
 import tailwindcss from '@tailwindcss/vite'
 import sitemap from '@astrojs/sitemap'
 import sentry from '@sentry/astro'
@@ -8,6 +9,7 @@ import rehypeSlug from 'rehype-slug'
 export default defineConfig({
   site: 'https://www.damianmullins.com',
   trailingSlash: 'always',
+  compressHTML: true,
   vite: {
     build: {
       sourcemap: false
@@ -23,6 +25,7 @@ export default defineConfig({
     })
   ],
   markdown: {
+    processor: unified(),
     shikiConfig: {
       themes: {
         light: 'github-light',
