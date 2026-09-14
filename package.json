@@ -39,7 +39,7 @@
     "slugify": "1.6.9"
   },
   "devDependencies": {
-    "@axe-core/cli": "^4.12.1",
+    "@axe-core/cli": "^4.13.0",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^24.12.4",
